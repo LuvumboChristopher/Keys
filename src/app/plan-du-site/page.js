@@ -1,0 +1,1 @@
+export default function PlanDuSite() { return (<div><h1>Plan du Site</h1><ul><li><a href="/">Accueil</a></li><li><a href="/about">À propos</a></li><li><a href="/companies">Entreprises</a></li><li><a href="/contact">Contact</a></li><li><a href="/jobs">Offres d'emploi</a></li><li><a href="/mentions-legales">Mentions Légales</a></li><li><a href="/cgu">CGU</a></li></ul></div>); }
