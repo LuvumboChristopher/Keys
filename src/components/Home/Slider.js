@@ -1,25 +1,26 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         {
-            imgSrc: 'https://via.placeholder.com/1472x600.png?text=Image+1',
-            link: 'https://www.example.com/1',
+            ImageSrc: "https://via.placeholder.com/1472x600.png?text=Image+1",
+            link: "https://www.example.com/1",
         },
         {
-            imgSrc: 'https://via.placeholder.com/1472x600.png?text=Image+2',
-            link: 'https://www.example.com/2',
+            ImageSrc: "https://via.placeholder.com/1472x600.png?text=Image+2",
+            link: "https://www.example.com/2",
         },
         {
-            imgSrc: 'https://via.placeholder.com/1472x600.png?text=Image+3',
-            link: 'https://www.example.com/3',
+            ImageSrc: "https://via.placeholder.com/1472x600.png?text=Image+3",
+            link: "https://www.example.com/3",
         },
         {
-            imgSrc: 'https://via.placeholder.com/1472x600.png?text=Image+4',
-            link: 'https://www.example.com/4',
+            ImageSrc: "https://via.placeholder.com/1472x600.png?text=Image+4",
+            link: "https://www.example.com/4",
         },
     ];
 
@@ -48,11 +49,14 @@ const Slider = () => {
                             >
                                 <div className="w-full inline-block overflow-hidden h-[380px] relative">
                                     <a href={slide.link} target="_blank" rel="noopener noreferrer">
-                                        <img
+                                        <Image
+                                           layout="responsive"
+                                           width={16}
+                                           height={9} 
                                             loading="lazy"
                                             alt={`Slider Image ${index + 1}`}
                                             className="w-full h-full object-cover"
-                                            src={slide.imgSrc}
+                                            src={slide.ImageSrc}
                                         />
                                     </a>
                                 </div>
@@ -67,7 +71,7 @@ const Slider = () => {
                         <div
                             key={dotIndex}
                             onClick={() => handleDotClick(dotIndex)}
-                            className={`cursor-pointer w-4 h-4 rounded-full transition-all duration-300 ease-in-out ${dotIndex === currentSlide ? 'bg-gray-800' : 'bg-gray-300'
+                            className={`cursor-pointer w-4 h-4 rounded-full transition-all duration-300 ease-in-out ${dotIndex === currentSlide ? "bg-gray-800" : "bg-gray-300"
                                 }`}
                         ></div>
                     ))}

@@ -7,6 +7,7 @@ const StatsSection = () => {
     <section
       className="w-full mx-auto py-12 text-black bg-cover bg-center relative"
     >      
+      <h1 className="text-center pb-6">Une vision différente de l"emploi</h1>
       <div className="max-w-screen-lg mx-auto relative z-20 ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
           {/* Stat 1 */}
@@ -21,7 +22,7 @@ const StatsSection = () => {
                 1.6 K+
               </motion.h2>
             </div>
-            <p className="text-md text-center">Offres d'Emploi Disponibles</p>
+            <p className="text-md text-center">Offres d"Emploi Disponibles</p>
           </motion.div>
           {/* Stat 2 */}
           <motion.div

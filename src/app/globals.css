@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Plus Jakarta Sans Bold';
-  src: url('/fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+  font-family: "Plus Jakarta Sans Bold";
+  src: url("/fonts/PlusJakartaSans-ExtraBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -29,12 +29,19 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans Bold', sans-serif;
+  font-family: "Plus Jakarta Sans Bold", sans-serif;
     line-height: 1.5;
     font-weight: bold;
 }

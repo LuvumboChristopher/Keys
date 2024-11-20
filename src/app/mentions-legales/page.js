@@ -9,7 +9,7 @@ export default function MentionsLegales() {
         vous bénéficiez d’un droit d’accès, de rectification, de suppression des informations
         qui vous concernent, que vous pouvez exercer en remplissant le formulaire par un clic
         sur Nous contacter ou par un courrier à: KEYS - INTERIM & RECRUTEMENT, 29 RUE CDT FAURAX, 69006 LYON.
-        Ce site n'implante pas de cookie dans votre ordinateur.
+        Ce site n"implante pas de cookie dans votre ordinateur.
     </p>
 
     <h2 className="text-xl font-semibold mt-4">PROPRIÉTÉS INTELLECTUELLES</h2>
@@ -24,11 +24,11 @@ export default function MentionsLegales() {
         Ce site ne saurait être tenu pour responsable des erreurs rencontrées sur le site, problèmes techniques,
         interprétation des informations publiées et les conséquences de leurs utilisations. L’utilisateur
         reconnaît dans ce cas utiliser ces informations sous sa responsabilité exclusive.
-        Les informations fournies par les candidats et l'envoi de CV ne constituent pas une inscription définitive
+        Les informations fournies par les candidats et l"envoi de CV ne constituent pas une inscription définitive
         au sein des agences KEYS - INTERIM & RECRUTEMENT. Une inscription pourra être validée par ces agences
-        qu'après un entretien en face à face et personnalisé. Les inscriptions des candidats sur la liste
-        (dépot de CV, offres d'emploi) sont provisoires, une inscription ne deviendra définitive qu'après validation
-        émanant de l'agence. Toute inscription validée n'implique aucunement d'obligation à la formation d'un contrat.
+        qu"après un entretien en face à face et personnalisé. Les inscriptions des candidats sur la liste
+        (dépot de CV, offres d"emploi) sont provisoires, une inscription ne deviendra définitive qu"après validation
+        émanant de l"agence. Toute inscription validée n"implique aucunement d"obligation à la formation d"un contrat.
     </p>
 
     <h2 className="text-xl font-semibold mt-4">DONNÉES À CARACTÈRE PERSONNEL</h2>

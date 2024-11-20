@@ -1,13 +1,17 @@
-// src/app/layout.js
-import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import ScrollToTop from '@/components/ScrollToTop';
+"use client";
+
+import "./globals.css";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import ScrollToTop from "@/components/Layout/ScrollToTop";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname(); 
+
   return (
     <html lang="fr">
-         <head>
+      <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Keys-RH - Agence intérimaire de confiance offrant des solutions de placement et d'emploi sur mesure." />
@@ -23,11 +27,10 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
+        <div style={{ paddingTop: pathname !== "/" ? "101.27px" : "0" }}> 
           {children}
-          {/**
-           * 
-            <Footer />
-           */}
+        </div>
+        <Footer />
         <ScrollToTop />
       </body>
     </html>

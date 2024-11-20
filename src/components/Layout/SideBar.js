@@ -1,7 +1,8 @@
 
+import Image from "next/image";
 import { CiMapPin } from "react-icons/ci";
 import { FaBriefcase, FaRegUser } from "react-icons/fa";
-import { IoKeySharp , IoListCircleSharp , IoMailUnread } from "react-icons/io5";
+import { IoKeySharp, IoListCircleSharp, IoMailUnread } from "react-icons/io5";
 
 
 export default function Sidebar({ isMenuOpen, toggleMenu }) {
@@ -13,7 +14,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
       <div className="w-full flex justify-between items-center">
         <div>
           <a href="/">
-            <img
+            <Image
               src="/images/keyslogos/Keys-logo-black-yellow.svg"
               alt="Logo de Keys-RH"
               width={100}
@@ -42,7 +43,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
                 <h4>
                   Qui sommes-nous ?</h4>
               </a>
-              <p className="text-xs pt-1">Présentation de l'agence</p>
+              <p className="text-xs pt-1">Présentation de l"agence</p>
             </div>
           </li>
           <li className="relative group flex items-start space-x-2">
@@ -51,7 +52,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
                 href="/jobs"
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500 "
               >
-                <h4> Offres d'emploi</h4>
+                <h4> Offres d"emploi</h4>
               </a>
               <p className="text-xs pt-1">Nos offres actuelles</p>
             </div>
@@ -69,21 +70,20 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
           </li>
         </ul>
       </nav>
-      <div className="border-t py-5 ">
-        <div className="flex flex-col items-start gap-4">
-        <a href="https://www.keys-rh.fr/worker/" className="w-full mx-auto ">
-  <div className="flex flex-row gap-2 items-center p-4 rounded-2xl bg-black text-white hover:bg-transparent hover:text-black hover:outline  hover:shadow-sm cursor-pointer duration-
-  100 ease-in-out">
-    <FaRegUser className="text-3xl" />
-    <p className="w-full text-left px-3 text-sm">Espace intérimaire</p>
-  </div>
-</a>
+      <div className="border-t py-5">
+        <div className="flex flex-row items-start gap-4">
+          <a href="https://www.keys-rh.fr/worker/" className="w-full mx-auto ">
+            <div className="flex flex-col gap-2 items-center justify-center p-4 rounded-xl border text-black  hover:outline-1  hover:shadow-sm  hover:bg-gray-100 cursor-pointer transition-all duration-400 group ease-in-out">
+              <span className="text-6xl" >🧑🏼‍🏭</span>
+              <p className="w-full text-center text-sm pt-2 group-hover:scale-105 group-hover:font-bolder transition-all duration-400">Vous êtes Candidat?</p>
+            </div>
+          </a>
 
           <a href="https://www.keys-rh.fr/company/security/login" className="w-full mx-auto ">
-            <div className="flex flex-row gap-2 items-center p-4 hober:border rounded-2xl hober:shadow-lg transition-all transform bg-yellow-500 hover:bg-transparent text-white hover:text-black hover:shadow-sm  cursor-pointer duration-300 ease-in-out">
-            <FaBriefcase className="text-3xl"/>
+          <div className="flex flex-col gap-2 items-center justify-center p-4 rounded-xl border text-black  hover:outline-1  hover:shadow-sm  hover:bg-gray-100 cursor-pointer transition-all duration-400 group ease-in-out">
+          <span className="text-6xl" >👨🏼‍💻</span>
 
-              <p className="w-full text-left px-3 text-sm">Vous êtes Recruteur?</p>
+          <p className="w-full text-center text-sm pt-2 group-hover:scale-105 group-hover:font-bolder transition-all  duration-400">Vous êtes Recruteur?</p>
             </div>
           </a>
         </div>
@@ -92,7 +92,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
         <div className="flex flex-col gap-6">
           <div className="w-full mx-auto flex items-start">
             <div>
-              <h3 className="text-md font-semibold pb-2 flex items-start"><CiMapPin className="mt-1 mr-2"/>
+              <h3 className="text-md font-semibold pb-2 flex items-start">
                 Agence de Lyon</h3>
               <a
                 href="https://www.google.com/maps?q=143+Cr+Émile-Zola,+69100+Villeurbanne"
@@ -113,7 +113,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
           </div>
           <div className="w-full mx-auto flex items-start">
             <div>
-              <h3 className="text-md font-semibold pb-2 flex items-start"><CiMapPin className="mt-1 mr-2" />
+              <h3 className="text-md font-semibold pb-2 flex items-start">
                 Agence de Toulouse</h3>
               <a
                 href="https://www.google.com/maps?q=52+Bd+Déodat+de+Sévérac,+31300+Toulouse"

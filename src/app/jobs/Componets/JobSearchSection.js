@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const JobSearchSection = () => {
-    const [keywords, setKeywords] = useState('');
-    const [location, setLocation] = useState('0');
-    const [category, setCategory] = useState('0');
+    const [keywords, setKeywords] = useState("");
+    const [location, setLocation] = useState("0");
+    const [category, setCategory] = useState("0");
 
     return (
-        <section className="pxp-page-header-simple" style={{ backgroundColor: 'var(--pxpMainColorLight)' }}>
+        <section className="pxp-page-header-simple" style={{ backgroundColor: "var(--pxpMainColorLight)" }}>
             <div className="pxp-container">
                 <h1>Jobs</h1>
                 <div className="pxp-hero-subtitle pxp-text-light">
