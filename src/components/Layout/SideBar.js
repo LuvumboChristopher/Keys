@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { CiMapPin } from "react-icons/ci";
 import { FaBriefcase, FaRegUser } from "react-icons/fa";
 import { IoKeySharp, IoListCircleSharp, IoMailUnread } from "react-icons/io5";
@@ -13,7 +14,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
     >
       <div className="w-full flex justify-between items-center">
         <div>
-          <a href="/">
+          <Link href="/">
             <Image
               src="/images/keyslogos/Keys-logo-black-yellow.svg"
               alt="Logo de Keys-RH"
@@ -21,7 +22,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
               height={100}
               className="transition-transform duration-500 ease-in-out hover:scale-105"
             />
-          </a>
+          </Link>
         </div>
         <button
           onClick={toggleMenu}
@@ -36,35 +37,35 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
         <ul className="py-2 space-y-4">
           <li className="relative group flex items-start space-x-2">
             <div>
-              <a
+              <Link
                 href="/about"
                 className=" transition-colors duration-300 ease-in-out hover:text-yellow-500 "
               >
                 <h4>
                   Qui sommes-nous ?</h4>
-              </a>
+              </Link>
               <p className="text-xs pt-1">Présentation de l"agence</p>
             </div>
           </li>
           <li className="relative group flex items-start space-x-2">
             <div>
-              <a
+              <Link
                 href="/jobs"
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500 "
               >
                 <h4> Offres d"emploi</h4>
-              </a>
+              </Link>
               <p className="text-xs pt-1">Nos offres actuelles</p>
             </div>
           </li>
           <li className="relative group flex items-start space-x-2">
             <div>
-              <a
+              <Link
                 href="/contact"
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500 "
               >
                 <h4> Contact</h4>
-              </a>
+              </Link>
               <p className="text-xs pt-1">Nous contacter</p>
             </div>
           </li>
@@ -72,20 +73,20 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
       </nav>
       <div className="border-t py-5">
         <div className="flex flex-row items-start gap-4">
-          <a href="https://www.keys-rh.fr/worker/" className="w-full mx-auto ">
-            <div className="flex flex-col gap-2 items-center justify-center p-4 rounded-xl border text-black  hover:outline-1  hover:shadow-sm  hover:bg-gray-100 cursor-pointer transition-all duration-400 group ease-in-out">
+          <Link href="https://www.keys-rh.fr/worker/" className="w-full mx-auto ">
+            <div className="flex flex-col gap-2 items-center justify-center p-4 rounded-xl border text-black  hover:outline-1  hover:shadow-sm  hover:bg-gray-50 cursor-pointer transition-all duration-500 group ease-in-out">
               <span className="text-6xl" >🧑🏼‍🏭</span>
-              <p className="w-full text-center text-sm pt-2 group-hover:scale-105 group-hover:font-bolder transition-all duration-400">Vous êtes Candidat?</p>
+              <p className="w-full text-center text-sm pt-2">Vous êtes Candidat?</p>
             </div>
-          </a>
+          </Link>
 
-          <a href="https://www.keys-rh.fr/company/security/login" className="w-full mx-auto ">
-          <div className="flex flex-col gap-2 items-center justify-center p-4 rounded-xl border text-black  hover:outline-1  hover:shadow-sm  hover:bg-gray-100 cursor-pointer transition-all duration-400 group ease-in-out">
+          <Link href="https://www.keys-rh.fr/company/security/login" className="w-full mx-auto ">
+          <div className="flex flex-col gap-2 items-center justify-center p-4 rounded-xl border text-black  hover:outline-1  hover:shadow-sm  hover:bg-gray-50 cursor-pointer transition-all duration-500 group ease-in-out">
           <span className="text-6xl" >👨🏼‍💻</span>
 
-          <p className="w-full text-center text-sm pt-2 group-hover:scale-105 group-hover:font-bolder transition-all  duration-400">Vous êtes Recruteur?</p>
+          <p className="w-full text-center text-sm pt-2">Vous êtes Recruteur?</p>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="border-t py-5">
@@ -94,41 +95,41 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
             <div>
               <h3 className="text-md font-semibold pb-2 flex items-start">
                 Agence de Lyon</h3>
-              <a
+              <Link
                 href="https://www.google.com/maps?q=143+Cr+Émile-Zola,+69100+Villeurbanne"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm hover:text-yellow-500"
               >
                 143 Cr Émile-Zola, 69100 Villeurbanne
-              </a>
-              <a
+              </Link>
+              <Link
                 href="tel:+33491901835"
                 className="text-sm block group"
               >
                 Tél: <span className="group-hover:text-yellow-500"> 04 91 90 18 35
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="w-full mx-auto flex items-start">
             <div>
               <h3 className="text-md font-semibold pb-2 flex items-start">
                 Agence de Toulouse</h3>
-              <a
+              <Link
                 href="https://www.google.com/maps?q=52+Bd+Déodat+de+Sévérac,+31300+Toulouse"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm hover:text-yellow-500"
               >
                 52 Bd Déodat de Sévérac, 31300 Toulouse
-              </a>
-              <a
+              </Link>
+              <Link
                 href="tel:+33561804950"
                 className="text-sm block group"
               >
                 Tél: <span className="group-hover:text-yellow-500">05 61 80 49 50</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

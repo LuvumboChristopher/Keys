@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gray-100 bg-center text-black flex flex-col items-center">
+      <footer className="bg-gray-50 border-t bg-center text-black flex flex-col items-center">
         {/* Logo */}
         <div className="mt-16 max-w-4xl flex flex-col items-center justify-center mx-auto">
           <Image
@@ -26,21 +26,21 @@ const Footer = () => {
           />
           <ul className="mt-9 flex flex-row">
             <li className="mx-2 flex items-center gap-4">
-              <a href="#" className="text-sm">
+              <Link href="/" className="text-sm">
                 Facebook
-              </a>
+              </Link>
               <FaFacebook className="text-lg md:text-xl" />
             </li>
             <li className="mx-2 flex items-center gap-4">
-              <a href="#" className="text-sm">
+              <Link href="/" className="text-sm">
                 Twitter
-              </a>
+              </Link>
               <FaTwitter className="text-lg md:text-xl" />
             </li>
             <li className="mx-2 flex items-center gap-4">
-              <a href="#" className="text-sm">
+              <Link href="/" className="text-sm">
                 LinkedIn
-              </a>
+              </Link>
               <FaLinkedin className="text-lg md:text-xl" />
             </li>
           </ul>
@@ -55,19 +55,19 @@ const Footer = () => {
         {/* Footer Menu */}
         <div className="mt-12 w-full grid grid-cols-3 justify-items-center border-b border-white pb-5">
           <div>
-            <a href="#" className="text-sm">
+            <Link href="/" className="text-sm">
               Link 1
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="#" className="text-sm">
+            <Link href="/" className="text-sm">
               Link 2
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="#" className="text-sm">
+            <Link href="/" className="text-sm">
               Link 3
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

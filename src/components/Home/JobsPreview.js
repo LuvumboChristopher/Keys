@@ -112,10 +112,8 @@ export default function JobsPreview() {
                     </div>
                 )}
 
-                <Link href="/jobs" legacyBehavior>
-                    <a className="mt-4 w-96 mx-auto bg-white hover:bg-white rounded-lg border flex items-center justify-center bg-transparent font-semibold px-12 py-3 text-black transition-colors duration-200">
+                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-white rounded-lg border flex items-center justify-center bg-transparent font-semibold px-12 py-3 text-black transition-colors duration-200">
                         Voir toutes les offres
-                    </a>
                 </Link>
             </div>
         </section>

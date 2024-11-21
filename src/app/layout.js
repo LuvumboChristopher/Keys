@@ -27,7 +27,11 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
-        <div style={{ paddingTop: pathname !== "/" ? "101.27px" : "0" }}> 
+        <div
+          style={{
+            paddingTop: typeof window === "undefined" ? "0" : pathname !== "/" ? "101.27px" : "0",
+          }}
+        >
           {children}
         </div>
         <Footer />

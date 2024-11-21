@@ -25,7 +25,7 @@ const JobsByLocation = () => {
   };
 
   return (
-    <section className="">
+    <section className="bg-gray-50 border-t border-b">
       <div className="container text-center w-full mx-auto py-12">
         <h2 className="text-center text-4xl py-2">
           Emplois par{" "}
@@ -38,43 +38,50 @@ const JobsByLocation = () => {
             localisation
           </motion.span>
         </h2>
-        <p className="max-w-2xl mx-auto text-md py-1">
-          Découvrez les offres d"emploi disponibles dans les principales villes de France.
-          <br /> Trouvez l"opportunité qui vous correspond !
+        <small className="block  mb-6">
+          Découvrez les offres d'emploi disponibles dans les principales villes de France.<br />
+        </small>
+        <p className="max-w-3xl mx-auto text-md ">
+          Que vous soyez à la recherche d'une nouvelle opportunité de carrière ou que vous souhaitiez explorer des options dans des secteurs variés, nous vous offrons un large éventail d'offres adaptées à vos compétences et vos aspirations.
         </p>
       </div>
 
-      <div className="container grid grid-cols-1 sm:grid-cols-3 gap-4 rounded-lg overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
         {cities.map((city, index) => (
           <Link key={index} href={`/jobs/${index}`} passHref>
-            <div className="relative group overflow-hidden cursor-pointer rounded-xl border shadow-lg">
-              <div className="relative w-full h-[300px] transition-all duration-500 group-hover:scale-105">
+            <div className="relative group overflow-hidden cursor-pointer shadow-lg">
+
+
+              <div className="h-[260px] transition-all duration-500 group-hover:scale-105">
                 <Image
-                   layout="responsive"
-                   width={16}
-                   height={9} 
+                  width={1000}
+                  height={1000}
                   src={city.image}
                   alt={`city-${city.name}`}
                   className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black transition-opacity duration-500 opacity-60 group-hover:opacity-70"></div>
               </div>
-              <div className="absolute top-36 flex flex-col justify-center items-start sm:flex-row sm:items-center w-full">
-                <div>
-                  <h1 className="pb-10 text-white text-center text-2xl font-bold transition-all duration-300 group-hover:text-3xl text-shadow">
+              <div className="absolute top-24 flex w-full">
+              <div className="max-w-xs mx-auto text-left">
+                  <h1 className="pb-10 text-white text-3xl font-bold transition-all duration-300 group-hover:text-2xl text-shadow-sm">
                     {city.name}
                   </h1>
-                  <p className=" text-white text-center text-xs px-5">
+                  <small className="absolute w-full text-xs top-12 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-yellow-500 text-sm">
+                    Voir les offres
+                  </small>
+                  <p className="text-white text-xs">
                     {adjustTextLength(city.description)}
                   </p>
                 </div>
-                <small className="absolute w-full text-center text-xs top-14 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-yellow-500 text-sm">
-                  Voir les offres
-                </small>
+            
               </div>
             </div>
           </Link>
         ))}
+      </div>
+      <div className="container py-10 text-center">
+        <p className="text-md font-bold font-black">Trouvez l'opportunité qui vous correspond !</p>
       </div>
     </section>
   );

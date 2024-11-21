@@ -7,9 +7,9 @@ const StatsSection = () => {
     <section
       className="w-full mx-auto py-12 text-black bg-cover bg-center relative"
     >      
-      <h1 className="text-center pb-6">Une vision différente de l"emploi</h1>
-      <div className="max-w-screen-lg mx-auto relative z-20 ">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
+      <h1 className="text-xl sm:text-2xl text-center pb-12 sm:pb-14 md:pb-16">Une vision différente de l"emploi</h1>
+      <div className="container max-w-screen-lg mx-auto relative z-20 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12  items-start">
           {/* Stat 1 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -17,12 +17,12 @@ const StatsSection = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="flex justify-center items-center flex-col text-center"
           >
-            <div className="text-6xl font-extrabold mb-1">
-              <motion.h2 className="">
+            <div className="w-full mx-auto font-extrabold mb-1">
+              <motion.h2 className="text-5xl md:text-6xl lg:text-7xl pb-3">
                 1.6 K+
               </motion.h2>
             </div>
-            <p className="text-md text-center">Offres d"Emploi Disponibles</p>
+            <p className="text-xs sm:text-sm md:text-md  text-center">Offres d"Emploi Disponibles</p>
           </motion.div>
           {/* Stat 2 */}
           <motion.div
@@ -31,12 +31,12 @@ const StatsSection = () => {
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="flex justify-center items-center flex-col text-center"
           >
-            <div className="text-6xl font-extrabold mb-1">
-              <motion.h2 className="">
+            <div className="w-full mx-auto font-extrabold mb-1">
+              <motion.h2 className="text-5xl md:text-6xl lg:text-7xl pb-3">
                 180+
               </motion.h2>
             </div>
-            <p className="text-md text-center">Entreprises recrutant</p>
+            <p className="text-xs sm:text-sm md:text-md  text-center">Entreprises recrutant</p>
           </motion.div>
           {/* Stat 3 */}
           <motion.div
@@ -45,12 +45,12 @@ const StatsSection = () => {
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             className="flex justify-center items-center flex-col text-center"
           >
-            <div className="text-6xl font-extrabold mb-1">
-              <motion.h2 className="">
+            <div className="w-full mx-auto font-extrabold mb-1">
+              <motion.h2 className="text-5xl md:text-6xl lg:text-7xl pb-3">
                 250+
               </motion.h2>
             </div>
-            <p className="text-md text-center">Nouvelles offres cette semaine</p>
+            <p className="text-xs sm:text-sm md:text-md  text-center">Nouvelles offres cette semaine</p>
           </motion.div>
           {/* Stat 4 */}
           <motion.div
@@ -59,12 +59,12 @@ const StatsSection = () => {
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             className="flex justify-center items-center flex-col text-center"
           >
-            <div className="text-6xl font-extrabold mb-1">
-              <motion.h2 className="">
+            <div className="w-full mx-auto font-extrabold mb-1">
+              <motion.h2 className="text-5xl md:text-6xl lg:text-7xl pb-3">
                 6.5 K+
               </motion.h2>
             </div>
-            <p className="text-md text-center">Candidats recrutés</p>
+            <p className="text-xs sm:text-sm md:text-md  text-center">Candidats recrutés</p>
           </motion.div>
         </div>
       </div>

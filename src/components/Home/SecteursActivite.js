@@ -47,7 +47,7 @@ const SecteursActivite = () => {
 
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
-      spaceBetween: 16,
+      spaceBetween: 1,
       centeredSlides: true,
       initialSlide: 1,
       loop: true,
@@ -69,10 +69,10 @@ const SecteursActivite = () => {
           slidesPerView: 3.5,
         },
         768: {
-          slidesPerView: 2,
+          slidesPerView: 2.5,
         },
         480: {
-          slidesPerView: 1,
+          slidesPerView: 1.5,
         },
       },
     });
@@ -134,10 +134,10 @@ const SecteursActivite = () => {
   ];
 
   return (
-    <section className="bg-gray-100 pb-20">
+    <section className="bg-gray-50 pb-20 border-t border-b">
       <div className="">
         <div className="relative group/nav">
-          <div className="container py-10 ">
+          <div className="container py-14">
             <h2 className="text-center text-4xl py-2">Tous nos
               <motion.span
                 className="px-3 bg-yellow-500 cursor-pointer"
@@ -146,7 +146,7 @@ const SecteursActivite = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 secteurs
-              </motion.span>{" "}
+              </motion.span>
               d’activité</h2>
             <p className="max-w-4xl mx-auto text-center text-black py-3">Chez Keys, nous mettons à votre disposition une expertise diversifiée pour répondre aux besoins spécifiques de chaque secteur d"activité. Que ce soit dans le domaine de l’industrie, de la santé, du commerce, ou des technologies, nous nous engageons à vous offrir des solutions sur-mesure, adaptées aux exigences de chaque entreprise et de chaque candidat. Découvrez nos domaines d’intervention et trouvez la clé de votre succès professionnel avec nous</p>
           </div>
@@ -166,8 +166,8 @@ const SecteursActivite = () => {
                   aria-label={`${index + 1} / ${sectors.length}`}
                   key={index}
                 >
-                  <div className="group relative rounded-xl overflow-hidden cursor-pointer">
-                    <div className="relative width-[616px] h-[380px] w-full overflow-hidden">
+                  <div className="group relative  overflow-hidden cursor-pointer">
+                    <div className="relative width-[616px] h-[400px] lg:h-[300px]  w-full overflow-hidden">
                       <Image
                         src={sector.image}
                         alt={`secteur-${sector.name}`}
@@ -178,9 +178,9 @@ const SecteursActivite = () => {
                       <div className="absolute inset-0 bg-black opacity-40"></div>
                     </div>
                     <div className="w-[calc(100%-4px)] absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
-                      <div className="max-w-[600px] flex-1 text-colorButteryWhite">
+                      <div className="flex-1 text-colorButteryWhite">
                         <p
-                          className="mb-[10px] block text-xl font-bold leading-[1.4] md:text-2xl text-shadow-md transition-all duration-500 ease-in-out"
+                          className="mb-[10px] block text-2xl  md:text-2xl font-bold leading-[1.4] text-shadow-sm transition-all duration-500 ease-in-out"
                           style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}
                         >
                           {sector.name}

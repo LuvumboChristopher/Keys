@@ -85,11 +85,9 @@ const Header = () => {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="flex justify-between items-center gap-8">
             <div className="hidden lg:flex items-center">
-              <Link href="/compte/connexion" legacyBehavior>
-                <a className="flex items-center">
+              <Link href="/compte/connexion" className="flex items-center">
                   <FaUser className="mr-4" />
                   Mon compte
-                </a>
               </Link>
             </div>
             <div className={`ml-auto flex space-x-8 z-60 transition-all transform duration-300 `}>

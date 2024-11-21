@@ -1,7 +1,6 @@
 "use client";
 
 import AgencesSection from "@/components/Home/AgencesSection";
-import Banner from "@/components/Home/Banner";
 import { CallToActionJobs } from "@/components/Home/CallToActionJobs";
 import HeroSection from "@/components/Home/HeroSection";
 import SecteursActivite from "@/components/Home/SecteursActivite";
@@ -13,14 +12,14 @@ import JobsByLocation from "@/components/Home/JobsByLocation";
 import JobsPreview from "@/components/Home/JobsPreview";
 
 const AnimatedHero = withInViewAnimation(HeroSection);
-const AnimatedStatsSection = withInViewAnimation(StatsSection);
-const AnimatedJobsByLocation = withInViewAnimation(JobsByLocation);
 const AnimatedSolutionsRH = withInViewAnimation(SolutionsRH);
-const AnimatedCallToActionJobs= withInViewAnimation(CallToActionJobs);
-const AnimatedSlider = withInViewAnimation(Slider);
 const AnimatedEconomicSector = withInViewAnimation(SecteursActivite);
-const AnimatedAgencesSection = withInViewAnimation(AgencesSection);
+const AnimatedSlider = withInViewAnimation(Slider);
+const AnimatedJobsByLocation = withInViewAnimation(JobsByLocation);
+const AnimatedStatsSection = withInViewAnimation(StatsSection);
 const AnimatedJobsPreview= withInViewAnimation(JobsPreview);
+const AnimatedCallToActionJobs= withInViewAnimation(CallToActionJobs);
+const AnimatedAgencesSection = withInViewAnimation(AgencesSection);
 
 
 
@@ -28,14 +27,14 @@ export default function HomePage() {
   return (
     <>
         <AnimatedHero/>
-        <AnimatedSolutionsRH/>
         <AnimatedEconomicSector/>
-        <AnimatedSlider/>
+        {/** <AnimatedSlider/> */}
+        <AnimatedSolutionsRH/>
         <AnimatedJobsByLocation/>
         <AnimatedStatsSection/>
+        <AnimatedAgencesSection/>
         <AnimatedJobsPreview/>
         <AnimatedCallToActionJobs/>
-        <AnimatedAgencesSection/>
     </>
   );
 }

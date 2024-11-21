@@ -7,26 +7,24 @@ const ContactPage = () => {
  
   return (
     <section className="relative">
-   
-      {/* Arrière-plan bicolore */}
       <div
         className={`grid grid-cols-2 relative ${isRecruiter ? "h-[1000px] md:h-[750px]":"h-[900px] md:h-[650px]"}`}
       >
-        <div
-          className="bg-yellow-500"
-          style={{
-            backgroundImage: isRecruiter
-              ? "url("/images/contact/recruiter-image.webp")"
-              : "url("/images/contact/candidate-image.webp")",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-          }}
-        >
-          {/* El overlay negro */}
+              <div
+              className="bg-yellow-500"
+              style={{
+                backgroundImage: `url(${isRecruiter 
+                  ? "/images/contact/recruiter-image.webp" 
+                  : "/images/contact/candidate-image.webp"})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                position: "relative",
+              }}
+            >
+
           <div
             style={{
-              content: """",
+              content: "",
               position: "absolute",
               top: 0,
               left: 0,

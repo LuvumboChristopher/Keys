@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Slider = () => {
@@ -48,7 +49,7 @@ const Slider = () => {
                                 className="slick-slide flex-shrink-0 w-full transition-opacity duration-500"
                             >
                                 <div className="w-full inline-block overflow-hidden h-[380px] relative">
-                                    <a href={slide.link} target="_blank" rel="noopener noreferrer">
+                                    <Link href={slide.link} target="_blank" rel="noopener noreferrer">
                                         <Image
                                            layout="responsive"
                                            width={16}
@@ -58,7 +59,7 @@ const Slider = () => {
                                             className="w-full h-full object-cover"
                                             src={slide.ImageSrc}
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         ))}

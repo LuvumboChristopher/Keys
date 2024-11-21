@@ -3,6 +3,7 @@
 import { FaBuilding } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const AgencesSection = () => {
     const [isVisible1, setIsVisible1] = useState(false);
@@ -42,30 +43,20 @@ const AgencesSection = () => {
     }, []);
 
     return (
-        <section className="py-14">
-            <div className="flex gap-10 container py-8">
-                <div className="w-4/6 mx-auto">
-                    {/* Encabezado animado */}
-                    <motion.h1
-                        className="text-2xl md:text-4xl font-extrabold text-left pb-8"
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{
-                            y: isVisible1 ? 0 : -20,
-                            opacity: isVisible1 ? 1 : 0,
-                        }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        ref={elementRef1}
-                    >
-                        KEYS, toujours à vos côtés !
-                    </motion.h1>
-
+        <section className="py-6 md:py-8">
+            <div className="flex flex-col-reverse md:flex-row-reverse container">
+                <div className="w-full md:w-2/3 lg:w-4/6 h-full mx-auto flex flex-col lg:flex-col space-between ">
                     {/* Contenido con animaciones */}
-                    <div className="space-y-6 text-justify">
+                    <div className="p-6 space-y-6 text-justify">
                         <motion.h2
-                            className="text-2xl"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: isVisible1 ? 1 : 0 }}
-                            transition={{ duration: 0.5 }}
+                            className="text-2xl md:text-3xl font-extrabold text-left"
+                            initial={{ y: -20, opacity: 0 }}
+                            animate={{
+                                y: isVisible1 ? 0 : -20,
+                                opacity: isVisible1 ? 1 : 0,
+                            }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            ref={elementRef1}
                         >
                             Nos agences, à deux pas de{" "}
                             <motion.span
@@ -100,8 +91,7 @@ const AgencesSection = () => {
                     </div>
 
                     {/* Animaciones de las agencias */}
-                    <div className="flex gap-12 py-6">
-                        {/* Agencia de Lyon */}
+                    <div className="p-6 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-12 xl:py-14 ">
                         <motion.div
                             className="agence-item"
                             initial={{ opacity: 0, x: -50 }}
@@ -112,7 +102,6 @@ const AgencesSection = () => {
                             transition={{ duration: 0.5 }}
                             ref={elementRef2}
                         >
-                            <FaBuilding className="text-2xl text-white mr-6" />
                             <div>
                                 <h3 className="flex items-center gap-2 text-lg font-semibold pb-2">
                                     <span className="group-hover:scale-125 text-xl transition-all duration-400">
@@ -131,15 +120,15 @@ const AgencesSection = () => {
                                         Lyon
                                     </motion.span>
                                 </h3>
-                                <a
+                                <Link
                                     href="https://www.google.com/maps?q=143+Cr+Émile-Zola,+69100+Villeurbanne"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-md hover:text-yellow-500"
                                 >
                                     143 Cr Émile-Zola, 69100 Villeurbanne
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="tel:+33491901835"
                                     className="text-md block group"
                                 >
@@ -147,11 +136,10 @@ const AgencesSection = () => {
                                     <span className="group-hover:text-yellow-500">
                                         04 91 90 18 35
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
 
-                        {/* Agencia de Toulouse */}
                         <motion.div
                             className="agence-item"
                             initial={{ opacity: 0, x: 50 }}
@@ -161,7 +149,6 @@ const AgencesSection = () => {
                             }}
                             transition={{ duration: 0.5 }}
                         >
-                            <FaBuilding className="text-2xl text-white mr-6" />
                             <div>
                                 <h3 className="flex items-center gap-2 text-lg font-semibold pb-2">
                                     <span className="group-hover:scale-125 text-xl transition-all duration-400">
@@ -180,15 +167,15 @@ const AgencesSection = () => {
                                         Toulouse
                                     </motion.span>
                                 </h3>
-                                <a
+                                <Link
                                     href="https://www.google.com/maps?q=52+Bd+Déodat+de+Sévérac,+31300+Toulouse"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-md hover:text-yellow-500"
                                 >
                                     52 Bd Déodat de Sévérac, 31300 Toulouse
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="tel:+33561804950"
                                     className="text-md block group"
                                 >
@@ -196,16 +183,16 @@ const AgencesSection = () => {
                                     <span className="group-hover:text-yellow-500">
                                         05 61 80 49 50
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     </div>
                 </div>
-                <div className="w-2/6 flex items-center justify-center mx-auto rounded-xl overflow-hidden transition-transform transform hover:scale-105 duration-300 ">
+                <div className="w-96 lg:w-2/6 flex items-start xl:items-center justify-center mx-auto">
                     <motion.img
                         src="/images/country.svg"
                         alt="France Icon"
-                        className="w-full h-auto transition-transform transform hover:scale-125 duration-300 cursor-pointer"
+                        className="w-80 h-auto"
                         initial={{ opacity: 0, scale: 1 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.6 }}

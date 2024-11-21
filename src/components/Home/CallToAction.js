@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const CallToAction = () => {
     return (
         <div
-            className="bg-yellow-500 text-black py-14 px-6" 
+            className="bg-yellow-500 text-black py-14 px-6 border-b border-black" 
             style={{ marginTop: "-70px" }} 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

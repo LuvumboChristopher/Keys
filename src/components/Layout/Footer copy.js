@@ -22,21 +22,21 @@ const Footer = () => {
 
         {/* Social Media Menu */}
         <ul className="mt-9 flex flex-row">
-          <li className="mx-2 flex items-center gap-4"><a href="#">Facebook <FaFacebook className="text-3xl md:text-5xl" /></a></li>
-          <li className="mx-2 flex items-center gap-4"><a href="#">Twitter</a><FaTwitter className="text-3xl md:text-5xl" /></li>
-          <li className="mx-2 flex items-center gap-4 "><a href="#" >LinkedIn</a><FaLinkedin className="text-3xl md:text-5xl" /> </li>
+          <li className="mx-2 flex items-center gap-4"><Link href="/">Facebook <FaFacebook className="text-3xl md:text-5xl" /></Link></li>
+          <li className="mx-2 flex items-center gap-4"><Link href="/">Twitter</Link><FaTwitter className="text-3xl md:text-5xl" /></li>
+          <li className="mx-2 flex items-center gap-4 "><Link href="/" >LinkedIn</Link><FaLinkedin className="text-3xl md:text-5xl" /> </li>
         </ul>
 
         {/* Footer Menu */}
         <div className="mt-12 w-full grid grid-cols-3 justify-items-center border-b border-white pb-5">
           <div>
-            <a href="#">Link 1</a>
+            <Link href="/">Link 1</Link>
           </div>
           <div>
-            <a href="#">Link 2</a>
+            <Link href="/">Link 2</Link>
           </div>
           <div>
-            <a href="#">Link 3</a>
+            <Link href="/">Link 3</Link>
           </div>
         </div>
       </footer>

@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServicesShowcase() {
     return (
         <div>
             <div className="lg:grid grid-cols-4 grid-rows-3  font-display text-3xl text-white">
-                <a href="#" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
+                <Link href="/" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
                     <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Overlay */}
                     <span className="relative z-10">BTP</span>
                     <Image
@@ -15,8 +16,8 @@ export default function ServicesShowcase() {
                         className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform transform hover:scale-105"
                         alt="BTP"
                     />
-                </a>
-                <a href="#" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
+                </Link>
+                <Link href="/" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
                     <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Overlay */}
                     <span className="relative z-10">Logistique</span>
                     <Image
@@ -27,8 +28,8 @@ export default function ServicesShowcase() {
                         className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform transform hover:scale-105"
                         alt="Logistique"
                     />
-                </a>
-                <a href="#" className="bg-gray-800 border shadow-lg col-span-2 row-span-2 relative flex items-center justify-center py-24 overflow-hidden">
+                </Link>
+                <Link href="/" className="bg-gray-800 border shadow-lg col-span-2 row-span-2 relative flex items-center justify-center py-24 overflow-hidden">
                     <div className="p-12 relative z-10">
                         <h2 className="text-[0.75rem] tracking-[0.02rem] uppercase text-[#aab0bc] !mb-3 !leading-[1.35]">Qui Sommes-Nous ?</h2>
                         <h3 className="xl:text-[2rem] text-[calc(1.325rem_+_0.9vw)] font-bold !leading-[1.25] tracking-[-0.03em] mb-5">
@@ -47,8 +48,8 @@ export default function ServicesShowcase() {
                         className="absolute inset-0 w-full h-full object-cover opacity-100 transition-transform transform hover:scale-105"
                         alt="E-commerce"
                     />
-                </a>
-                <a href="#" className="bg-gray-800 border shadow-lg col-span-2 row-span-2 relative flex items-center justify-center py-24 overflow-hidden">
+                </Link>
+                <Link href="/" className="bg-gray-800 border shadow-lg col-span-2 row-span-2 relative flex items-center justify-center py-24 overflow-hidden">
                     <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Overlay */}
                     <span className="relative z-10">Agriculture</span>
                     <Image
@@ -59,8 +60,8 @@ export default function ServicesShowcase() {
                         className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform transform hover:scale-105"
                         alt="Agriculture"
                     />
-                </a>
-                <a href="#" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
+                </Link>
+                <Link href="/" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
                     <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Overlay */}
                     <span className="relative z-10">Transport</span>
                     <Image
@@ -71,8 +72,8 @@ export default function ServicesShowcase() {
                         className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform transform hover:scale-105"
                         alt="Transport"
                     />
-                </a>
-                <a href="#" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
+                </Link>
+                <Link href="/" className="bg-gray-800 border shadow-lg col-span-1 row-span-1 relative flex items-center justify-center py-24 overflow-hidden">
                     <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Overlay */}
                     <span className="relative z-10">Grande distribution</span>
                     <Image
@@ -83,7 +84,7 @@ export default function ServicesShowcase() {
                         className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform transform hover:scale-105"
                         alt="Grande distribution"
                     />
-                </a>
+                </Link>
             </div>
         </div>
     );

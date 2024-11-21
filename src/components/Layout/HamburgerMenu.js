@@ -37,7 +37,7 @@ export default function Navbar() {
                         }`}
                 >
                     <div className="absolute left-1/2 transform -translate-x-1/2">
-                        <a href="/">
+                        <Link href="/">
                             <Image
                                 src="/images/logo-keys-rh.svg"
                                 alt="Logo de Keys-RH, agence de travail temporaire"
@@ -45,7 +45,7 @@ export default function Navbar() {
                                 height={100}
                                 priority="true"
                                 />
-                        </a>
+                        </Link>
                     </div>
                     <div className="ml-auto flex space-x-4">
                         <button
@@ -68,19 +68,19 @@ export default function Navbar() {
                 <nav className="mt-8">
                     <ul>
                         <li>
-                            <a href="#about" className="block py-2">
+                            <Link href="#about" className="block py-2">
                                 Sobre nosotros
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#services" className="block py-2">
+                            <Link href="#services" className="block py-2">
                                 Servicios
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#contact" className="block py-2">
+                            <Link href="#contact" className="block py-2">
                                 Contacto
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

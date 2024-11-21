@@ -1,1 +1,3 @@
-export default function PlanDuSite() { return (<div><h1>Plan du Site</h1><ul><li><a href="/">Accueil</a></li><li><a href="/about">À propos</a></li><li><a href="/companies">Entreprises</a></li><li><a href="/contact">Contact</a></li><li><a href="/jobs">Offres d"emploi</a></li><li><a href="/mentions-legales">Mentions Légales</a></li><li><a href="/cgu">CGU</a></li></ul></div>); }
+import Link from "next/link";
+
+export default function PlanDuSite() { return (<div><h1>Plan du Site</h1><ul><li><Link href="/">Accueil</Link></li><li><Link href="/about">À propos</Link></li><li><Link href="/companies">Entreprises</Link></li><li><Link href="/contact">Contact</Link></li><li><Link href="/jobs">Offres d"emploi</Link></li><li><Link href="/mentions-legales">Mentions Légales</Link></li><li><Link href="/cgu">CGU</Link></li></ul></div>); }

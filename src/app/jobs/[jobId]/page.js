@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { getJobById } from "../../../utils/jobs";
 import Link from "next/link";
 
 const JobPage = ({ params }) => {
