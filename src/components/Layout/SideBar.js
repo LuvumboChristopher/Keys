@@ -44,7 +44,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
                 <h4>
                   Qui sommes-nous ?</h4>
               </Link>
-              <p className="text-xs pt-1">Présentation de l"agence</p>
+              <p className="text-xs pt-1">Présentation de l'agence</p>
             </div>
           </li>
           <li className="relative group flex items-start space-x-2">
@@ -53,7 +53,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu }) {
                 href="/jobs"
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500 "
               >
-                <h4> Offres d"emploi</h4>
+                <h4> Offres d'emploi</h4>
               </Link>
               <p className="text-xs pt-1">Nos offres actuelles</p>
             </div>

@@ -39,10 +39,10 @@ const JobsByLocation = () => {
           </motion.span>
         </h2>
         <small className="block  mb-6">
-          Découvrez les offres d'emploi disponibles dans les principales villes de France.<br />
+          Découvrez les offres d&#39;emploi disponibles dans les principales villes de France.<br />
         </small>
         <p className="max-w-3xl mx-auto text-md ">
-          Que vous soyez à la recherche d'une nouvelle opportunité de carrière ou que vous souhaitiez explorer des options dans des secteurs variés, nous vous offrons un large éventail d'offres adaptées à vos compétences et vos aspirations.
+          Que vous soyez à la recherche d&#39;une nouvelle opportunité de carrière ou que vous souhaitiez explorer des options dans des secteurs variés, nous vous offrons un large éventail d&#39;offres adaptées à vos compétences et vos aspirations.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ const JobsByLocation = () => {
         ))}
       </div>
       <div className="container py-10 text-center">
-        <p className="text-md font-bold font-black">Trouvez l'opportunité qui vous correspond !</p>
+        <p className="text-md font-bold font-black">Trouvez l&#39;opportunité qui vous correspond !</p>
       </div>
     </section>
   );

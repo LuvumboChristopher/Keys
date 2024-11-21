@@ -9,22 +9,22 @@ export default function FAQ() {
     {
       question: "Comment puis-je postuler pour une mission via votre agence ?",
       answer:
-        "Pour postuler, vous pouvez visiter notre site et consulter les offres disponibles. Une fois que vous avez trouvé une mission qui vous intéresse, il vous suffit de cliquer sur "Postuler" et de remplir le formulaire en ligne avec votre CV et vos informations.",
+        "Pour postuler, vous pouvez visiter notre site et consulter les offres disponibles. Une fois que vous avez trouvé une mission qui vous intéresse, il vous suffit de cliquer sur Postuler et de remplir le formulaire en ligne avec votre CV et vos informations.",
     },
     {
-      question: "Quelles sont les qualifications requises pour m"inscrire ?",
+      question: "Quelles sont les qualifications requises pour m'inscrire ?",
       answer:
         "Nous recherchons des candidats ayant une variété de compétences, en fonction des besoins de nos clients. Une expérience préalable dans le secteur souhaité est souvent un plus, mais nous considérons également les débutants pour certaines missions.",
     },
     {
       question: "Quels sont les avantages de passer par une agence intérimaire ?",
       answer:
-        "Les agences intérimaires vous permettent d"accéder à une large gamme d"opportunités de travail temporaire. Vous bénéficiez également d"un accompagnement personnalisé, de la sécurité de l"emploi avec un contrat intérimaire, et de conseils pour votre développement professionnel.",
+        "Les agences intérimaires vous permettent d'accéder à une large gamme d'opportunités de travail temporaire. Vous bénéficiez également d'un accompagnement personnalisé, de la sécurité de l'emploi avec un contrat intérimaire, et de conseils pour votre développement professionnel.",
     },
     {
       question: "Quels types de missions proposez-vous ?",
       answer:
-        "Nous proposons des missions dans divers secteurs tels que l"administration, la logistique, la santé, et bien plus. Nos missions varient en durée et en responsabilité, ce qui vous permet de trouver celle qui correspond le mieux à vos besoins et compétences.",
+        "Nous proposons des missions dans divers secteurs tels que l'administration, la logistique, la santé, et bien plus. Nos missions varient en durée et en responsabilité, ce qui vous permet de trouver celle qui correspond le mieux à vos besoins et compétences.",
     },
   ];
 

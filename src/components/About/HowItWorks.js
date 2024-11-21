@@ -68,7 +68,7 @@ const HowItWorks = () => {
                                 <Link href="/" target="_self">
                                     <h3 className="stepTitle">Optimiser votre CV</h3>
                                 </Link>
-                                <div className="stepDescription">Améliorez votre CV pour attirer l"attention des recruteurs avec nos conseils.</div>
+                                <div className="stepDescription">Améliorez votre CV pour attirer l&#39;attention des recruteurs avec nos conseils.</div>
                             </div>
                         </div>
                     </div>

@@ -45,8 +45,8 @@ const Footer = () => {
             </li>
           </ul>
           <p className="max-w-md mx-auto text-center text-sm py-6">
-            Créé en 2017, Keys a pour ambition de s'imposer durablement sur le
-            marché de l'emploi. Nous vous mettons à disposition nos experts
+            Créé en 2017, Keys a pour ambition de s&#39;imposer durablement sur le
+            marché de l&#39;emploi. Nous vous mettons à disposition nos experts
             métiers afin de trouver le(a) candidat(e) qui correspondra le mieux à
             vos attentes.
           </p>

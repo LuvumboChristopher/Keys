@@ -17,7 +17,7 @@ export const CallToActionJobs = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             >
-                Rejoignez l"équipe KEYS ! 🚀 <br />
+                Rejoignez l&#39;équipe KEYS ! 🚀 <br />
                 Keys
                 <motion.span
                     className="px-3 bg-white cursor-pointer"
@@ -43,7 +43,7 @@ export const CallToActionJobs = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             >
-                Votre talent est notre force. Postulez dès aujourd'hui et construisons l'avenir ensemble !
+                Votre talent est notre force. Postulez dès aujourd&#39;hui et construisons l&#39;avenir ensemble !
             </motion.p>
             <motion.div
                 className="text-center"

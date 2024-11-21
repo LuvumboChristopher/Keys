@@ -50,7 +50,7 @@ const ContactPage = () => {
                       En tant que recruteur, trouver les bons candidats est essentiel pour le
                       succès de votre entreprise. Notre solution vous accompagne dans ce
                       processus en simplifiant la recherche de profils qualifiés et en
-                      optimisant votre attractivité auprès des talents. Profitez d"une plateforme
+                      optimisant votre attractivité auprès des talents. Profitez d&#39;une plateforme
                       adaptée à vos besoins pour recruter rapidement et efficacement.
                     </p>
                   </>
@@ -62,7 +62,7 @@ const ContactPage = () => {
                     <p className="text-md pt-3">
                       En tant que candidat, notre objectif est de vous mettre en relation avec
                       des offres qui correspondent à vos aspirations et à vos compétences. Que
-                      vous soyez en début de carrière ou à la recherche d"un nouveau défi,
+                      vous soyez en début de carrière ou à la recherche d&#39;un nouveau défi,
                       trouvez des opportunités qui vous aideront à progresser dans votre
                       parcours professionnel.
                     </p>
@@ -154,7 +154,7 @@ const ContactPage = () => {
                     <div className="gap-10 flex">
                       <div className="w-1/2">
                         <label htmlFor="companyName" className="block text-sm font-medium">
-                          Nom de l"entreprise <span className="text-red-500">*</span>
+                          Nom de l&#39;entreprise <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="text"
@@ -166,7 +166,7 @@ const ContactPage = () => {
                       </div>
                       <div className="w-1/2">
                         <label htmlFor="companySize" className="block text-sm font-medium">
-                          Taille de l"entreprise <span className="text-red-500">*</span>
+                          Taille de l&#39;entreprise <span className="text-red-500">*</span>
                         </label>
                         <select
                           id="companySize"

@@ -33,10 +33,10 @@ export default function ServicesShowcase() {
                     <div className="p-12 relative z-10">
                         <h2 className="text-[0.75rem] tracking-[0.02rem] uppercase text-[#aab0bc] !mb-3 !leading-[1.35]">Qui Sommes-Nous ?</h2>
                         <h3 className="xl:text-[2rem] text-[calc(1.325rem_+_0.9vw)] font-bold !leading-[1.25] tracking-[-0.03em] mb-5">
-                            Une agence de recrutement qui valorise la stratégie et l"engagement humain.
+                            Une agence de recrutement qui valorise la stratégie et l&#39;engagement humain.
                         </h3>
                         <p className="!mb-6">
-                            Chez Keys, nous croyons en l"importance d"une approche sur-mesure pour chaque client et candidat. Notre équipe s"efforce d"identifier des talents qui correspondent parfaitement aux besoins des entreprises tout en respectant les aspirations des individus.
+                            Chez Keys, nous croyons en l&#39;importance d&#39;une approche sur-mesure pour chaque client et candidat. Notre équipe s&#39;efforce d&#39;identifier des talents qui correspondent parfaitement aux besoins des entreprises tout en respectant les aspirations des individus.
                         </p>
                     </div>
                     <div className="absolute inset-0 bg-black opacity-80 z-0"></div> {/* Overlay */}

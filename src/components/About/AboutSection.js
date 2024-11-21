@@ -58,10 +58,10 @@ export default function AboutKeys() {
         <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:px-[35px] lg:px-[20px] md:px-[20px] px-[15px] max-w-full mt-[80px]">
           <h2 className="text-[0.75rem] tracking-[0.02rem] uppercase text-[#aab0bc] !mb-3 !leading-[1.35]">Qui Sommes-Nous ?</h2>
           <h3 className="xl:text-[2rem] text-[calc(1.325rem_+_0.9vw)] font-bold !leading-[1.25] tracking-[-0.03em] mb-5">
-            Une agence de recrutement qui valorise la stratégie et l"engagement humain.
+            Une agence de recrutement qui valorise la stratégie et l&#39;engagement humain.
           </h3>
           <p className="!mb-6">
-            Chez Keys, nous croyons en l"importance d"une approche sur-mesure pour chaque client et candidat. Notre équipe s"efforce d"identifier des talents qui correspondent parfaitement aux besoins des entreprises tout en respectant les aspirations des individus.
+            Chez Keys, nous croyons en l&#39;importance d&#39;une approche sur-mesure pour chaque client et candidat. Notre équipe s&#39;efforce d&#39;identifier des talents qui correspondent parfaitement aux besoins des entreprises tout en respectant les aspirations des individus.
           </p>
 
           {/* Bullet points */}

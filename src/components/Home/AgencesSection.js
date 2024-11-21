@@ -58,7 +58,7 @@ const AgencesSection = () => {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             ref={elementRef1}
                         >
-                            Nos agences, à deux pas de{" "}
+                            Nos agences, à deux pas de
                             <motion.span
                                 className="flex items-center px-1 bg-yellow-500 cursor-pointer"
                                 style={{ display: "inline-block" }}
@@ -83,10 +83,10 @@ const AgencesSection = () => {
                             animate={{ opacity: isVisible1 ? 1 : 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            Nous avons de grandes ambitions pour l"avenir et
+                            Nous avons de grandes ambitions pour l&#39;avenir et
                             bientôt, vous pourrez trouver nos agences dans
-                            d"autres grandes villes à travers la France. Restez
-                            à l"écoute pour plus de nouvelles !
+                            d&#39;autres grandes villes à travers la France. Restez
+                            à l&#39;écoute pour plus de nouvelles !
                         </motion.p>
                     </div>
 

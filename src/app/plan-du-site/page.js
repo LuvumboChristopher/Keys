@@ -9,7 +9,7 @@ export default function PlanDuSite() {
             <li><Link href="/about">À propos</Link></li>
             <li><Link href="/companies">Entreprises</Link></li>
             <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/jobs">Offres d'emploi</Link></li>
+            <li><Link href="/jobs">Offres d&#39;emploi</Link></li>
             <li><Link href="/mentions-legales">Mentions Légales</Link>
             </li><li><Link href="/cgu">CGU</Link></li>
         </ul>

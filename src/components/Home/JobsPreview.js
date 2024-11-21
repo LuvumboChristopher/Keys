@@ -27,10 +27,10 @@ export default function JobsPreview() {
                         >
                             offres
                         </motion.span>
-                        d"emploi
+                        d&#39;emploi
                     </h2>
                     <p className="text-gray-700 mb-6 max-w-2xl mx-auto text-center">
-                        Découvrez les dernières opportunités d"emploi dans divers secteurs. Sélectionnez un secteur pour voir les offres les plus pertinentes.
+                        Découvrez les dernières opportunités d&#39;emploi dans divers secteurs. Sélectionnez un secteur pour voir les offres les plus pertinentes.
                     </p>
                 </div>
 
@@ -60,8 +60,8 @@ export default function JobsPreview() {
                 {filteredJobs.length === 0 ? (
                     <div className="text-center py-24">
                         <FaRegSadCry className="w-full text-7xl text-gray-500 mb-4 text-center" />
-                        <h3 className="text-xl font-semibold text-gray-700">Désolé, il n"y a pas d"offres disponibles pour ce secteur.</h3>
-                        <p className="text-gray-600">Nous vous invitons à consulter d"autres secteurs ou revenir plus tard pour de nouvelles offres.</p>
+                        <h3 className="text-xl font-semibold text-gray-700">Désolé, il n&#39;y a pas d&#39;offres disponibles pour ce secteur.</h3>
+                        <p className="text-gray-600">Nous vous invitons à consulter d&#39;autres secteurs ou revenir plus tard pour de nouvelles offres.</p>
                     </div>
                 ) : (
                     <div className="grid gap-6 md:grid-cols-2 py-4">
@@ -81,7 +81,7 @@ export default function JobsPreview() {
                                             className="text-3xl group-hover:scale-110 transition-all duration-300 opacity-80 hover:opacity-100"
                                         />
                                         <div className="w-32 absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pl-2 text-sm">
-                                            Voir l"offre
+                                            Voir l&#39;offre
                                         </div>
                                     </div>
                                 </Link>

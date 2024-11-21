@@ -125,7 +125,7 @@ const HeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    Aujourd'hui je veux être
+                    Aujourd&#39;hui je veux être
                     <span className="text-yellow-500 ml-2">
                         {currentJob}
                     </span>

@@ -66,7 +66,7 @@ const SolutionsRH = () => {
                 <div className="w-full flex flex-col sm:flex-row  items-center justify-between gap-4">
                  <h3 className="text-xl">Espace intérimaire</h3>
                         <Link href="/https://www.keys-rh.fr/worker/security/login" className="bg-black text-white text-sm p-2 px-10 rounded-md border border-white hover:bg-transparent hover:text-black hover:border-black inline-block">
-                            J"y vais !
+                            J&#39;y vais !
                         </Link>
                     </div>
                     <p className="max-w-xs sm:max-w-full mx-auto text-sm md:text-base py-4">
@@ -94,7 +94,7 @@ const SolutionsRH = () => {
                     <div className="w-full flex flex-col sm:flex-row  items-center justify-between gap-4">
                         <h3 className="text-xl">Espace Entreprise</h3>
                         <Link href="/https://www.keys-rh.fr/company/security/login" className="bg-black text-white text-sm p-2 px-10 rounded-md border border-white hover:bg-transparent hover:text-black hover:border-black inline-block">
-                            C"est parti !
+                            C&#39;est parti !
                         </Link>
                     </div>
                     <p className="max-w-xs sm:max-w-full mx-auto text-sm md:text-base py-4">
