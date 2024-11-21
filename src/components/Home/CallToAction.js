@@ -43,8 +43,8 @@ export const CallToAction = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             >
-                "Découvrez des opportunités professionnelles qui correspondent à vos
-                aspirations et construisez l&#39;avenir que vous méritez."
+                &#39;Découvrez des opportunités professionnelles qui correspondent à vos
+                aspirations et construisez l&#39;avenir que vous méritez.&#39;
             </motion.p>
         </div>
     );
