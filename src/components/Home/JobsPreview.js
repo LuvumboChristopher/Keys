@@ -18,14 +18,14 @@ export default function JobsPreview() {
         <section className=" bg-gray-100 py-14 border-t border-b">
             <div className="container">
                 <div className="relative z-10">
-                    <h2 className="text-center text-4xl py-2">
-                        Dernières                    <motion.span
+                    <h2 className="text-center text-3xl lg:text-4xl py-2">
+                        Dernières<motion.span
                             className="px-3 bg-yellow-500 cursor-pointer"
                             style={{ display: "inline-block" }}
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            offres
+                        offres
                         </motion.span>
                         d&#39;emploi
                     </h2>
@@ -36,7 +36,7 @@ export default function JobsPreview() {
 
                 <div className="flex justify-center items-center mb-4 space-x-4 overflow-scroll">
                     <button
-                        className={`rounded-lg font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"}`}
+                        className={`  font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"}`}
                         onClick={() => setSelectedSector("All")}
                     >
                         <p className="text-sm p-3">Tous</p>
@@ -46,7 +46,7 @@ export default function JobsPreview() {
                         sectors.map((sector) => (
                             <button
                                 key={sector.name}
-                                className={`rounded-lg font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"}`}
+                                className={`  font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"}`}
                                 onClick={() => setSelectedSector(sector.name)}
                             >
                                 <p className="text-sm p-3">{sector.name}</p>
@@ -112,7 +112,7 @@ export default function JobsPreview() {
                     </div>
                 )}
 
-                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-white rounded-lg border flex items-center justify-center bg-transparent font-semibold px-12 py-3 text-black transition-colors duration-200">
+                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-white   border flex items-center justify-center bg-transparent font-semibold px-12 py-3 text-black transition-colors duration-200">
                         Voir toutes les offres
                 </Link>
             </div>

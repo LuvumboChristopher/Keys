@@ -65,8 +65,11 @@ const SecteursActivite = () => {
         crossFade: true,
       },
       breakpoints: {
-        1024: {
+        1440: {
           slidesPerView: 3.5,
+        },
+        1024: {
+          slidesPerView: 3,
         },
         768: {
           slidesPerView: 2.5,
@@ -138,7 +141,8 @@ const SecteursActivite = () => {
       <div className="">
         <div className="relative group/nav">
           <div className="container py-14">
-            <h2 className="text-center text-4xl py-2">Tous nos
+            <h2 className="text-center text-3xl lg:text-4xl pb-6 lg:py-2">
+              Tous nos
               <motion.span
                 className="px-3 bg-yellow-500 cursor-pointer"
                 style={{ display: "inline-block" }}
@@ -147,9 +151,35 @@ const SecteursActivite = () => {
               >
                 secteurs
               </motion.span>
-              d’activité</h2>
-            <p className="max-w-4xl mx-auto text-center text-black py-3">Chez Keys, nous mettons à votre disposition une expertise diversifiée pour répondre aux besoins spécifiques de chaque secteur d&#39;activité. Que ce soit dans le domaine de l&#39;industrie, de la santé, du commerce, ou des technologies, nous nous engageons à vous offrir des solutions sur-mesure, adaptées aux exigences de chaque entreprise et de chaque candidat. Découvrez nos domaines d&#39;intervention et trouvez la clé de votre succès professionnel avec nous</p>
+              d’activité
+            </h2>
+            {/* Texto para pantallas pequeñas */}
+            <div className="max-w-4xl mx-auto text-justify sm:hidden">
+              <p className="py-3">
+                Chez Keys, nous mettons à votre disposition une expertise diversifiée
+                pour répondre aux besoins spécifiques de chaque secteur d&#39;activité.
+              </p>
+              <p className="py-3">
+                Que ce soit dans le domaine de l&#39;industrie, de la santé, du commerce,
+                ou des technologies, nous nous engageons à vous offrir des solutions
+                sur-mesure, adaptées aux exigences de chaque entreprise et de chaque candidat.
+              </p>
+              <p className="py-3">
+                Découvrez nos domaines d&#39;intervention et trouvez la clé de votre succès
+                professionnel avec nous.
+              </p>
+            </div>
+            {/* Texto para pantallas grandes */}
+            <p className="hidden sm:block max-w-5xl mx-auto text-center py-4">
+              Chez Keys, nous mettons à votre disposition une expertise diversifiée pour répondre
+              aux besoins spécifiques de chaque secteur d&#39;activité. Que ce soit dans le
+              domaine de l&#39;industrie, de la santé, du commerce, ou des technologies, nous
+              nous engageons à vous offrir des solutions sur-mesure, adaptées aux exigences de
+              chaque entreprise et de chaque candidat. Découvrez nos domaines d&#39;intervention
+              et trouvez la clé de votre succès professionnel avec nous.
+            </p>
           </div>
+
           <motion.div
             ref={swiperRef}
             className="swiper-container slider-center-inline"
@@ -167,7 +197,7 @@ const SecteursActivite = () => {
                   key={index}
                 >
                   <div className="group relative  overflow-hidden cursor-pointer">
-                    <div className="relative width-[616px] h-[400px] lg:h-[300px]  w-full overflow-hidden">
+                    <div className="relative width-[616px] h-[400px] xl:h-[300px]  w-full overflow-hidden">
                       <Image
                         src={sector.image}
                         alt={`secteur-${sector.name}`}
@@ -175,25 +205,25 @@ const SecteursActivite = () => {
                         height={390}
                         className="h-full w-full object-cover transition-all duration-500 ease-in-out"
                       />
-                      <div className="absolute inset-0 bg-black opacity-40"></div>
+                      <div className="absolute inset-0 bg-black opacity-60"></div>
+
                     </div>
                     <div className="w-[calc(100%-4px)] absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
                       <div className="flex-1 text-colorButteryWhite">
-                        <p
-                          className="mb-[10px] block text-2xl  md:text-2xl font-bold leading-[1.4] text-shadow-sm transition-all duration-500 ease-in-out"
-                          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}
-                        >
+
+                        <h1 className="flex items-center justify-between mb-[20px] text-white text-xl font-thin transition-all duration-300"
+                          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}>
                           {sector.name}
-                        </p>
+                          <div className="hidden inline-flex items-start justify-center overflow-hidden" href="/">
+                            <FaKey
+                              className="text-xl translate-x-0 opacity-100 transition-all duration-500 ease-in-out group-hover:translate-x-full group-hover:opacity-0"
+                            />
+                            <FaKey
+                              className="text-xl text-yellow-500 absolute -translate-x-full opacity-0 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100"
+                            />
+                          </div>
+                        </h1>
                         <p className="text-sm line-clamp-2">{sector.description}</p>
-                      </div>
-                      <div className="relative inline-flex items-start justify-center overflow-hidden" href="/">
-                        <FaKey
-                          className="text-3xl p-1 translate-x-0 opacity-100 transition-all duration-500 ease-in-out group-hover:translate-x-full group-hover:opacity-0"
-                        />
-                        <FaKey
-                          className="text-3xl p-1 text-yellow-500 absolute -translate-x-full opacity-0 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100"
-                        />
                       </div>
                     </div>
                   </div>

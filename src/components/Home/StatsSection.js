@@ -68,6 +68,7 @@ const StatsSection = () => {
           </motion.div>
         </div>
       </div>
+      <div className="w-1/5 mx-auto h-px mt-12 bg-gray-200"></div>
     </section>
   );
 };

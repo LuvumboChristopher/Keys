@@ -49,7 +49,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`rounded-xl border border-gray-800 transition-all duration-300 ease-in-out overflow-hidden ${
+              className={`   border border-gray-800 transition-all duration-300 ease-in-out overflow-hidden ${
                 activeIndex === index ? "active-faq" : ""
               }`}
             >

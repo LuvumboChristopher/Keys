@@ -197,7 +197,7 @@ const ContactPage = () => {
                   {/* Bouton d"envoi */}
                   <button
                     type="submit"
-                    className="w-full bg-yellow-500 text-white py-4 px-4 rounded-md hover:bg-black transition"
+                    className="w-full bg-yellow-500 text-white py-4 px-4  hover:bg-black transition"
                   >
                     Envoyer
                   </button>

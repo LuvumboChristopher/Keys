@@ -83,12 +83,12 @@ const HeroSection = () => {
                             </motion.h1>
                         </div>
                         <motion.div
-                            className="flex justify-center lg:rounded-xl lg:py-2 lg:mt-2 overflow-hidden"
+                            className="flex justify-center lg:py-2 lg:mt-2 overflow-hidden"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                         >
-                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row  items-center bg-white lg:pl-6  lg:rounded-xl  lg:border lg:hover:scale-105 duration-200 cursor-pointer">
+                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row  items-center bg-white lg:pl-6  lg:border lg:hover:scale-105 duration-200 cursor-pointer">
                                 <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center ">
                                     <TfiSearch className="text-xl text-gray-700" />
                                     <input
@@ -111,7 +111,7 @@ const HeroSection = () => {
 
                                 </div>
 
-                                <button className="w-full rounded-xl lg:rounded-none lg:w-1/2 mx-auto flex items-center justify-center hover:bg-yellow-500 hover:text-black py-6 lg:rounded-r-xl font-semibold bg-black text-white lg:border-l-2 border-black transition-all duration-500">
+                                <button className="w-full lg:w-1/2 mx-auto flex items-center justify-center hover:bg-yellow-500 hover:text-black py-5 lg:py-6 font-semibold bg-black text-white lg:border-l-2 border-black transition-all duration-500">
                                     <TfiWand className="mr-4" />
                                     Explorer les jobs
                                 </button>

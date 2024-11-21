@@ -27,7 +27,8 @@ const JobsByLocation = () => {
   return (
     <section className="bg-gray-50 border-t border-b">
       <div className="container text-center w-full mx-auto py-12">
-        <h2 className="text-center text-4xl py-2">
+        <h2 className="text-center text-3xl lg:text-4xl py-2 text-shadow-xl"
+        >
           Emplois par{" "}
           <motion.span
             className="px-3 bg-yellow-500 cursor-pointer"
@@ -46,7 +47,7 @@ const JobsByLocation = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
+      <div className="container grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
         {cities.map((city, index) => (
           <Link key={index} href={`/jobs/${index}`} passHref>
             <div className="relative group overflow-hidden cursor-pointer shadow-lg">
@@ -64,7 +65,8 @@ const JobsByLocation = () => {
               </div>
               <div className="absolute top-24 flex w-full">
               <div className="max-w-xs mx-auto text-left">
-                  <h1 className="pb-10 text-white text-3xl font-bold transition-all duration-300 group-hover:text-2xl text-shadow-sm">
+                  <h1 className="pb-10 text-white text-3xl font-bold transition-all duration-300 group-hover:text-2xl text-shadow-sm"
+                    style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>
                     {city.name}
                   </h1>
                   <small className="absolute w-full text-xs top-12 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-yellow-500 text-sm">
