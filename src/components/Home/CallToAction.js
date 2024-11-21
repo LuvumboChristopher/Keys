@@ -17,7 +17,7 @@ export const CallToAction = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             >
-                Avancez dans Votre{" "}
+                Avancez dans Votre
                 <motion.span
                     className="px-3 bg-white cursor-pointer"
                     style={{ display: "inline-block" }}
@@ -25,8 +25,8 @@ export const CallToAction = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                 >
                     Carrière
-                </motion.span>{" "}
-                avec{" "}
+                </motion.span>
+                avec
                 <motion.span
                     className="px-3 bg-black text-white  cursor-pointer"
                     style={{ display: "inline-block" }}
@@ -44,7 +44,7 @@ export const CallToAction = () => {
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             >
                 "Découvrez des opportunités professionnelles qui correspondent à vos
-                aspirations et construisez l"avenir que vous méritez."
+                aspirations et construisez l'avenir que vous méritez."
             </motion.p>
         </div>
     );

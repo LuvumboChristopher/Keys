@@ -43,7 +43,7 @@ export const CallToActionJobs = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             >
-                Votre talent est notre force. Postulez dès aujourd"hui et construisons l"avenir ensemble !"
+                Votre talent est notre force. Postulez dès aujourd'hui et construisons l'avenir ensemble !
             </motion.p>
             <motion.div
                 className="text-center"

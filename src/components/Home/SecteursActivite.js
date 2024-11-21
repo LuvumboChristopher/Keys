@@ -148,7 +148,7 @@ const SecteursActivite = () => {
                 secteurs
               </motion.span>
               d’activité</h2>
-            <p className="max-w-4xl mx-auto text-center text-black py-3">Chez Keys, nous mettons à votre disposition une expertise diversifiée pour répondre aux besoins spécifiques de chaque secteur d"activité. Que ce soit dans le domaine de l’industrie, de la santé, du commerce, ou des technologies, nous nous engageons à vous offrir des solutions sur-mesure, adaptées aux exigences de chaque entreprise et de chaque candidat. Découvrez nos domaines d’intervention et trouvez la clé de votre succès professionnel avec nous</p>
+            <p className="max-w-4xl mx-auto text-center text-black py-3">Chez Keys, nous mettons à votre disposition une expertise diversifiée pour répondre aux besoins spécifiques de chaque secteur d'activité. Que ce soit dans le domaine de l’industrie, de la santé, du commerce, ou des technologies, nous nous engageons à vous offrir des solutions sur-mesure, adaptées aux exigences de chaque entreprise et de chaque candidat. Découvrez nos domaines d’intervention et trouvez la clé de votre succès professionnel avec nous</p>
           </div>
           <motion.div
             ref={swiperRef}

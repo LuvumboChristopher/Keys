@@ -147,7 +147,7 @@ const JobsPage = () => {
                         </div>
                     </div>
                     <div className="w-3/4">
-                        <h2 className="text-xl font-bold my-6 border-b pb-6">Offres d"emploi</h2>
+                        <h2 className="text-xl font-bold my-6 border-b pb-6">Offres d'emploi</h2>
                         <div className="min-h-[410px]">
                             {currentJobs.length > 0 ? (
                                 <div className="grid gap-7 md:grid-cols-2">
@@ -204,7 +204,7 @@ const JobsPage = () => {
                                     <div className="w-full max-w-4xl mx-auto">
                                         <FaRegSadCry className="text-7xl text-gray-500 mb-4 mx-auto" />
                                         <h3 className="text-xl font-semibold text-gray-700">
-                                            Désolé, il n"y a pas d"offres disponibles pour ce secteur.
+                                            Désolé, il n'y a pas d'offres disponibles pour ce secteur.
                                         </h3>
                                         <p className="text-gray-600">
                                             Aucun emploi trouvé pour les filtres appliqués.

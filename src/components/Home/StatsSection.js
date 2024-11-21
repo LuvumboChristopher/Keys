@@ -22,7 +22,7 @@ const StatsSection = () => {
                 1.6 K+
               </motion.h2>
             </div>
-            <p className="text-xs sm:text-sm md:text-md  text-center">Offres d"Emploi Disponibles</p>
+            <p className="text-xs sm:text-sm md:text-md  text-center">Offres d'Emploi Disponibles</p>
           </motion.div>
           {/* Stat 2 */}
           <motion.div
