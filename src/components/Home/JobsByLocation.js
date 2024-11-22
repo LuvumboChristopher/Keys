@@ -25,7 +25,7 @@ const JobsByLocation = () => {
   };
 
   return (
-    <section className="bg-gray-50 border-t border-b">
+    <section id="emplois-par-localisation" className="bg-gray-50 border-t border-b">
       <div className="container text-center w-full mx-auto py-12">
         <h2 className="text-center text-3xl lg:text-4xl py-2 text-shadow-xl"
         >
@@ -82,7 +82,7 @@ const JobsByLocation = () => {
           </Link>
         ))}
       </div>
-      <div className="container py-10 text-center">
+      <div className="container py-12 text-center">
         <p className="text-md font-bold font-black">Trouvez l&#39;opportunité qui vous correspond !</p>
       </div>
     </section>

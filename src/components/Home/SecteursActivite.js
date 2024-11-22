@@ -137,10 +137,10 @@ const SecteursActivite = () => {
   ];
 
   return (
-    <section className="bg-gray-50 pb-20 border-t border-b">
+    <section className="bg-gray-50  border-t border-b">
       <div className="">
         <div className="relative group/nav">
-          <div className="container py-14">
+          <div id="secteurs-d'activité" className="container py-8">
             <h2 className="text-center text-3xl lg:text-4xl pb-6 lg:py-2">
               Tous nos
               <motion.span
@@ -197,7 +197,7 @@ const SecteursActivite = () => {
                   key={index}
                 >
                   <div className="group relative  overflow-hidden cursor-pointer">
-                    <div className="relative width-[616px] h-[400px] xl:h-[300px]  w-full overflow-hidden">
+                    <div className="relative width-[616px] h-[400px] xl:h-[310px]  w-full overflow-hidden">
                       <Image
                         src={sector.image}
                         alt={`secteur-${sector.name}`}

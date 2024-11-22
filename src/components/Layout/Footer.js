@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer className="bg-white py-10">
+      <footer className="bg-white py-12">
         <div className="container flex justify-between items-center text-center">
           <p className="text-xs">
             Copyright © {currentYear || "loading..."} Keys - Intérim & Recrutement

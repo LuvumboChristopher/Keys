@@ -43,10 +43,9 @@ const AgencesSection = () => {
     }, []);
 
     return (
-        <section className="py-6 md:py-8">
+        <section id="nos-agences" className="py-6 md:py-12">
             <div className="flex flex-col md:flex-row-reverse container">
                 <div className="w-full md:w-2/3 lg:w-4/6 h-full mx-auto flex flex-col lg:flex-col space-between ">
-                    {/* Contenido con animaciones */}
                     <div className="p-6 space-y-6 text-justify">
                         <motion.h2
                             className="text-2xl md:text-3xl font-extrabold text-left"
@@ -89,9 +88,7 @@ const AgencesSection = () => {
                             à l&#39;écoute pour plus de nouvelles !
                         </motion.p>
                     </div>
-
-                    {/* Animaciones de las agencias */}
-                    <div className="p-6 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-12 sm:py-10 xl:py-14 ">
+                    <div className="p-6 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-12 sm:py-12 xl:py-14 ">
                         <motion.div
                             className="agence-item"
                             initial={{ opacity: 0, x: -50 }}

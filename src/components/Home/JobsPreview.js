@@ -15,7 +15,7 @@ export default function JobsPreview() {
         : jobs.filter(job => job.sector === selectedSector).slice(0, 4);
 
     return (
-        <section className=" bg-gray-100 py-14 border-t border-b">
+        <section id="dernières-offres-d'emploi" className=" bg-gray-100 py-12 border-t border-b">
             <div className="container">
                 <div className="relative z-10">
                     <h2 className="text-center text-3xl lg:text-4xl py-2">
@@ -112,7 +112,7 @@ export default function JobsPreview() {
                     </div>
                 )}
 
-                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-white   border flex items-center justify-center bg-transparent font-semibold px-12 py-3 text-black transition-colors duration-200">
+                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-3 transition-all duration-400">
                         Voir toutes les offres
                 </Link>
             </div>

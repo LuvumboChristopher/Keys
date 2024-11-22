@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const HowItWorks = () => {
     return (
-        <div className="container py-10">
+        <div className="container py-12">
             <div className="sectionHeading">
                 <h2 className="headingTitle">Comment ça marche</h2>
             </div>

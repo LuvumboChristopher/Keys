@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 export const CallToActionJobs = () => {
     return (
         <motion.div
-            className="bg-yellow-500 text-black py-10 px-6 "
+        id="keys-recrute"
+            className="bg-yellow-500 text-black py-12 px-6 "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}

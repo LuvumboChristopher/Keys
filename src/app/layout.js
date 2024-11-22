@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div
           style={{
-            paddingTop: typeof window === "undefined" ? "0" : pathname !== "/" ? "101.27px" : "0",
+            paddingTop: typeof window === "undefined" ? "0" : pathname !== "/" ? "151px" : "0",
           }}
         >
           {children}

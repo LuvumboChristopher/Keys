@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 const StatsSection = () => {
   return (
     <section
+    id="une-vision-différente-de-l'emploi"
       className="w-full mx-auto py-12 text-black bg-cover bg-center relative"
     >      
-      <h1 className="text-xl sm:text-2xl text-center pb-12 sm:pb-14 md:pb-16">Une vision différente de l&#39;emploi</h1>
+      <h1 className="text-xl sm:text-2xl text-center pb-8 sm:pb-10 md:pb-12">Une vision différente de l&#39;emploi</h1>
       <div className="container max-w-screen-lg mx-auto relative z-20 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12  items-start">
           {/* Stat 1 */}
@@ -68,7 +69,6 @@ const StatsSection = () => {
           </motion.div>
         </div>
       </div>
-      <div className="w-1/5 mx-auto h-px mt-12 bg-gray-200"></div>
     </section>
   );
 };

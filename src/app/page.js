@@ -27,10 +27,10 @@ export default function HomePage() {
   return (
     <>
         <AnimatedHero/>
+        <AnimatedSolutionsRH/>
         <AnimatedEconomicSector/>
         {/** <AnimatedSlider/> */}
         <AnimatedJobsByLocation/>
-        <AnimatedSolutionsRH/>
         <AnimatedStatsSection/>
         <AnimatedJobsPreview/>
         <AnimatedCallToActionJobs/>
