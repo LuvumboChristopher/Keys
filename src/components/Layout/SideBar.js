@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
   return (
     <div
-      className={`sidebar fixed top-0 left-0 py-12 px-10 w-full sm:w-[450px] h-full ${colorChanged ? "bg-black text-white " : "bg-white text-black "} transform z-[9999] ${isMenuOpen ? "open" : "closing"
+      className={`sidebar fixed top-0 left-0 py-12 px-10 w-full sm:w-[450px] h-full ${colorChanged ? "bg-black text-white border-r-2" : "bg-white text-black "} transform z-[9999] ${isMenuOpen ? "open" : "closing"
         } flex flex-col`}
     >
       <div className="w-full flex justify-between items-center">
@@ -23,7 +23,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
           onClick={toggleMenu}
           className={`hamburger-btn ${isMenuOpen ? "open open-menu" : ""} text-black transition-transform duration-300 ease-in-out`}
         >
-              <p className={`line transition-all duration-300 ease-in-out ${colorChanged ? "bg-white" : "bg-black"}`}></p>
+            <p className={`line transition-all duration-300 ease-in-out ${colorChanged ? "bg-white" : "bg-black"}`}></p>
             <p className={`line transition-all duration-300 ease-in-out ${colorChanged ? "bg-white" : "bg-black"}`}></p>
             <p className={`line transition-all duration-300 ease-in-out ${colorChanged ? "bg-white" : "bg-black"}`}></p>
         </button>
@@ -72,14 +72,14 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
       <div className="border-t py-5">
         <div className="flex flex-row items-start gap-4">
           <Link href="https://www.keys-rh.fr/worker/" className="w-full mx-auto" onClick={toggleMenu}>
-            <div className="flex flex-col gap-2 items-center justify-center p-4 text-black hover:outline-1 hover:shadow-sm hover:bg-gray-50 cursor-pointer transition-all duration-500 group ease-in-out">
-              <span className="text-6xl">🧑🏼‍🏭</span>
-              <p className="w-full text-center text-sm pt-2">Vous êtes Candidat?</p>
+          <div className={`flex flex-col gap-2 items-center justify-center p-4 text-black hover:outline-1 hover:shadow-sm hover:bg-gray-50 cursor-pointer transition-all duration-500 group ease-in-out ${colorChanged && "text-white hover:text-black" }`}>
+          <span className="text-6xl">🧑🏼‍🏭</span>
+              <p className="w-full text-center text-sm pt-2 ">Vous êtes Candidat?</p>
             </div>
           </Link>
 
           <Link href="https://www.keys-rh.fr/company/security/login" className="w-full mx-auto" onClick={toggleMenu}>
-            <div className="flex flex-col gap-2 items-center justify-center p-4 text-black hover:outline-1 hover:shadow-sm hover:bg-gray-50 cursor-pointer transition-all duration-500 group ease-in-out">
+            <div className={`flex flex-col gap-2 items-center justify-center p-4 text-black hover:outline-1 hover:shadow-sm hover:bg-gray-50 cursor-pointer transition-all duration-500 group ease-in-out ${colorChanged && "text-white hover:text-black" }`}>
               <span className="text-6xl">👨🏼‍💻</span>
               <p className="w-full text-center text-sm pt-2">Vous êtes Recruteur?</p>
             </div>

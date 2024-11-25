@@ -149,7 +149,7 @@ const SecteursActivite = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                secteurs
+              secteurs
               </motion.span>
               d’activité
             </h2>
@@ -211,7 +211,7 @@ const SecteursActivite = () => {
                     <div className="w-[calc(100%-4px)] absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
                       <div className="flex-1 text-colorButteryWhite">
 
-                        <h1 className="flex items-center justify-between mb-[20px] text-white text-xl font-thin transition-all duration-300"
+                        <h1 className="flex items-center justify-between mb-[15px] text-white text-2xl font-thin transition-all duration-300"
                           style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}>
                           {sector.name}
                           <div className="hidden inline-flex items-start justify-center overflow-hidden" href="/">

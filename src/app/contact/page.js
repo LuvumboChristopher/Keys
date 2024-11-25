@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 
 const ContactPage = () => {
   const [isRecruiter, setIsRecruiter] = useState(false);
- 
   return (
     <section className="relative">
       <div
@@ -77,14 +76,14 @@ const ContactPage = () => {
               <div className="absolute top-0 left-0">
                 <div className="w-full mb-4 flex group">
                   <button
-                    className={`w-1/2 cursor-pointer py-2 px-6 hover:bg-black hover:text-white ${!isRecruiter ? "bg-yellow-500 text-white" : "bg-gray-200"
+                    className={`w-1/2 cursor-pointer py-2 px-6 hover:bg-black hover:text-white ${!isRecruiter ? "bg-yellow-500 text-white" : "bg-transparent"
                       }`}
                     onClick={() => setIsRecruiter(false)}
                   >
                     Candidat
                   </button>
                   <button
-                    className={`w-1/2 cursor-pointer py-2 px-6 hover:bg-transparent ${isRecruiter ? "bg-yellow-500 text-white" : "bg-gray-200"
+                    className={`w-1/2 cursor-pointer py-2 px-6 bg-transparent hover:bg-black ${isRecruiter ? "bg-yellow-500 text-white" : "bg-transparent"
                       }`}
                     onClick={() => setIsRecruiter(true)}
                   >

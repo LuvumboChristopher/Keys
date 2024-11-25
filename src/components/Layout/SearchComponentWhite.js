@@ -4,15 +4,15 @@ import { TfiSearch, TfiLocationArrow, TfiWand } from "react-icons/tfi";
 export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation, colorChanged }) => {
     return (
         <motion.div
-            className="hidden lg:block fixed left-0 right-0 h-auto z-20 border-b border-black text-sm"
+            className="hidden lg:block fixed left-0 right-0 h-auto z-40 border-b border-black text-sm duration-300"
             initial={{ y: -200, opacity: 0 }}
             animate={{
-                y: showBar ? 150 : -500,
+                y: showBar ? 150 : -200,
                 opacity: showBar ? 1 : 0
             }}
             transition={{
                 type: "spring",
-                stiffness: 100,
+                stiffness: 80,
                 damping: 20,
                 opacity: { duration: 0.5 },
             }}
@@ -27,10 +27,17 @@ export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation,
             }}
         >
             <motion.div
-                className="flex justify-center"
+                className="flex justify-center duration-300"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                transition={{ ease: "easeOut" }}
+                style={{
+                    background: scrolled
+                        ? colorChanged
+                            ? "linear-gradient(to right, white 50%, #ebb305 50%)"
+                            : "linear-gradient(to right, white 50%, black 50%)" 
+                        : "transparent",
+                }}
             >
                 <div className="container flex flex-col lg:flex-row items-center bg-white duration-300 cursor-pointer">
                     <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
@@ -52,13 +59,12 @@ export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation,
                         />
                     </div>
                     <button className=
-                        {`w-auto block mx-auto flex items-center justify-center hover:bg-yellow-500 hover:text-black px-5 py-5 font-semibold bg-black text-white lg:border-r lg:border-l border-black transition-all duration-500 ${colorChanged ? "bg-yellow-500 text-white" : "bg-black text-white"}`}>
+                        {`w-auto block mx-auto flex items-center justify-center  px-5 py-5 font-semibold bg-black text-white  lg:border-l border-black ${colorChanged ? "bg-yellow-500 text-white" : "bg-black text-white"}`}>
                         <TfiWand className="mr-4" />
                         <span className="whitespace-nowrap">Explorer les jobs</span>
                     </button>
                 </div>
             </motion.div>
         </motion.div>
-    )
-}
-
+    );
+};

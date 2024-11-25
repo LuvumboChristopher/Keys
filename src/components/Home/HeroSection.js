@@ -13,7 +13,6 @@ const HeroSection = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [cursorBlink, setCursorBlink] = useState(true);
 
-    const [query, setQuery] = useState("");
     const [location, setLocation] = useState("");
 
     useEffect(() => {
@@ -37,8 +36,7 @@ const HeroSection = () => {
         }, delay);
 
         return () => clearTimeout(typeTimeout);
-    }, [charIndex, isDeleting, jobIndex]);
-
+    }, [charIndex, isDeleting, jobIndex, jobs]);
 
     useEffect(() => {
         const cursorTimeout = setInterval(() => {
@@ -51,15 +49,15 @@ const HeroSection = () => {
     return (
         <>
             <section
-                className="bg-cover bg-bottom bg-no-repeat flex flex-col items-center justify-center py-[100px] relative z-10 "
+                className="bg-cover bg-bottom bg-no-repeat flex flex-col items-center justify-center py-[100px] relative z-10"
                 style={{ backgroundImage: "url(/images/clouds.svg)" }}
             >
-                <div className="w-full max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-5xl mx-auto ">
+                <div className="w-full max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-5xl mx-auto">
                     <motion.div
-                        className="relative w-full text-center flex flex-col items-center pb-8 md:pb-8 mt-4 lg:mt-14"
-                        initial={{ opacity: 0, y: -30 }}
+                        className="relative w-full text-center flex flex-col items-center pb-8 mt-4 lg:mt-14"
+                        initial={{ opacity: 0, y: -60 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
                     >
                         <motion.div className="absolute flex items-center justify-center top-[65px]">
                             <FaKey className="text-yellow-500 text-4xl md:text-5xl lg:text-6xl" />
@@ -77,7 +75,7 @@ const HeroSection = () => {
                                 className="text-lg md:text-lg lg:text-xl font-semibold"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 1, ease: "easeInOut" }}
                             >
                                 Trouvez votre futur job facilement !
                             </motion.h1>
@@ -86,10 +84,10 @@ const HeroSection = () => {
                             className="flex justify-center lg:py-2 lg:mt-2 overflow-hidden"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1, ease: "easeOut" }}
+                            transition={{ duration: 1, ease: "easeInOut" }}
                         >
-                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row  items-center bg-white lg:pl-6  lg:border lg:hover:scale-105 duration-200 cursor-pointer">
-                                <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center ">
+                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row items-center bg-white lg:pl-6 lg:border lg:hover:scale-105 duration-300 cursor-pointer">
+                                <div className="w-full lg:w-3/5 border-b lg:border-none flex items-center">
                                     <TfiSearch className="text-xl text-gray-700" />
                                     <input
                                         placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise"
@@ -97,20 +95,16 @@ const HeroSection = () => {
                                     />
                                 </div>
                                 <div className="hidden lg:block bg-gray-500 h-1/2 w-0.5 mx-4"></div>
-                                <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center ">
-
-                                    <TfiLocationArrow className="text-xl text-gray-700 " />
-
+                                <div className="w-full lg:w-3/5 border-b lg:border-none flex items-center">
+                                    <TfiLocationArrow className="text-xl text-gray-700" />
                                     <input
-                                        className=" w-full px-3 py-6 text-gray-800 focus:outline-none  "
+                                        className="w-full px-3 py-6 text-gray-800 focus:outline-none"
                                         placeholder="Sélectionner un lieu"
                                         name="location"
                                         value={location}
                                         onChange={(e) => setLocation(e.target.value)}
                                     />
-
                                 </div>
-
                                 <button className="w-full lg:w-1/2 mx-auto flex items-center justify-center hover:bg-yellow-500 hover:text-black py-5 lg:py-6 font-semibold bg-black text-white lg:border-l-2 border-black transition-all duration-500">
                                     <TfiWand className="mr-4" />
                                     Explorer les jobs
@@ -120,15 +114,13 @@ const HeroSection = () => {
                     </div>
                 </div>
                 <motion.p
-                    className="container text-xl sm:text-2xl lg:text-3xl text-center antialiased tracking-tight	 pt-10"
-                    initial={{ opacity: 0, y: 20 }}
+                    className="container text-xl sm:text-2xl lg:text-3xl text-center antialiased tracking-tight pt-10"
+                    initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                     Aujourd&#39;hui je veux être
-                    <span className="text-yellow-500 ml-2">
-                        {currentJob}
-                    </span>
+                    <span className="text-yellow-500 ml-2">{currentJob}</span>
                     <span className="text-black">{cursorBlink ? "|" : " "}</span>
                 </motion.p>
             </section>

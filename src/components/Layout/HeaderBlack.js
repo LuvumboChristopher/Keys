@@ -23,7 +23,7 @@ const Header = () => {
     const scrollThreshold = window.innerHeight * 0.35;
     const scrollTop = window.scrollY;
 
-    setColorChanged(scrollTop > 2570 );
+    setColorChanged(scrollTop > 2570);
     setScrolled(scrollTop > 0);
     setShowBar(scrollTop >= scrollThreshold);
   };
@@ -58,9 +58,9 @@ const Header = () => {
           right: 0,
           zIndex: 50,
           transition: "all 0.3s ease-in-out",
-          backgroundColor: colorChanged ? "black" : scrolled ? "white" : "transparent",
-          color: colorChanged ? "white" : "black",
-          borderBottom: colorChanged ? "none" : scrolled ? "1px solid black" : "",
+          backgroundColor: "black",
+          color: "white",
+          borderBottom: "1px solid black",
         }}
       >
         <div className="container mx-auto flex justify-end lg:justify-between items-center py-14 relative">
@@ -74,7 +74,7 @@ const Header = () => {
                 <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
                   <FaFileUpload />
                   Candidature
-                </Link> 
+                </Link>
               </li>
               <li>
                 <Link href="#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all  ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
@@ -89,7 +89,7 @@ const Header = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link href="/">
               <Image
-                src={colorChanged ? "/images/keyslogos/Keys-logo-white-yellow.svg" : "/images/keyslogos/Keys-logo-black-yellow.svg"}
+                src="/images/keyslogos/Keys-logo-white-yellow.svg"
                 alt="Keys"
                 title="Keys"
                 width={100}
@@ -103,22 +103,31 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="flex justify-between items-center gap-8"
-        >
+          >
             {/* Enlace al perfil */}
             <div className="hidden lg:flex items-center">
-                <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
-                    <FaUser />
-                    Mon compte
-                </Link>
+              <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
+                <FaUser />
+                Mon compte
+              </Link>
             </div>
 
-            {/* Botón de menú */}  
-            <HamburgerMenu
-              colorChanged={colorChanged}
-              isMenuOpen={isMenuOpen}
-              toggleMenu={toggleMenu}
-            />
-        </motion.div>
+            {/* Botón de menú */}
+            <div
+              className={`ml-auto flex space-x-8 z-60 transition-all transform duration-300 ${colorChanged ? "text-white" : "text-black"
+                }`}
+            >
+              <button
+                onClick={toggleMenu}
+                className={`hamburger-btn btn-header ${isMenuOpen ? "open open-menu" : ""} 
+    ${isMenuOpen ? "transparent-lines" : ""} text-black transition-transform duration-300 ease-in-out hover:scale-110`}
+              >
+                <p className="line transition-all duration-300 ease-in-out bg-white"></p>
+                <p className="line transition-all duration-300 ease-in-out bg-white"></p>
+                <p className="line transition-all duration-300 ease-in-out bg-white"></p>
+              </button>
+            </div>
+          </motion.div>
 
 
         </div>

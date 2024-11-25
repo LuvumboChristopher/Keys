@@ -15,7 +15,7 @@ export default function JobsPreview() {
         : jobs.filter(job => job.sector === selectedSector).slice(0, 4);
 
     return (
-        <section id="dernières-offres-d'emploi" className=" bg-gray-100 py-12 border-t border-b">
+        <section id="dernières-offres-d'emploi" className="bg-gray-100 py-12 border-t border-b">
             <div className="container">
                 <div className="relative z-10">
                     <h2 className="text-center text-3xl lg:text-4xl py-2">
@@ -29,7 +29,7 @@ export default function JobsPreview() {
                         </motion.span>
                         d&#39;emploi
                     </h2>
-                    <p className="text-gray-700 mb-6 max-w-2xl mx-auto text-center">
+                    <p className="text-black py-3 mb-6 max-w-2xl mx-auto text-center">
                         Découvrez les dernières opportunités d&#39;emploi dans divers secteurs. Sélectionnez un secteur pour voir les offres les plus pertinentes.
                     </p>
                 </div>
@@ -53,15 +53,15 @@ export default function JobsPreview() {
                             </button>
                         ))
                     ) : (
-                        <p className="text-gray-700">Aucun secteur disponible.</p>
+                        <p className="text-black">Aucun secteur disponible.</p>
                     )}
                 </div>
 
                 {filteredJobs.length === 0 ? (
                     <div className="text-center py-24">
-                        <FaRegSadCry className="w-full text-7xl text-gray-500 mb-4 text-center" />
-                        <h3 className="text-xl font-semibold text-gray-700">Désolé, il n&#39;y a pas d&#39;offres disponibles pour ce secteur.</h3>
-                        <p className="text-gray-600">Nous vous invitons à consulter d&#39;autres secteurs ou revenir plus tard pour de nouvelles offres.</p>
+                        <FaRegSadCry className="w-full text-7xl text-black mb-4 text-center" />
+                        <h3 className="text-xl font-semibold text-black">Désolé, il n&#39;y a pas d&#39;offres disponibles pour ce secteur.</h3>
+                        <p className="text-black">Nous vous invitons à consulter d&#39;autres secteurs ou revenir plus tard pour de nouvelles offres.</p>
                     </div>
                 ) : (
                     <div className="grid gap-6 md:grid-cols-2 py-4">
