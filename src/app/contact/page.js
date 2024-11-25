@@ -1,26 +1,33 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const ContactPage = () => {
   const [isRecruiter, setIsRecruiter] = useState(false);
-  return (
-    <section className="relative">
-      <div
-        className={`grid grid-cols-2 relative ${isRecruiter ? "h-[1000px] md:h-[750px]":"h-[900px] md:h-[650px]"}`}
-      >
-              <div
-              className="bg-yellow-500"
-              style={{
-                backgroundImage: `url(${isRecruiter 
-                  ? "/images/contact/recruiter-image.webp" 
-                  : "/images/contact/candidate-image.webp"})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                position: "relative",
-              }}
-            >
 
+  return (
+    <section className="relative ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className={`grid grid-cols-2 relative ${isRecruiter ? "h-[1000px] md:h-[750px]" : "h-[900px] md:h-[650px]"}`}
+      >
+        <motion.div
+          className="bg-yellow-500"
+          style={{
+            backgroundImage: `url(${isRecruiter 
+              ? "/images/contact/recruiter-image.webp" 
+              : "/images/contact/candidate-image.webp"})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           <div
             style={{
               content: "",
@@ -32,13 +39,19 @@ const ContactPage = () => {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
           ></div>
-        </div>
+        </motion.div>
         <div className=""></div>
-        {/* Formulaire dynamique */}
+
+        {/* Formulario dinámico */}
         <div className="absolute inset-0 flex justify-center items-start">
           <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-2 justify-start">
-            {/* Section d"information */}
-            <div className="relative h-[360px] pt-10 section-inner p-10 flex flex-col items-start justify-center bg-black bg-opacity-60 text-white">
+            {/* Sección de información */}
+            <motion.div
+              className="relative h-[360px] pt-10 section-inner p-10 flex flex-col items-start justify-center bg-black bg-opacity-60 text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
               <header className="mb-4">
                 {isRecruiter ? (
                   <>
@@ -91,13 +104,18 @@ const ContactPage = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Formulaire dynamique */}
-            <div className={`${isRecruiter ? "h-[750px] md:h-[750px]" : "h-[650px] md:h-[650px]"} section-form bg-white p-6 sm:p-8 md:p-10 lg:p-12`}>
+            {/* Formulario dinámico */}
+            <motion.div
+              className={`${isRecruiter ? "h-[750px] md:h-[750px]" : "h-[650px] md:h-[650px]"} section-form bg-white p-6 sm:p-8 md:p-10 lg:p-12`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.5 }}
+            >
               <div className="mt-6 md:m-0">
                 <form method="POST" action="#" className="space-y-7">
-                  {/* Champs communs */}
+                  {/* Campos comunes */}
                   <div className="w-full gap-10 flex">
                     <div className="w-1/2">
                       <label htmlFor="name" className="block text-sm font-medium">
@@ -148,7 +166,7 @@ const ContactPage = () => {
                       className="mt-1 py-2 block w-full border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                     />
                   </div>
-                  {/* Champs spécifiques aux recruteurs */}
+                  {/* Campos específicos para los reclutadores */}
                   {isRecruiter && (
                     <div className="gap-10 flex">
                       <div className="w-1/2">
@@ -180,7 +198,7 @@ const ContactPage = () => {
                       </div>
                     </div>
                   )}
-                  {/* Champ pour le message */}
+                  {/* Campo para el mensaje */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium">
                       Message <span className="text-red-500">*</span>
@@ -188,24 +206,26 @@ const ContactPage = () => {
                     <textarea
                       id="message"
                       name="message"
+                      rows="4"
                       required
-                      className="mt-1 py-2 block w-full border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none resize-none"
-                      rows={isRecruiter ? 4 : 6}
-                    ></textarea>
+                      className="mt-1 py-2 block w-full border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                    />
                   </div>
-                  {/* Bouton d"envoi */}
-                  <button
-                    type="submit"
-                    className="w-full bg-yellow-500 text-white py-4 px-4  hover:bg-black transition"
-                  >
-                    Envoyer
-                  </button>
+                  {/* Botón de envío */}
+                  <div>
+                    <button
+                      type="submit"
+                      className="bg-yellow-500 py-4 px-6 text-white w-full mt-4 hover:bg-black hover:text-white rounded-lg overflow-hidden"
+                    >
+                      {isRecruiter ? "Envoyer votre demande" : "Postuler maintenant"}
+                    </button>
+                  </div>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

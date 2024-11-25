@@ -65,7 +65,7 @@ const SolutionsRH = () => {
                 <div className="w-full">
                 <div className="w-full flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center justify-between gap-4">
                 <h3 className="pt-4 sm:pt-0 text-lg xl:text-xl">Espace intérimaire</h3>
-                        <Link href="/https://www.keys-rh.fr/worker/security/login" className="bg-black text-white text-sm p-2 px-10  border border-white hover:bg-transparent hover:text-black hover:border-black inline-block">
+                        <Link href="/https://www.keys-rh.fr/worker/security/login" className="bg-black text-white text-sm p-2 px-10  border border-white hover:bg-transparent hover:text-black hover:border-black inline-block rounded-lg overflow-hidden">
                             J&#39;y vais !
                         </Link>
                     </div>
@@ -84,7 +84,7 @@ const SolutionsRH = () => {
 
             <motion.section
                 ref={elementRef2}
-                className="w-full md:w-4/5 lg:w-1/2  p-2 xl:p-0    flex flex-col sm:flex-row justify-center items-center sm:gap-10 md:gap-4 md:space-x-8"
+                className="w-full md:w-4/5 lg:w-1/2 p-2 xl:p-0 flex flex-col sm:flex-row justify-center items-center sm:gap-10 md:gap-4 md:space-x-8"
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: isVisible2 ? 1 : 0, x: isVisible2 ? 0 : 100 }}
                 transition={{ duration: 0.5 }}
@@ -93,7 +93,7 @@ const SolutionsRH = () => {
                 <div className="w-full">
                     <div className="w-full flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center  justify-between gap-4">
                         <h3 className="pt-4 sm:pt-0 text-lg xl:text-xl">Espace Entreprise</h3>
-                        <Link href="/https://www.keys-rh.fr/company/security/login" className="bg-black text-white text-sm p-2 px-10  border border-white hover:bg-transparent hover:text-black hover:border-black inline-block">
+                        <Link href="/https://www.keys-rh.fr/company/security/login" className="bg-black text-white text-sm p-2 px-10  border border-white hover:bg-transparent hover:text-black hover:border-black inline-block rounded-lg overflow-hidden">
                             C&#39;est parti !
                         </Link>
                     </div>

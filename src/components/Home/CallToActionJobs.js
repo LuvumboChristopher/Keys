@@ -52,7 +52,7 @@ export const CallToActionJobs = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                <button className="flex items-center gap-2 hover:gap-4 text-md w-max mx-auto px-12 mt-8 bg-black text-white py-3 font-semibold hover:bg-white hover:text-black transition-all duration-400 group">
+                <button className="flex items-center gap-2 hover:gap-4 text-md w-max mx-auto px-12 mt-8 bg-black text-white py-3 font-semibold hover:bg-white hover:text-black transition-all duration-400 group rounded-lg overflow-hidden">
                     <span className="group-hover:scale-125 text-3xl transition-all duration-400">👊 </span>Postuler maintnant !
                 </button>
             </motion.div>

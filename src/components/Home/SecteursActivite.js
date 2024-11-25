@@ -137,10 +137,10 @@ const SecteursActivite = () => {
   ];
 
   return (
-    <section className="bg-gray-50  border-t border-b">
+    <section className="bg-gray-50 border-t border-b">
       <div className="">
         <div className="relative group/nav">
-          <div id="secteurs-d'activité" className="container py-8">
+          <div id="secteurs-d'activité" className="container py-12">
             <h2 className="text-center text-3xl lg:text-4xl pb-6 lg:py-2">
               Tous nos
               <motion.span

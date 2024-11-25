@@ -34,18 +34,6 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
           <li className="relative group flex items-start space-x-2">
             <div>
               <Link
-                href="/about"
-                className="transition-colors duration-300 ease-in-out hover:text-yellow-500"
-                onClick={toggleMenu} 
-              >
-                <h4>Qui sommes-nous ?</h4>
-              </Link>
-              <p className="text-xs pt-1">Présentation de l&#39;agence</p>
-            </div>
-          </li>
-          <li className="relative group flex items-start space-x-2">
-            <div>
-              <Link
                 href="/jobs"
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500"
                 onClick={toggleMenu} 

@@ -43,7 +43,7 @@ const AgencesSection = () => {
     }, []);
 
     return (
-        <section id="nos-agences" className="py-6 md:py-12">
+        <section id="nos-agences" className="pt-10">
             <div className="flex flex-col md:flex-row-reverse container">
                 <div className="w-full md:w-2/3 lg:w-4/6 h-full mx-auto flex flex-col lg:flex-col space-between ">
                     <div className="p-6 space-y-6 text-justify">

@@ -1,22 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { jobs } from "../../utils/jobs";
 import { sectors } from "../../utils/sectors";
 import { FaBuilding, FaClock, FaKey, FaMapMarkerAlt, FaRegSadCry } from "react-icons/fa";
-import Image from "next/image";
 import { TfiLocationArrow, TfiSearch, TfiWand } from "react-icons/tfi";
-
-const jobImages = [
-    "/images/jobpreviewpics/Business deal-cuate.svg",
-    "/images/jobpreviewpics/Job hunt-cuate.svg",
-    "/images/jobpreviewpics/Search-cuate.svg",
-    "/images/jobpreviewpics/Interview-cuate.svg",
-    "/images/jobpreviewpics/Onboarding-cuate.svg",
-    "/images/jobpreviewpics/Resume-cuate.svg"
-];
-
+import { CallToActionInfo } from "@/components/Home/CallToActionInfo";
+import { motion } from "framer-motion";
 
 const JobsPage = () => {
     const [filters, setFilters] = useState({
@@ -33,15 +24,6 @@ const JobsPage = () => {
 
     const [location, setLocation] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [imageIndex, setImageIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setImageIndex((prevIndex) => (prevIndex + 1) % jobImages.length);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, []);
 
     const handleFilterChange = (e) => {
         const { name, value } = e.target;
@@ -93,40 +75,52 @@ const JobsPage = () => {
     return (
         <div className="mx-auto flex gap-8">
             <div className="w-full">
-                <div className="container">
-                    <div className="my-4">
-                        <div>
-                            <div className="flex flex-col lg:flex-row items-center bg-white duration-300 cursor-pointer">
-                                <div className="w-full lg:w-4/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
-                                    <TfiSearch className="text-xl text-gray-700" />
-                                    <input
-                                        placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise"
-                                        className="w-full px-3 py-5 text-gray-800 focus:outline-none"
-                                    />
-                                </div>
-                                <div className="bg-black h-8 w-px mx-4"></div>
-                                <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
-                                    <TfiLocationArrow className="text-xl text-gray-700" />
-                                    <input
-                                        className="w-full px-3 py-5 text-gray-800 focus:outline-none"
-                                        placeholder="Sélectionner un lieu"
-                                        name="location"
-                                        value={location}
-                                        onChange={(e) => setLocation(e.target.value)}
-                                    />
-                                </div>
-                                <button className=
-                                    "w-auto block mx-auto flex items-center justify-center  px-5 py-4 font-semibold bg-black hover:bg-yellow-500 text-white">
-                                    <TfiWand className="mr-4" />
-                                    <span className="whitespace-nowrap">Explorer les jobs</span>
-                                </button>
-                            </div>
+                <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="container"
+                >
+                    <div className="flex flex-col lg:flex-row items-center bg-white duration-300 cursor-pointer">
+                        <div className="w-full lg:w-4/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
+                            <TfiSearch className="text-xl text-gray-700" />
+                            <input
+                                placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise"
+                                className="w-full px-3 py-6 text-gray-800 focus:outline-none"
+                            />
                         </div>
+                        <div className="bg-black h-8 w-px mx-4"></div>
+                        <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
+                            <TfiLocationArrow className="text-xl text-gray-700" />
+                            <input
+                                className="w-full px-3 py-6 text-gray-800 focus:outline-none"
+                                placeholder="Sélectionner un lieu"
+                                name="location"
+                                value={location}
+                                onChange={(e) => setLocation(e.target.value)}
+                            />
+                        </div>
+                        <button className="w-auto block mx-auto flex items-center justify-center  px-5 py-6 font-semibold bg-black hover:bg-yellow-500 text-white">
+                            <TfiWand className="mr-4" />
+                            <span className="whitespace-nowrap">Explorer les jobs</span>
+                        </button>
                     </div>
-                </div>
-                <div className="bg-gray-100 border-t border-black">
+                </motion.div>
+
+                <CallToActionInfo />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-gray-100 border-t border-black"
+                >
                     <div className="container bg-grey-500 flex w-full gap-8 py-4">
-                        <div className="w-1/5">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="w-1/5"
+                        >
                             <h2 className="text-xl font-bold my-6 border-b pb-6">Filtres</h2>
                             <div className="filters">
                                 <div className="filter my-6 border-b pb-6">
@@ -137,7 +131,7 @@ const JobsPage = () => {
                                         name="keyword"
                                         value={filters.keyword}
                                         onChange={handleFilterChange}
-                                        className="p-4 border   w-full"
+                                        className="p-4 border w-full"
                                         placeholder="Rechercher par mot-clé"
                                     />
                                 </div>
@@ -174,129 +168,88 @@ const JobsPage = () => {
                                 </div>
                                 <button
                                     onClick={handleResetFilters}
-                                    className="w-full bg-yellow-500 text-white py-4 px-4 hover:bg-black transition duration-400"
+                                    className="w-full bg-yellow-500 text-white py-4 px-4 hover:bg-black transition duration-400 rounded-lg overflow-hidden"
                                 >
                                     Réinitialiser
                                 </button>
                             </div>
-                        </div>
+                        </motion.div>
+
                         <div className="w-4/5">
                             <h2 className="text-xl font-bold my-6 border-b pb-6">Offres d&#39;emploi</h2>
                             <div className="min-h-[410px]">
                                 {currentJobs.length > 0 ? (
                                     <div className="grid gap-7 md:grid-cols-2">
                                         {currentJobs.map((job, index) => (
-                                            <div
+                                            <motion.div
                                                 key={job.id}
-                                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1, delay: 1 }}
+                                                className="relative job-card bg-white p-8 transition-transform transform duration-300 cursor-pointer rounded-lg overflow-hidden"
                                             >
-                                                <div className="absolute inset-0 bg-white clip-path-triangle"></div>
-                                                <div className="absolute top-0 right-0 bottom-0 flex justify-end items-center z-10 pr-4">
-                                                </div>
                                                 <Link href={`/jobs/${job.id}`} passHref>
                                                     <div className="absolute top-6 right-6 z-10 group">
-                                                        <FaKey
-                                                            className="text-black text-3xl group-hover:scale-110 transition-all duration-300 opacity-100 hover:scale-105"
-                                                        />
-                                                        <div className="w-32 absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pl-2 text-sm">
-                                                            Voir l&#39;offre
-                                                        </div>
+                                                        <FaKey className="text-black text-3xl group-hover:scale-110 transition-all duration-300 opacity-100 hover:scale-105" />
                                                     </div>
-                                                </Link>
-
-                                                <div className="job-card-content relative z-10 text-black">
-                                                    <h3 className="text-xl font-semibold pb-4">{job.title}</h3>
-                                                    <div className="space-y-1">
-                                                        <div className="flex items-center">
-                                                            <FaBuilding className="mr-3 text-gray-600" />
-                                                            <p className="text-gray-700">{job.company}</p>
+                                                <div className="job-card-content flex flex-col justify-between h-full relative z-10 text-black">
+                                                    <div>
+                                                        <h3 className="text-xl font-semibold pb-4">{job.title}</h3>
+                                                        <div className="space-y-1">
+                                                            <div className="flex items-center">
+                                                                <FaBuilding className="mr-3 text-gray-600" />
+                                                                <p className="text-gray-700">{job.company}</p>
+                                                            </div>
+                                                            <div className="flex items-center">
+                                                                <FaMapMarkerAlt className="mr-3 text-gray-600" />
+                                                                <p className="text-gray-700">{job.location}</p>
+                                                            </div>
+                                                            <div className="flex items-center">
+                                                                <FaClock className="mr-3 text-gray-600" />
+                                                                <p className="text-gray-700">{job.contractType} - {job.type}</p>
+                                                            </div>
                                                         </div>
-                                                        <div className="flex items-center">
-                                                            <FaMapMarkerAlt className="mr-3 text-gray-600" />
-                                                            <p className="text-gray-700">{job.location}</p>
+                                                        <div className="py-4">
+                                                            <p className="text-gray-700">Expérience requise: {job.experienceRequired}</p>
                                                         </div>
-                                                        <div className="flex items-center">
-                                                            <FaClock className="mr-3 text-gray-600" />
-                                                            <p className="text-gray-700">{job.contractType} - {job.type}</p>
-                                                        </div>
+                                                        <p className="text-gray-700 mb-4">{job.description}</p>
                                                     </div>
-                                                    <div className="py-4">
-                                                        <p className="text-gray-700">Expérience requise: {job.experienceRequired}</p>
-                                                    </div>
-                                                    <p className="text-gray-700 mb-4">{job.description}</p>
+                                                    <button className="w-full bg-black text-white text-left px-8 p-4 py-4 hover:bg-yellow-500 transition-all duration-300">Voir l&#39;offre</button>
                                                 </div>
-                                            </div>
+                                                </Link>
+                                            </motion.div>
                                         ))}
                                     </div>
                                 ) : (
-                                    <div className="w-full h-[435px] flex items-center justify-center text-center py-24">
-                                        <div className="text-center py-24">
-                                            <FaRegSadCry className="w-full text-7xl text-black mb-4 text-center" />
-                                            <h3 className="text-xl font-semibold text-black">Désolé, il n&#39;y a pas d&#39;offres disponibles pour ce secteur.</h3>
-                                            <p className="text-black">Nous vous invitons à consulter d&#39;autres secteurs ou revenir plus tard pour de nouvelles offres.</p>
-                                        </div>
+                                    <div className="min-h-[410px] text-center text-gray-700">
+                                        <FaRegSadCry className="text-6xl mb-4" />
+                                        <h3 className="text-2xl font-semibold">Aucune offre trouvée.</h3>
                                     </div>
                                 )}
                             </div>
-                            <div className="flex justify-between items-center py-3">
-                                <div className="flex items-center gap-4">
-                                    <label htmlFor="perPage" className="text-sm text-gray-700">Offres par page :</label>
-                                    <select
-                                        id="perPage"
-                                        name="perPage"
-                                        value={filters.perPage}
-                                        onChange={handlePerPageChange}
-                                        className="p-4 pr-8 border   shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
-                                    >
-                                        <option value={6}>6</option>
-                                        <option value={8}>8</option>
-                                        <option value={10}>10</option>
-                                        <option value={12}>12</option>
-                                    </select>
+
+                            {/* Pagination */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.5 }}
+                                className="flex justify-center mt-8 rounded-lg overflow-hidden"
+                            >
+                                <div className="pagination">
+                                    {Array.from({ length: totalPages }).map((_, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => handlePageChange(index + 1)}
+                                            className={`page-btn ${currentPage === index + 1 ? 'bg-black text-white' : 'bg-gray-200 text-black'} px-6 py-3 rounded-lg overflow-hidden`}
+                                        >
+                                            {index + 1}
+                                        </button>
+                                    ))}
                                 </div>
-                                <div className="pagination flex items-center gap-4 py-8">
-                                    {currentPage > 3 && (
-                                        <>
-                                            <button
-                                                onClick={() => handlePageChange(1)}
-                                                className="px-4 py-2 border   text-yellow-600 bg-white hover:bg-yellow-500 hover:text-white"
-                                            >
-                                                1
-                                            </button>
-                                            <span className="px-2 text-yellow-600">...</span>
-                                        </>
-                                    )}
-                                    {[...Array(5)].map((_, index) => {
-                                        const page = currentPage + index - 2;
-                                        if (page >= 1 && page <= totalPages) {
-                                            return (
-                                                <button
-                                                    key={page}
-                                                    onClick={() => handlePageChange(page)}
-                                                    className={`px-5 py-3 border   ${currentPage === page ? "bg-yellow-500 text-white" : "bg-white text-yellow-600"} hover:bg-yellow-500 hover:text-white transition duration-200`}
-                                                >
-                                                    {page}
-                                                </button>
-                                            );
-                                        }
-                                        return null;
-                                    })}
-                                    {currentPage < totalPages - 2 && (
-                                        <>
-                                            <span className="px-2 text-yellow-600">...</span>
-                                            <button
-                                                onClick={() => handlePageChange(totalPages)}
-                                                className="px-4 py-2 border text-yellow-600 bg-white hover:bg-yellow-500 hover:text-white"
-                                            >
-                                                {totalPages}
-                                            </button>
-                                        </>
-                                    )}
-                                </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

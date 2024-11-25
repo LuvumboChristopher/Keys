@@ -34,9 +34,9 @@ export default function JobsPreview() {
                     </p>
                 </div>
 
-                <div className="flex justify-center items-center mb-4 space-x-4 overflow-scroll">
+                <div className="flex justify-center items-center mb-4 space-x-4 overflow-scroll ">
                     <button
-                        className={`  font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"}`}
+                        className={`font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-lg overflow-hidden`}
                         onClick={() => setSelectedSector("All")}
                     >
                         <p className="text-sm p-3">Tous</p>
@@ -46,7 +46,7 @@ export default function JobsPreview() {
                         sectors.map((sector) => (
                             <button
                                 key={sector.name}
-                                className={`  font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"}`}
+                                className={`  font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-lg overflow-hidden`}
                                 onClick={() => setSelectedSector(sector.name)}
                             >
                                 <p className="text-sm p-3">{sector.name}</p>
@@ -68,7 +68,7 @@ export default function JobsPreview() {
                         {filteredJobs.map((job, index) => (
                             <div
                                 key={job.id}
-                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer"
+                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer rounded-lg overflow-hidden group"
                             >
                                 <div className="absolute inset-0 bg-white clip-path-triangle"></div>
                                 <div className="absolute top-0 right-0 bottom-0 flex justify-end items-center z-10 pr-4">
@@ -76,9 +76,9 @@ export default function JobsPreview() {
                                 </div>
 
                                 <Link href={`/jobs/${job.id}`} passHref>
-                                    <div className="absolute top-6 right-6 z-10 group">
+                                    <div className="absolute top-6 right-6 z-10 ">
                                         <FaKey
-                                            className="text-3xl group-hover:scale-110 transition-all duration-300 opacity-80 hover:opacity-100"
+                                            className="text-3xl group-hover:scale-110 transition-all duration-300"
                                         />
                                         <div className="w-32 absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pl-2 text-sm">
                                             Voir l&#39;offre
@@ -112,7 +112,7 @@ export default function JobsPreview() {
                     </div>
                 )}
 
-                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-3 transition-all duration-400">
+                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-3 transition-all duration-400 rounded-lg overflow-hidden">
                         Voir toutes les offres
                 </Link>
             </div>

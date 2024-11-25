@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import Header from "@/components/Layout/Header";
-import HeaderBlack from "@/components/Layout/HeaderBlack"; 
+import HeaderBlack from "@/components/Layout/HeaderBlack";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
 import { usePathname } from "next/navigation";
@@ -13,10 +13,11 @@ export default function RootLayout({ children }) {
   const [paddingTop, setPaddingTop] = useState("0");
 
   useEffect(() => {
-    setPaddingTop(pathname !== "/" ? "151px" : "0");
+    if (typeof window !== "undefined") {
+      setPaddingTop(pathname !== "/" ? "151px" : "0");
+    }
   }, [pathname]);
 
-  // Decide qué header usar
   const HeaderComponent = pathname === "/" ? Header : HeaderBlack;
 
   return (
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <HeaderComponent />
-        <div style={{ paddingTop }}>{children}</div>
+        <div className="min-h-screen" style={{ paddingTop }}>{children}</div>
         <Footer />
         <ScrollToTop />
       </body>

@@ -71,13 +71,13 @@ const Header = () => {
           >
             <ul className="list-none p-0 m-0 flex gap-5 text-md">
               <li>
-                <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
+                <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
                   <FaFileUpload />
                   Candidature
                 </Link> 
               </li>
               <li>
-                <Link href="#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all  ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
+                <Link href="#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all `}>
                   <FaLocationArrow />
                   Trouver une agence
                 </Link>
@@ -106,7 +106,7 @@ const Header = () => {
         >
             {/* Enlace al perfil */}
             <div className="hidden lg:flex items-center">
-                <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
+                <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
                     <FaUser />
                     Mon compte
                 </Link>
@@ -130,7 +130,7 @@ const Header = () => {
         location={location}
         setLocation={setLocation}
         colorChanged={colorChanged}
-      />
+        />
 
       <Sidebar
         isMenuOpen={isMenuOpen}

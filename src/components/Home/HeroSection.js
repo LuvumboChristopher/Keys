@@ -81,12 +81,12 @@ const HeroSection = () => {
                             </motion.h1>
                         </div>
                         <motion.div
-                            className="flex justify-center lg:py-2 lg:mt-2 overflow-hidden"
+                            className="flex justify-center lg:py-2 lg:mt-2 "
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeInOut" }}
                         >
-                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row items-center bg-white lg:pl-6 lg:border lg:hover:scale-105 duration-300 cursor-pointer">
+                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row items-center bg-white lg:pl-6 lg:border lg:hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden">
                                 <div className="w-full lg:w-3/5 border-b lg:border-none flex items-center">
                                     <TfiSearch className="text-xl text-gray-700" />
                                     <input
