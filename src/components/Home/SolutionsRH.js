@@ -53,7 +53,7 @@ const SolutionsRH = () => {
     }, []);
 
     return (
-        <div id="solutions-rh" className="container text-center sm:text-left flex flex-col lg:flex-row items-center justify-center py-6 xl:gap-6">
+        <div id="solutions-rh" className="container text-center sm:text-left flex flex-col lg:flex-row items-center justify-center py-8 xl:gap-6">
             <motion.section
                 ref={elementRef1}
                 className="w-full md:w-4/5 lg:w-1/2 p-2 xl:p-0  flex flex-col sm:flex-row justify-center items-center sm:gap-10 md:gap-4 md:space-x-8 "

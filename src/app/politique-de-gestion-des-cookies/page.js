@@ -17,21 +17,21 @@ export default function CookiesPolicy() {
                     Politique de gestion des cookies
                     </h1>
                     <p className="mb-6">
-                        KEYS - INTERIM & RECRUTEMENT s’engage à protéger au service de votre vie privée. Pour
+                        KEYS - INTERIM & RECRUTEMENT s&#39;engage à protéger au service de votre vie privée. Pour
                         en savoir plus, référez-vous à notre 
                         <Link href="/politique-de-confidentialite" className="text-yellow-500 pl-1.5">
                         politique de confidentialité.
                         </Link></p> <p>
-                        La politique ci-dessous vise à vous donner toutes les informations utiles s’agissant
+                        La politique ci-dessous vise à vous donner toutes les informations utiles s&#39;agissant
                         des cookies utilisés par nos sites et notre application.
                     </p>
                     <h2 className="text-xl font-semibold mt-8 mb-4">Qu'est-ce qu'un cookie ?</h2>
                     <p className="mb-6">
                         Les cookies sont des fichiers souvent cryptés qui sont stockés dans votre navigateur.
-                        Ils sont créés pour une durée limitée lorsque le navigateur d’un utilisateur charge un
+                        Ils sont créés pour une durée limitée lorsque le navigateur d&#39;un utilisateur charge un
                         site Internet donné : le site envoie des informations au navigateur, qui crée alors un
-                        fichier texte. Chaque fois que l’utilisateur revient sur le même site, le navigateur
-                        récupère ce fichier et l’envoie au serveur du site Internet.
+                        fichier texte. Chaque fois que l&#39;utilisateur revient sur le même site, le navigateur
+                        récupère ce fichier et l&#39;envoie au serveur du site Internet.
                     </p>
                     <p className="mb-6">
                         Les informations stockées par les cookies portent notamment sur les pages visitées, le
@@ -42,11 +42,11 @@ export default function CookiesPolicy() {
                     <ul className="list-disc pl-6 mb-6">
                         <li>
                             <strong>Cookies techniques :</strong> indispensables à la connexion ou permettant
-                            l’identification.
+                            l&#39;identification.
                         </li>
                         <li>
-                            <strong>Cookies fonctionnels :</strong> offrent des fonctionnalités d’optimisation de
-                            la navigation ou encore de l’apparence du site.
+                            <strong>Cookies fonctionnels :</strong> offrent des fonctionnalités d&#39;optimisation de
+                            la navigation ou encore de l&#39;apparence du site.
                         </li>
                         <li>
                             <strong>Cookies statistiques :</strong> permettent de connaître les performances du

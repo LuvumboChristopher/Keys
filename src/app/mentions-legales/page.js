@@ -15,7 +15,7 @@ const MentionsLegales = () => {
                             Les destinataires des données sont : <strong>KEYS - INTERIM & RECRUTEMENT</strong>
                         </p>
                         <p className="mb-4">
-                            Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès, de rectification, de suppression des informations qui vous concernent, que vous pouvez exercer en remplissant le formulaire par un clic sur <strong>Nous contacter</strong> ou par un courrier à :<br />
+                            Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée, vous bénéficiez d&#39;un droit d&#39;accès, de rectification, de suppression des informations qui vous concernent, que vous pouvez exercer en remplissant le formulaire par un clic sur <strong>Nous contacter</strong> ou par un courrier à :<br />
                         </p>
                         <p className="mb-4">
                             <strong>KEYS - INTERIM & RECRUTEMENT</strong><br />
@@ -31,14 +31,14 @@ const MentionsLegales = () => {
                             Les contenus de ce site (structure, design, texte, image, animation, logo) sont la propriété exclusive de <strong>KEYS - INTERIM & RECRUTEMENT</strong>.
                         </p>
                         <p className="mb-4">
-                            Toute représentation totale ou partielle de ce site est soumise à l’autorisation préalable, écrite et expresse de <strong>KEYS - INTERIM & RECRUTEMENT</strong>.
+                            Toute représentation totale ou partielle de ce site est soumise à l&#39;autorisation préalable, écrite et expresse de <strong>KEYS - INTERIM & RECRUTEMENT</strong>.
                         </p>
                     </section>
                     <section className="space-y-3 mt-6">
                         <h2 className="text-xl font-semibold mb-6">Limitation de responsabilité</h2>
                         <p className="mb-4">
 
-                            Ce site ne saurait être tenu pour responsable des erreurs rencontrées sur le site, problèmes techniques, interprétation des informations publiées et les conséquences de leurs utilisations. L’utilisateur reconnaît dans ce cas utiliser ces informations sous sa responsabilité exclusive.
+                            Ce site ne saurait être tenu pour responsable des erreurs rencontrées sur le site, problèmes techniques, interprétation des informations publiées et les conséquences de leurs utilisations. L&#39;utilisateur reconnaît dans ce cas utiliser ces informations sous sa responsabilité exclusive.
 
                         </p>
                         <p className="mb-4">
@@ -52,14 +52,14 @@ const MentionsLegales = () => {
                     <section className="space-y-3 mt-6">
                         <h2 className="text-xl font-semibold mb-6">Données à caractère personnel</h2>
                         <p className="mb-4">
-                            Aux fins d’établissement des contrats, de traitement des rémunérations et des déclarations sociales et fiscales, et plus généralement de la gestion du personnel à l’occasion de la conclusion, l’exécution et la cessation de votre contrat de travail, nous sommes amenés à traiter des données personnelles vous concernant.
+                            Aux fins d&#39;établissement des contrats, de traitement des rémunérations et des déclarations sociales et fiscales, et plus généralement de la gestion du personnel à l&#39;occasion de la conclusion, l&#39;exécution et la cessation de votre contrat de travail, nous sommes amenés à traiter des données personnelles vous concernant.
                         </p>
                         <p className="mb-4">
                             Vous pouvez consulter notre charte de confidentialité sur <a href="https://www.keys-rh.fr" className="text-yellow-500">www.keys-rh.fr</a>.<br />
-                            Pour exercer vos droits Informatique et libertés et pour toute demande d’information, nous avons désigné un Délégué à la Protection des Données (DPO) à contacter par mail : <a href="mailto:contact.dpo@keys-rh.fr" className="text-yellow-500">contact.dpo@keys-rh.fr</a> ou par courrier :
+                            Pour exercer vos droits Informatique et libertés et pour toute demande d&#39;information, nous avons désigné un Délégué à la Protection des Données (DPO) à contacter par mail : <a href="mailto:contact.dpo@keys-rh.fr" className="text-yellow-500">contact.dpo@keys-rh.fr</a> ou par courrier :
                         </p>
                         <p className="mb-4">
-                            <strong>KEYS - INTERIM & RECRUTEMENT</strong> - A l’attention du PDO – 29 RUE CDT FAURAX 69006 LYON
+                            <strong>KEYS - INTERIM & RECRUTEMENT</strong> - A l&#39;attention du PDO – 29 RUE CDT FAURAX 69006 LYON
                         </p>
                     </section>
                     <section className="space-y-3 mt-6">

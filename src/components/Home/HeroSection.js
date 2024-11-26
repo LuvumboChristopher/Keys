@@ -1,12 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { FaKey } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { CallToAction } from "./CallToAction";
 import { TfiSearch, TfiLocationArrow, TfiWand } from "react-icons/tfi";
 
 const HeroSection = () => {
-    const jobs = ["Téléconseiller !", "Développeur !", "Designer !", "Manager !", "Commercial !"];
+    const jobs = useMemo(() => ["Téléconseiller !", "Développeur !", "Designer !", "Manager !", "Commercial !"], []);
     const [currentJob, setCurrentJob] = useState("");
     const [jobIndex, setJobIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
@@ -14,11 +14,10 @@ const HeroSection = () => {
     const [cursorBlink, setCursorBlink] = useState(true);
 
     const [location, setLocation] = useState("");
-
     useEffect(() => {
         const typingSpeed = isDeleting ? 120 : 150;
         const delay = isDeleting && charIndex === 0 ? 1000 : typingSpeed;
-
+    
         const typeTimeout = setTimeout(() => {
             const job = jobs[jobIndex];
             if (!isDeleting && charIndex < job.length) {
@@ -34,7 +33,7 @@ const HeroSection = () => {
                 setJobIndex((jobIndex + 1) % jobs.length);
             }
         }, delay);
-
+    
         return () => clearTimeout(typeTimeout);
     }, [charIndex, isDeleting, jobIndex, jobs]);
 

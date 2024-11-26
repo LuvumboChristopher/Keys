@@ -26,7 +26,7 @@ const JobsByLocation = () => {
 
   return (
     <section id="emplois-par-localisation" className="bg-gray-50 border-t border-b">
-      <div className="container text-center w-full mx-auto py-12">
+      <div className="container text-center w-full mx-auto py-8">
         <h2 className="text-center text-3xl lg:text-4xl py-2 text-shadow-xl"
         >
           Emplois par{" "}
@@ -47,7 +47,7 @@ const JobsByLocation = () => {
         </p>
       </div>
 
-      <div className="container grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 rounded-lg overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
         {cities.map((city, index) => (
           <Link key={index} href={`/jobs/${index}`} passHref>
             <div className="relative group overflow-hidden cursor-pointer shadow-lg">

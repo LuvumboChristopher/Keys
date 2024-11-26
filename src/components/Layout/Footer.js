@@ -69,7 +69,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/#dernières-offres-d'emploi" className="text-sm hover:underline">
-                  Dernières offres d'emploi
+                  Dernières offres d&#39;emploi
                 </Link>
               </li>
               <li>
