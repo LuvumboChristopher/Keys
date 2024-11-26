@@ -10,7 +10,6 @@ import StatsSection from "@/components/Home/StatsSection";
 import withInViewAnimation from "@/utils/withInViewAnimation";
 import JobsByLocation from "@/components/Home/JobsByLocation";
 import JobsPreview from "@/components/Home/JobsPreview";
-import Banner from "@/components/Home/Banner";
 
 const AnimatedHero = withInViewAnimation(HeroSection);
 const AnimatedSolutionsRH = withInViewAnimation(SolutionsRH);
