@@ -23,7 +23,7 @@ const Header = () => {
     const scrollThreshold = window.innerHeight * 0.35;
     const scrollTop = window.scrollY;
 
-    setColorChanged(scrollTop > 2570 );
+    setColorChanged(scrollTop > 620 );
     setScrolled(scrollTop > 0);
     setShowBar(scrollTop >= scrollThreshold);
   };
@@ -63,7 +63,7 @@ const Header = () => {
           borderBottom: colorChanged ? "none" : scrolled ? "1px solid black" : "",
         }}
       >
-        <div className="container mx-auto flex justify-end lg:justify-between items-center py-14 relative">
+        <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[134px]">
           <motion.div
             className="hidden lg:flex gap-5"
             initial={{ opacity: 0 }}
@@ -119,11 +119,8 @@ const Header = () => {
               toggleMenu={toggleMenu}
             />
         </motion.div>
-
-
         </div>
       </header>
-
       <SearchComponentWhite
         scrolled={scrolled}
         showBar={showBar}
@@ -131,13 +128,11 @@ const Header = () => {
         setLocation={setLocation}
         colorChanged={colorChanged}
         />
-
       <Sidebar
         isMenuOpen={isMenuOpen}
         colorChanged={colorChanged}
         toggleMenu={toggleMenu}
       />
-
       {isMenuOpen && (
         <div
           className={`overlay-opacity ${isMenuOpen ? "open" : ""}`}

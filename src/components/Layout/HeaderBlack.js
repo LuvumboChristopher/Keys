@@ -7,9 +7,7 @@ import { useState, useEffect } from "react";
 import { FaFileUpload, FaLocationArrow, FaUser } from "react-icons/fa";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-import { SearchComponentWhite } from "./SearchComponentWhite";
-import HamburgerMenu from "./HamburgerMenu";
+import { SearchComponentBlack } from "./SearchComponentBlack";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -50,7 +48,7 @@ const Header = () => {
   return (
     <header>
       {/* Header */}
-      <header
+      <section
         style={{
           position: "fixed",
           top: 0,
@@ -63,7 +61,7 @@ const Header = () => {
           borderBottom: "1px solid black",
         }}
       >
-        <div className="container mx-auto flex justify-end lg:justify-between items-center py-14 relative">
+        <div className="container mx-auto flex justify-end lg:justify-between items-center h-[134px] relative">
           <motion.div
             className="hidden lg:flex gap-5"
             initial={{ opacity: 0 }}
@@ -77,7 +75,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all  ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
+                <Link href="/#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all  ${colorChanged && "hover:bg-yellow-500 hover:text-gray-900"}`}>
                   <FaLocationArrow />
                   Trouver une agence
                 </Link>
@@ -86,7 +84,7 @@ const Header = () => {
           </motion.div>
 
           {/* Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          <div className="absolute left-1/2 transform -translate-x-1/2 hover:translate-y-[-3px] transition-all">
             <Link href="/">
               <Image
                 src="/images/keyslogos/Keys-logo-white-yellow.svg"
@@ -119,8 +117,7 @@ const Header = () => {
             >
               <button
                 onClick={toggleMenu}
-                className={`hamburger-btn btn-header ${isMenuOpen ? "open open-menu" : ""} 
-    ${isMenuOpen ? "transparent-lines" : ""} text-black transition-transform duration-300 ease-in-out hover:scale-110`}
+                className={`hamburger-btn btn-header ${isMenuOpen ? "open open-menu" : ""} ${isMenuOpen ? "transparent-lines" : ""} text-black transition-transform duration-300 ease-in-out hover:scale-110`}
               >
                 <p className="line transition-all duration-300 ease-in-out bg-white"></p>
                 <p className="line transition-all duration-300 ease-in-out bg-white"></p>
@@ -131,9 +128,9 @@ const Header = () => {
 
 
         </div>
-      </header>
+      </section>
 
-      <SearchComponentWhite
+      <SearchComponentBlack
         scrolled={scrolled}
         showBar={showBar}
         location={location}

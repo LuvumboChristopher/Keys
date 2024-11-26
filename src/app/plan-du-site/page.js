@@ -1,18 +1,19 @@
-import Link from "next/link";
+import Head from "next/head";
+import React from "react";
 
-export default function PlanDuSite() { 
-    return (
-    <div>
-        <h1>Plan du Site</h1>
-        <ul>
-            <li><Link href="/">Accueil</Link></li>
-            <li><Link href="/about">À propos</Link></li>
-            <li><Link href="/companies">Entreprises</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/jobs">Offres d&#39;emploi</Link></li>
-            <li><Link href="/mentions-legales">Mentions Légales</Link>
-            </li><li><Link href="/cgu">CGU</Link></li>
-        </ul>
-    </div>
-    );
-}
+const PlanDuSite = () => {
+  return (
+    <main className="h-screen p-6 md:p-12 bg-gray-100 text-justify">
+      <div className="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-8">
+        <h1 className="text-2xl md:text-4xl font-bold text-left mb-12">
+          Plan du Site
+        </h1>
+        <div>
+
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default PlanDuSite;

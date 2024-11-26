@@ -39,8 +39,8 @@ export default function ScrollToTop() {
 
     return (
         <div
-            className={`fixed w-[2.7rem] h-[2.7rem] cursor-pointer flex items-center justify-center shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010]
-            transition-all duration-200 ease-linear rounded-full right-6 bottom-6
+            className={`fixed w-[2.5rem] h-[2.5rem] cursor-pointer flex items-center justify-center shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010]
+            transition-all duration-200 ease-linear rounded-full right-6 bottom-5
             ${isVisible ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-3"}
             ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}
         `}

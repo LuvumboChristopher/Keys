@@ -4,10 +4,10 @@ import { TfiSearch, TfiLocationArrow, TfiWand } from "react-icons/tfi";
 export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation, colorChanged }) => {
     return (
         <motion.div
-            className=" mx-auto hidden lg:block fixed left-0 right-0 h-auto z-40 border border-black text-sm duration-300"
+            className=" mx-auto hidden lg:block fixed left-0 right-0 h-auto z-40 border border-black text-xs duration-300"
             initial={{ y: -200, opacity: 0 }}
             animate={{
-                y: showBar ? 150 : -200,
+                y: showBar ? 134 : -200,
                 opacity: showBar ? 1 : 0
             }}
             transition={{
@@ -44,14 +44,14 @@ export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation,
                         <TfiSearch className="text-xl text-gray-700" />
                         <input
                             placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise"
-                            className="w-full px-3 py-6 text-gray-800 focus:outline-none"
+                            className="w-full px-3 py-5 text-gray-800 focus:outline-none"
                         />
                     </div>
                     <div className="bg-black h-8 w-px mx-4"></div>
                     <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
                         <TfiLocationArrow className="text-xl text-gray-700" />
                         <input
-                            className="w-full px-3 py-6 text-gray-800 focus:outline-none"
+                            className="w-full px-3 py-5 text-gray-800 focus:outline-none"
                             placeholder="Sélectionner un lieu"
                             name="location"
                             value={location}
@@ -59,7 +59,7 @@ export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation,
                         />
                     </div>
                     <button className=
-                        {`w-auto block mx-auto flex items-center justify-center  px-5 py-6 font-semibold bg-black text-white  lg:border-l border-black ${colorChanged ? "bg-yellow-500 text-white" : "bg-black text-white"}`}>
+                        {`w-auto block mx-auto flex items-center justify-center  px-5 py-5 font-semibold bg-black text-white  lg:border-l border-black hover:text-black ${colorChanged ? "bg-yellow-500 text-white" : "bg-black text-white hover:text-yellow-500 "}`}>
                         <TfiWand className="mr-4" />
                         <span className="whitespace-nowrap">Explorer les jobs</span>
                     </button>

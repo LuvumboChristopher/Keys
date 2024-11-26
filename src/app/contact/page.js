@@ -12,7 +12,7 @@ const ContactPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className={`grid grid-cols-2 relative ${isRecruiter ? "h-[1000px] md:h-[750px]" : "h-[900px] md:h-[650px]"}`}
+        className={`grid grid-cols-1 md:grid-cols-2 relative ${isRecruiter ? "h-[1100px]  sm:h-[1100px] md:h-[750px]" : "h-[970px] md:h-[670px]"}`}
       >
         <motion.div
           className="bg-yellow-500"
@@ -40,19 +40,33 @@ const ContactPage = () => {
             }}
           ></div>
         </motion.div>
-        <div className=""></div>
-
-        {/* Formulario dinámico */}
-        <div className="absolute inset-0 flex justify-center items-start">
+        <div className="absolute inset-0 flex justify-center items-start text-sm">
           <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-2 justify-start">
-            {/* Sección de información */}
             <motion.div
-              className="relative h-[360px] pt-10 section-inner p-10 flex flex-col items-start justify-center bg-black bg-opacity-60 text-white"
+              className="h-max flex flex-col items-start justify-between gap-0 bg-black bg-opacity-60 text-white "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              <header className="mb-4">
+              <div className="w-full h-max">
+                <div className="w-max flex group">
+                  <button
+                    className={`w-1/2 cursor-pointer py-2 px-6 hover:bg-black hover:text-white ${!isRecruiter ? "bg-yellow-500 text-white" : "bg-transparent"
+                      }`}
+                    onClick={() => setIsRecruiter(false)}
+                  >
+                    Candidat
+                  </button>
+                  <button
+                    className={`w-1/2 cursor-pointer py-2 px-6 bg-transparent hover:bg-black ${isRecruiter ? "bg-yellow-500 text-white" : "bg-transparent"
+                      }`}
+                    onClick={() => setIsRecruiter(true)}
+                  >
+                    Recruteur
+                  </button>
+                </div>
+              </div>
+              <header className="px-6 pt-8 pb-12 text-sm">
                 {isRecruiter ? (
                   <>
                     <h3 className="text-2xl font-bold">
@@ -80,35 +94,15 @@ const ContactPage = () => {
                     </p>
                   </>
                 )}
+                <p className="text-md pt-6">
+                  {isRecruiter
+                    ? "Faites le premier pas vers une solution adaptée à vos besoins RH."
+                    : "Explorez des opportunités de carrière adaptées à vos compétences."}
+                </p>
               </header>
-              <p className="text-md pt-3">
-                {isRecruiter
-                  ? "Faites le premier pas vers une solution adaptée à vos besoins RH."
-                  : "Explorez des opportunités de carrière adaptées à vos compétences."}
-              </p>
-              <div className="absolute top-0 left-0">
-                <div className="w-full mb-4 flex group">
-                  <button
-                    className={`w-1/2 cursor-pointer py-2 px-6 hover:bg-black hover:text-white ${!isRecruiter ? "bg-yellow-500 text-white" : "bg-transparent"
-                      }`}
-                    onClick={() => setIsRecruiter(false)}
-                  >
-                    Candidat
-                  </button>
-                  <button
-                    className={`w-1/2 cursor-pointer py-2 px-6 bg-transparent hover:bg-black ${isRecruiter ? "bg-yellow-500 text-white" : "bg-transparent"
-                      }`}
-                    onClick={() => setIsRecruiter(true)}
-                  >
-                    Recruteur
-                  </button>
-                </div>
-              </div>
             </motion.div>
-
-            {/* Formulario dinámico */}
             <motion.div
-              className={`${isRecruiter ? "h-[750px] md:h-[750px]" : "h-[650px] md:h-[650px]"} section-form bg-white p-6 sm:p-8 md:p-10 lg:p-12`}
+              className={`section-form bg-white p-6 sm:p-8 md:p-10 lg:p-12 xl:p-0 xl:py-12 xl:pl-12`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
@@ -206,7 +200,7 @@ const ContactPage = () => {
                     <textarea
                       id="message"
                       name="message"
-                      rows="4"
+                      rows={isRecruiter ? "4" : "5"}
                       required
                       className="mt-1 py-2 block w-full border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                     />
@@ -215,9 +209,9 @@ const ContactPage = () => {
                   <div>
                     <button
                       type="submit"
-                      className="bg-yellow-500 py-4 px-6 text-white w-full mt-4 hover:bg-black hover:text-white rounded-lg overflow-hidden"
+                      className="bg-yellow-500 py-5 px-6 text-white w-full mt-4 hover:bg-black hover:text-white rounded-sm overflow-hidden"
                     >
-                      {isRecruiter ? "Envoyer votre demande" : "Postuler maintenant"}
+                      Envoyer votre demande
                     </button>
                   </div>
                 </form>

@@ -30,7 +30,7 @@ const SecteursActivite = () => {
         }
       });
     }, {
-      threshold: 0.25
+      threshold: 0.5
     });
 
     const element = swiperRef.current;

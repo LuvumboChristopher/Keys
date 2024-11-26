@@ -86,26 +86,26 @@ const HeroSection = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeInOut" }}
                         >
-                            <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row items-center bg-white lg:pl-6 lg:border lg:hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden">
+                            <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center bg-white lg:pl-6 lg:border lg:hover:scale-105 duration-300 cursor-pointer lg:rounded-xl overflow-hidden space-y-8 lg:space-y-0">
                                 <div className="w-full lg:w-3/5 border-b lg:border-none flex items-center">
                                     <TfiSearch className="text-xl text-gray-700" />
                                     <input
                                         placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise"
-                                        className="w-full px-3 py-6 text-gray-800 focus:outline-none"
+                                        className="w-full px-3 py-6 text-gray-800 focus:outline-none text-sm lg:text-base"
                                     />
                                 </div>
                                 <div className="hidden lg:block bg-gray-500 h-1/2 w-0.5 mx-4"></div>
                                 <div className="w-full lg:w-3/5 border-b lg:border-none flex items-center">
                                     <TfiLocationArrow className="text-xl text-gray-700" />
                                     <input
-                                        className="w-full px-3 py-6 text-gray-800 focus:outline-none"
+                                        className="w-full px-3 py-6 text-gray-800 focus:outline-none text-sm lg:text-base"
                                         placeholder="Sélectionner un lieu"
                                         name="location"
                                         value={location}
                                         onChange={(e) => setLocation(e.target.value)}
                                     />
                                 </div>
-                                <button className="w-full lg:w-1/2 mx-auto flex items-center justify-center hover:bg-yellow-500 hover:text-black py-5 lg:py-6 font-semibold bg-black text-white lg:border-l-2 border-black transition-all duration-500">
+                                <button className="w-full lg:w-1/2 text-sm lg:text-base mx-auto flex items-center justify-center hover:bg-yellow-500 hover:text-black py-5 lg:py-6 font-semibold bg-black text-white lg:border-l-2 border-black transition-all duration-500 rounded-lg lg:rounded-none">
                                     <TfiWand className="mr-4" />
                                     Explorer les jobs
                                 </button>

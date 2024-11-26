@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setPaddingTop(pathname !== "/" ? "151px" : "0");
+      setPaddingTop(pathname !== "/" ? "134px" : "0");
     }
   }, [pathname]);
 

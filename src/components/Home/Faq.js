@@ -34,7 +34,6 @@ export default function FAQ() {
 
   return (
     <section className="container py-20 flex flex-col lg:flex-row gap-8">
-      {/* Columna de texto (35%) */}
       <div className="w-full lg:w-[40%] animate-fadeInLeft">
         <h6 className="text-gray-500 text-lg font-semibold">Questions Fréquentes</h6>
         <h2 className="text-3xl font-bold">Foire aux Questions</h2>
@@ -42,8 +41,6 @@ export default function FAQ() {
           Retrouvez ici les réponses aux questions les plus courantes concernant notre agence et les services que nous offrons.
         </p>
       </div>
-
-      {/* Columna de preguntas (65%) */}
       <div className="w-full lg:w-[60%] animate-fadeIn">
         <div className="grid gap-4" id="accordionFAQ">
           {faqs.map((faq, index) => (
