@@ -26,7 +26,7 @@ const JobsByLocation = () => {
 
   return (
     <section id="emplois-par-localisation" className="bg-gray-50 border-t border-b">
-      <div className="container text-center w-full mx-auto py-8">
+      <div className="container text-center w-full mx-auto py-10">
         <h2 className="text-center text-3xl lg:text-4xl py-2 text-shadow-xl"
         >
           Emplois par{" "}
@@ -42,7 +42,7 @@ const JobsByLocation = () => {
         <small className="block  mb-6">
           Découvrez les offres d&#39;emploi disponibles dans les principales villes de France.<br />
         </small>
-        <p className="max-w-3xl mx-auto text-md ">
+        <p className="max-w-4xl mx-auto text-md ">
           Que vous soyez à la recherche d&#39;une nouvelle opportunité de carrière ou que vous souhaitiez explorer des options dans des secteurs variés, nous vous offrons un large éventail d&#39;offres adaptées à vos compétences et vos aspirations.
         </p>
       </div>
@@ -51,8 +51,6 @@ const JobsByLocation = () => {
         {cities.map((city, index) => (
           <Link key={index} href={`/jobs/${index}`} passHref>
             <div className="relative group overflow-hidden cursor-pointer shadow-lg">
-
-
               <div className="h-[270px] transition-all duration-500 group-hover:scale-105">
                 <Image
                   width={1000}

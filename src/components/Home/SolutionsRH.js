@@ -53,7 +53,7 @@ const SolutionsRH = () => {
     }, []);
 
     return (
-        <div id="solutions-rh" className="container text-center sm:text-left flex flex-col lg:flex-row items-center justify-center py-8 xl:gap-6">
+        <div id="solutions-rh" className="container text-center sm:text-left flex flex-col lg:flex-row items-center justify-center py-10 xl:gap-6">
             <motion.section
                 ref={elementRef1}
                 className="w-full md:w-4/5 lg:w-1/2 p-2 xl:p-0  flex flex-col sm:flex-row justify-center items-center sm:gap-10 md:gap-4 md:space-x-8 "
@@ -61,7 +61,7 @@ const SolutionsRH = () => {
                 animate={{ opacity: isVisible1 ? 1 : 0, x: isVisible1 ? 0 : -100 }}
                 transition={{ duration: 0.5 }}
             >
-                <span className="text-7xl">🧑🏼‍🏭</span>
+                <span className="text-6xl">🧑🏼‍🏭</span>
                 <div className="w-full">
                 <div className="w-full flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center justify-between gap-4">
                 <h3 className="pt-4 sm:pt-0 text-lg xl:text-xl">Espace intérimaire</h3>
@@ -69,7 +69,7 @@ const SolutionsRH = () => {
                             J&#39;y vais !
                         </Link>
                     </div>
-                    <p className="max-w-xs sm:max-w-full mx-auto text-sm md:text-base py-4">
+                    <p className="max-w-xs sm:max-w-full mx-auto text-sm md:text-md py-4">
                         Les compétences de Keys mises à disposition de nos clients pour répondre à leurs besoins
                     </p>
                 </div>
@@ -89,7 +89,7 @@ const SolutionsRH = () => {
                 animate={{ opacity: isVisible2 ? 1 : 0, x: isVisible2 ? 0 : 100 }}
                 transition={{ duration: 0.5 }}
             >
-                <span className="text-7xl">👨🏼‍💻</span>
+                <span className="text-6xl">👨🏼‍💻</span>
                 <div className="w-full">
                     <div className="w-full flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center  justify-between gap-4">
                         <h3 className="pt-4 sm:pt-0 text-lg xl:text-xl">Espace Entreprise</h3>
@@ -97,7 +97,7 @@ const SolutionsRH = () => {
                             C&#39;est parti !
                         </Link>
                     </div>
-                    <p className="max-w-xs sm:max-w-full mx-auto text-sm md:text-base py-4">
+                    <p className="max-w-xs sm:max-w-full mx-auto text-sm md:text-md py-4">
                         Nous proposons des solutions sur mesure pour répondre aux besoins de recrutement et d’emploi de votre entreprise !
                     </p>
                 </div>

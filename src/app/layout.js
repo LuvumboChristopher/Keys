@@ -1,18 +1,10 @@
-"use client";
-
 import "./globals.css";
-import Header from "@/components/Layout/Header";
-import HeaderBlack from "@/components/Layout/HeaderBlack";
+import DynamicHeader from "@/components/Layout/DynamicHeader";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
-import { usePathname } from "next/navigation";
 import PaddingAdjuster from "@/components/Layout/PaddingAdjuster";
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-
-  const HeaderComponent = pathname === "/" ? Header : HeaderBlack;
-
   return (
     <html lang="fr">
       <head>
@@ -36,7 +28,7 @@ export default function RootLayout({ children }) {
         <title>Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH</title>
       </head>
       <body>
-        <HeaderComponent />
+        <DynamicHeader />
         <PaddingAdjuster>{children}</PaddingAdjuster>
         <Footer />
         <ScrollToTop />
