@@ -1,7 +1,6 @@
 import "./globals.css";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
-import PaddingAdjuster from "@/components/Layout/PaddingAdjuster";
 import Header from "@/components/Layout/Header";
 
 export default function RootLayout({ children }) {
@@ -19,7 +18,6 @@ export default function RootLayout({ children }) {
           content="agence intérimaire, emploi, recrutement, travail temporaire, placement, RH"
         />
         <meta name="author" content="Keys-RH" />
-
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -29,7 +27,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
-        <PaddingAdjuster>{children}</PaddingAdjuster>
+        <div>{children}</div>
         <Footer />
         <ScrollToTop />
       </body>
