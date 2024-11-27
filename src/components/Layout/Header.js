@@ -6,11 +6,13 @@ import Sidebar from "./SideBar";
 import { useState, useEffect } from "react";
 import { FaFileUpload, FaLocationArrow, FaUser } from "react-icons/fa";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,6 +34,8 @@ const Header = () => {
     };
   }, []);
 
+  const isHomePage = pathname === "/";
+
   return (
     <>
       <header
@@ -41,7 +45,7 @@ const Header = () => {
           right: 0,
           zIndex: 50,
           transition: "all 0.3s ease-in-out",
-          backgroundColor: scrolled ? "white" : "transparent",
+          backgroundColor: scrolled && isHomePage ? "white" : "transparent",
           color: "black",
         }}
       >
@@ -76,7 +80,7 @@ const Header = () => {
                 width={100}
                 height={100}
                 loading="lazy"
-                className={`transition-opacity ease-in-out w-[120px] ${scrolled ? "opacity-100" : "opacity-0"}`}
+                className={`transition-opacity ease-in-out w-[120px] ${isHomePage ? (scrolled ? "opacity-100" : "opacity-0") : "opacity-100"}`}
               />
             </Link>
           </div>

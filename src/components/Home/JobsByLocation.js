@@ -9,7 +9,7 @@ const JobsByLocation = () => {
 
   const cities = [
     { name: "Paris", image: "/images/cities/paris.jpeg", description: "Explorez les meilleures opportunités professionnelles à Paris, la capitale économique de la France." },
-    { name: "Lyon", image: "/images/cities/lyon.jpeg", description: "Lyon, un centre majeur pour l'industrie et l'innovation, offre une grande variété de postes." },
+    { name: "Lyon", image: "/images/cities/villedelyon.jpeg", description: "Lyon, un centre majeur pour l'industrie et l'innovation, offre une grande variété de postes." },
     { name: "Marseille", image: "/images/cities/marseille.jpeg", description: "Marseille est une ville dynamique avec des emplois dans le secteur portuaire, touristique et technologique." },
     { name: "Toulouse", image: "/images/cities/toulouse.webp", description: "Toulouse, le centre de l'industrie aéronautique, offre de nombreuses possibilités de carrière." },
     { name: "Nice", image: "/images/cities/nice.jpeg", description: "Nice allie un cadre de vie exceptionnel avec des opportunités dans les secteurs du tourisme et des services." },
