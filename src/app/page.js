@@ -14,7 +14,6 @@ import JobsPreview from "@/components/Home/JobsPreview";
 const AnimatedHero = withInViewAnimation(HeroSection);
 const AnimatedSolutionsRH = withInViewAnimation(SolutionsRH);
 const AnimatedEconomicSector = withInViewAnimation(SecteursActivite);
-const AnimatedSlider = withInViewAnimation(Slider);
 const AnimatedJobsByLocation = withInViewAnimation(JobsByLocation);
 const AnimatedStatsSection = withInViewAnimation(StatsSection);
 const AnimatedJobsPreview= withInViewAnimation(JobsPreview);
@@ -28,11 +27,10 @@ export default function HomePage() {
     <>
         <AnimatedHero/>
         <AnimatedEconomicSector/>
-        <AnimatedSolutionsRH/>
-        <AnimatedSlider/>
-        <AnimatedJobsByLocation/>
         <AnimatedStatsSection/>
+        <AnimatedJobsByLocation/>
         <AnimatedJobsPreview/>
+        <AnimatedSolutionsRH/>
         <AnimatedCallToActionJobs/>
         <AnimatedAgencesSection/>
     </>

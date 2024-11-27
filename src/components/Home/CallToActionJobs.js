@@ -6,7 +6,7 @@ export const CallToActionJobs = () => {
     return (
         <motion.div
         id="keys-recrute"
-            className="bg-yellow-500 text-black py-12 px-6 "
+            className="mt-2 max-w-7xl mx-auto  bg-yellow-500 text-black  py-12 px-6 rounded-3xl "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -21,7 +21,7 @@ export const CallToActionJobs = () => {
                 Rejoignez l&#39;équipe KEYS ! 🚀 <br />
                 Keys
                 <motion.span
-                    className="px-3 bg-white cursor-pointer"
+                    className="px-3 bg-white cursor-pointer rounded-lg"
                     style={{ display: "inline-block" }}
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -29,7 +29,7 @@ export const CallToActionJobs = () => {
                     Recrute
                 </motion.span>{" "}
                 pour                <motion.span
-                    className="px-3 bg-black text-white  cursor-pointer"
+                    className="px-3 bg-black text-white  cursor-pointer rounded-lg"
                     style={{ display: "inline-block" }}
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -52,7 +52,7 @@ export const CallToActionJobs = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                <button className="flex items-center gap-2 hover:gap-4 text-md w-max mx-auto px-12 mt-8 bg-black text-white py-3 font-semibold hover:bg-white hover:text-black transition-all duration-400 group rounded-lg overflow-hidden">
+                <button className="flex items-center gap-2 hover:gap-4 text-md w-max mx-auto px-12 mt-8 bg-black text-white py-3 font-semibold hover:bg-white hover:text-black transition-all duration-400 group rounded-3xl overflow-hidden">
                     <span className="group-hover:scale-125 text-3xl transition-all duration-400">👊 </span>Postuler maintnant !
                 </button>
             </motion.div>

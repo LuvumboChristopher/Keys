@@ -3,43 +3,17 @@ import { TfiSearch, TfiLocationArrow, TfiWand } from "react-icons/tfi";
 
 export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation, colorChanged }) => {
     return (
-        <motion.div
-            className=" mx-auto hidden lg:block fixed left-0 right-0 h-auto z-40 border border-black text-xs duration-300"
-            initial={{ y: -200, opacity: 0 }}
-            animate={{
-                y: showBar ? 134 : -200,
-                opacity: showBar ? 1 : 0
-            }}
-            transition={{
-                type: "spring",
-                stiffness: 80,
-                damping: 20,
-                opacity: { duration: 0.5 },
-            }}
-            style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 40,
-                backgroundColor: scrolled ? "white" : "transparent",
-                boxShadow: scrolled ? "0px 4px 6px rgba(0, 0, 0, 0.05)" : "none",
-            }}
+       <>
+        {showBar &&  <motion.div
+            className="bg-transparent py-3 mx-auto hidden lg:block h-auto z-20 text-xs  duration-300 "
         >
             <motion.div
-                className="flex justify-center duration-300"
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ ease: "easeOut" }}
+                className="container flex justify-center duration-300 rounded-full overflow-hidden pl-10"
                 style={{
-                    background: scrolled
-                        ? colorChanged
-                            ? "linear-gradient(to right, white 50%, #ebb305 50%)"
-                            : "linear-gradient(to right, white 50%, black 50%)" 
-                        : "transparent",
+                    boxShadow: scrolled ? "0px 4px 6px rgba(0, 0, 0, 0.05)" : "none",
                 }}
             >
-                <div className="container flex flex-col lg:flex-row items-center bg-white duration-300 cursor-pointer">
+                <div className="w-full flex flex-col lg:flex-row items-center bg-white duration-300 cursor-pointer ">
                     <div className="w-full lg:w-3/5 border-b lg:border-none mb-8 lg:mb-0 flex items-center">
                         <TfiSearch className="text-xl text-gray-700" />
                         <input
@@ -65,6 +39,7 @@ export const SearchComponentWhite = ({ scrolled, showBar, location, setLocation,
                     </button>
                 </div>
             </motion.div>
-        </motion.div>
+        </motion.div> }
+        </>
     );
 };

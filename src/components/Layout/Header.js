@@ -7,13 +7,11 @@ import { useState, useEffect } from "react";
 import { FaFileUpload, FaLocationArrow, FaUser } from "react-icons/fa";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-import { SearchComponentWhite } from "./SearchComponentWhite";
 import HamburgerMenu from "./HamburgerMenu";
+import { SearchComponentWhite } from "./SearchComponentWhite";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [colorChanged, setColorChanged] = useState(false);
   const [showBar, setShowBar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, setLocation] = useState("");
@@ -23,7 +21,6 @@ const Header = () => {
     const scrollThreshold = window.innerHeight * 0.35;
     const scrollTop = window.scrollY;
 
-    setColorChanged(scrollTop > 620 );
     setScrolled(scrollTop > 0);
     setShowBar(scrollTop >= scrollThreshold);
   };
@@ -48,22 +45,23 @@ const Header = () => {
     : true;
 
   return (
-    <header>
-      {/* Header */}
+    <>
       <header
         style={{
           position: "fixed",
-          top: 0,
+      
           left: 0,
           right: 0,
           zIndex: 50,
           transition: "all 0.3s ease-in-out",
-          backgroundColor: colorChanged ? "black" : scrolled ? "white" : "transparent",
-          color: colorChanged ? "white" : "black",
-          borderBottom: colorChanged ? "none" : scrolled ? "1px solid black" : "",
+          backgroundColor: scrolled ? "white" : "transparent",
+          boxShadow: scrolled
+          ? "0px 4px 6px rgba(0, 0, 0, 0.2)" 
+          : "none",
+          color: "black",
         }}
       >
-        <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[134px]">
+        <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[145px]">
           <motion.div
             className="hidden lg:flex gap-5"
             initial={{ opacity: 0 }}
@@ -85,11 +83,10 @@ const Header = () => {
             </ul>
           </motion.div>
 
-          {/* Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          <div className="absolute left-1/2 transform -translate-x-1/2 hover:transform hover:translate-y-[-3px] transition-all">
             <Link href="/">
               <Image
-                src={colorChanged ? "/images/keyslogos/Keys-logo-white-yellow.svg" : "/images/keyslogos/Keys-logo-black-yellow.svg"}
+                src="/images/keyslogos/Keys-logo-black-yellow.svg"
                 alt="Keys"
                 title="Keys"
                 width={100}
@@ -103,8 +100,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="flex justify-between items-center gap-8"
-        >
-            {/* Enlace al perfil */}
+          >
             <div className="hidden lg:flex items-center">
                 <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
                     <FaUser />
@@ -112,25 +108,25 @@ const Header = () => {
                 </Link>
             </div>
 
-            {/* Botón de menú */}  
             <HamburgerMenu
-              colorChanged={colorChanged}
               isMenuOpen={isMenuOpen}
               toggleMenu={toggleMenu}
             />
-        </motion.div>
+          </motion.div>
         </div>
-      </header>
-      <SearchComponentWhite
-        scrolled={scrolled}
-        showBar={showBar}
-        location={location}
-        setLocation={setLocation}
-        colorChanged={colorChanged}
+        {/**
+         *   <SearchComponentWhite
+          scrolled={scrolled}
+          showBar={showBar}
+          location={location}
+          setLocation={setLocation}
         />
+         * 
+         */}
+      
+        </header>
       <Sidebar
         isMenuOpen={isMenuOpen}
-        colorChanged={colorChanged}
         toggleMenu={toggleMenu}
       />
       {isMenuOpen && (
@@ -139,7 +135,7 @@ const Header = () => {
           onClick={toggleMenu}
         ></div>
       )}
-    </header>
+    </>
   );
 };
 

@@ -20,7 +20,7 @@ export default function JobsPreview() {
                 <div className="relative z-10">
                     <h2 className="text-center text-3xl lg:text-4xl py-2">
                         Dernières<motion.span
-                            className="px-3 bg-yellow-500 cursor-pointer"
+                            className="px-3 bg-yellow-500 cursor-pointer rounded-lg"
                             style={{ display: "inline-block" }}
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
@@ -36,7 +36,7 @@ export default function JobsPreview() {
 
                 <div className="flex justify-center items-center mb-4 space-x-4 overflow-scroll ">
                     <button
-                        className={`font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-lg overflow-hidden`}
+                        className={`font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-xl overflow-hidden`}
                         onClick={() => setSelectedSector("All")}
                     >
                         <p className="text-sm p-3">Tous</p>
@@ -46,7 +46,7 @@ export default function JobsPreview() {
                         sectors.map((sector) => (
                             <button
                                 key={sector.name}
-                                className={`  font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-lg overflow-hidden`}
+                                className={`  font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-xl overflow-hidden`}
                                 onClick={() => setSelectedSector(sector.name)}
                             >
                                 <p className="text-sm p-3">{sector.name}</p>
@@ -68,7 +68,7 @@ export default function JobsPreview() {
                         {filteredJobs.map((job, index) => (
                             <div
                                 key={job.id}
-                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer rounded-lg overflow-hidden group"
+                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer rounded-3xl overflow-hidden group"
                             >
                                 <div className="absolute inset-0 bg-white clip-path-triangle"></div>
                                 <div className="absolute top-0 right-0 bottom-0 flex justify-end items-center z-10 pr-4">
@@ -112,7 +112,7 @@ export default function JobsPreview() {
                     </div>
                 )}
 
-                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-3 transition-all duration-400 rounded-lg overflow-hidden">
+                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-3 transition-all duration-400 rounded-3xl overflow-hidden">
                         Voir toutes les offres
                 </Link>
             </div>

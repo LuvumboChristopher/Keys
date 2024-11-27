@@ -47,7 +47,7 @@ const SecteursActivite = () => {
 
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
-      spaceBetween: 1,
+      spaceBetween: 12,
       centeredSlides: true,
       initialSlide: 1,
       loop: true,
@@ -65,17 +65,14 @@ const SecteursActivite = () => {
         crossFade: true,
       },
       breakpoints: {
-        1440: {
-          slidesPerView: 3.5,
-        },
         1024: {
           slidesPerView: 3,
         },
         768: {
-          slidesPerView: 2.5,
+          slidesPerView: 2,
         },
         480: {
-          slidesPerView: 1.5,
+          slidesPerView: 1,
         },
       },
     });
@@ -137,14 +134,14 @@ const SecteursActivite = () => {
   ];
 
   return (
-    <section className="bg-gray-50 border-t border-b">
+    <section className="bg-gray-50 border-t border-b pb-14">
       <div className="">
         <div className="relative group/nav">
           <div id="secteurs-d'activité" className="container py-8">
             <h2 className="text-center text-3xl lg:text-4xl pb-6 lg:py-2">
               Tous nos
               <motion.span
-                className="px-3 bg-yellow-500 cursor-pointer"
+                className="px-3 bg-yellow-500 cursor-pointer rounded-lg"
                 style={{ display: "inline-block" }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -181,7 +178,7 @@ const SecteursActivite = () => {
 
           <motion.div
             ref={swiperRef}
-            className="swiper-container slider-center-inline"
+            className="max-w-7xl mx-auto swiper-container slider-center-inline"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
             transition={{ duration: 0.6 }}
@@ -195,7 +192,7 @@ const SecteursActivite = () => {
                   aria-label={`${index + 1} / ${sectors.length}`}
                   key={index}
                 >
-                  <div className="group relative  overflow-hidden cursor-pointer">
+                  <div className="group relative rounded-3xl overflow-hidden cursor-pointer">
                     <div className="relative width-[616px] h-[400px] xl:h-[310px]  w-full overflow-hidden">
                       <Image
                         src={sector.image}
@@ -207,19 +204,11 @@ const SecteursActivite = () => {
                       <div className="absolute inset-0 bg-black opacity-60"></div>
 
                     </div>
-                    <div className="w-[calc(100%-4px)] absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
+                    <div className="w-[calc(100%-4px)] text-center absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
                       <div className="flex-1 text-colorButteryWhite">
-                        <h1 className="flex items-center justify-between mb-[15px] text-white text-xl font-thin transition-all duration-300"
+                        <h1 className="w-full mx-auto mb-[15px] text-white text-2xl font-thin transition-all duration-300"
                           style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}>
                           {sector.name}
-                          <div className="hidden inline-flex items-start justify-center overflow-hidden" href="/">
-                            <FaKey
-                              className="text-xl translate-x-0 opacity-100 transition-all duration-500 ease-in-out group-hover:translate-x-full group-hover:opacity-0"
-                            />
-                            <FaKey
-                              className="text-xl text-yellow-500 absolute -translate-x-full opacity-0 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100"
-                            />
-                          </div>
                         </h1>
                         <p className="text-sm line-clamp-2">{sector.description}</p>
                       </div>

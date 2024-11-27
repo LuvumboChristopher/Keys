@@ -31,7 +31,7 @@ const JobsByLocation = () => {
         >
           Emplois par{" "}
           <motion.span
-            className="px-3 bg-yellow-500 cursor-pointer"
+            className="px-3 bg-yellow-500 cursor-pointer rounded-lg"
             style={{ display: "inline-block" }}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -47,11 +47,11 @@ const JobsByLocation = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
+      <div className="container gap-6 md:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
         {cities.map((city, index) => (
           <Link key={index} href={`/jobs/${index}`} passHref>
-            <div className="relative group overflow-hidden cursor-pointer shadow-lg">
-              <div className="h-[270px] transition-all duration-500 group-hover:scale-105">
+            <div className="relative group overflow-hidden cursor-pointer rounded-3xl shadow-lg">
+              <div className="h-[300px] transition-all duration-500 group-hover:scale-105">
                 <Image
                   width={1000}
                   height={1000}
@@ -61,7 +61,7 @@ const JobsByLocation = () => {
                 />
                 <div className="absolute inset-0 bg-black transition-opacity duration-500 opacity-60 group-hover:opacity-70"></div>
               </div>
-              <div className="absolute top-24 flex w-full">
+              <div className="absolute top-28 flex w-full">
               <div className="max-w-xs mx-auto text-left">
                   <h1 className="pb-10 text-white text-3xl font-bold transition-all duration-300 group-hover:text-2xl text-shadow-sm"
                     style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>

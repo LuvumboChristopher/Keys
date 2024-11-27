@@ -29,7 +29,7 @@
 }
 
 html {
-  scroll-padding-top: 192px;
+  scroll-padding-top: 145px;
   scroll-behavior: smooth;
 
 }
@@ -64,6 +64,20 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9999; 
 }
 
+.custom-select {
+  position: relative;
+  padding-right: 2rem; /* Espacio para el ícono */
+}
+
+.custom-select::after {
+  content: '▼'; /* Pictograma */
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: black;
+}
 
 .hamburger-btn .line{
   width: 100%;

@@ -33,7 +33,9 @@ const Slider = () => {
     };
 
     return (
-        <section className="relative z-10">
+        <section className="relative z-10"
+        style={{ marginTop: "-70px" }} 
+>
             <div className="slider-container relative block overflow-hidden ">
                 <div
                     className="slider-list relative touch-pan-y select-none transition-transform duration-500"

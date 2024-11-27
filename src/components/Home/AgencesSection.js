@@ -59,7 +59,7 @@ const AgencesSection = () => {
                         >
                             Nos agences, à deux pas de
                             <motion.span
-                                className="flex items-center px-1 bg-yellow-500 cursor-pointer"
+                                className="flex items-center p-2 bg-yellow-500 cursor-pointer rounded-xl"
                                 style={{ display: "inline-block" }}
                                 whileHover={{ scale: 1.1 }}
                                 transition={{ type: "spring", stiffness: 300 }}
@@ -106,7 +106,7 @@ const AgencesSection = () => {
                                     </span>
                                     Agence de
                                     <motion.span
-                                        className="px-2 bg-black text-white cursor-pointer"
+                                        className="px-2 bg-black text-white cursor-pointer rounded-lg"
                                         style={{ display: "inline-block" }}
                                         whileHover={{ scale: 1.1 }}
                                         transition={{
@@ -153,7 +153,7 @@ const AgencesSection = () => {
                                     </span>
                                     Agence de{" "}
                                     <motion.span
-                                        className="px-3 bg-black text-white cursor-pointer"
+                                        className="px-3 bg-black text-white cursor-pointer rounded-lg"
                                         style={{ display: "inline-block" }}
                                         whileHover={{ scale: 1.1 }}
                                         transition={{

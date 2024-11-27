@@ -19,7 +19,7 @@ const JobsPage = () => {
         experience: "",
         sector: "",
         keyword: "",
-        perPage: 6,
+        perPage: 4,
     });
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -91,26 +91,23 @@ const JobsPage = () => {
 
     return (
         <>
-            <div className="mx-auto flex gap-8">
+            <div className="mx-auto flex gap-8 bg-transparent">
                 <div className="w-full">
-                    <motion.div
-                        className="flex justify-center"
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        style={{
-                            background: "linear-gradient(to right, white 50%, #ebb305 50%)"
-                        }}
-                    >
-                        <JobSearchBar location={location} setLocation={setLocation} />
-                    </motion.div>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="bg-gray-100 border-t border-black"
+                        className="bg-gray-100 "
                     >
-                        <div className="container bg-grey-500 flex w-full gap-8 py-4">
+                    <motion.div
+                        className=" w-full max-w-7xl mx-auto "
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                    >
+                        <JobSearchBar location={location} setLocation={setLocation} />
+                    </motion.div>
+                        <div className="container bg-grey-500 flex w-full gap-8 pb-8">
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -122,7 +119,8 @@ const JobsPage = () => {
                                     handleFilterChange={handleFilterChange}
                                     handleResetFilters={handleResetFilters}
                                     sectors={sectors}
-                                />                        </motion.div>
+                                />
+                            </motion.div>
 
                             <div className="w-4/5">
                                 <JobList 

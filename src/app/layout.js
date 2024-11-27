@@ -1,8 +1,8 @@
 import "./globals.css";
-import DynamicHeader from "@/components/Layout/DynamicHeader";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
 import PaddingAdjuster from "@/components/Layout/PaddingAdjuster";
+import Header from "@/components/Layout/Header";
 
 export default function RootLayout({ children }) {
   return (
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         <title>Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH</title>
       </head>
       <body>
-        <DynamicHeader />
+        <Header />
         <PaddingAdjuster>{children}</PaddingAdjuster>
         <Footer />
         <ScrollToTop />
