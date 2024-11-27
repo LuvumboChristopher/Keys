@@ -200,7 +200,7 @@ const ContactPage = () => {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="w-full py-3 mt-4 text-lg font-semibold text-white bg-yellow-500 hover:bg-yellow-400 rounded-lg"
+                      className="w-full py-4 mt-4 text-md font-semibold text-white bg-yellow-500 hover:bg-yellow-400 rounded-lg"
                     >
                       Envoyer
                     </button>

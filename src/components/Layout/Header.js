@@ -45,7 +45,7 @@ const Header = () => {
           right: 0,
           zIndex: 50,
           transition: "all 0.3s ease-in-out",
-          backgroundColor: scrolled && isHomePage ? "white" : "transparent",
+          backgroundColor: scrolled ? "white" : "transparent",
           color: "black",
         }}
       >
@@ -80,7 +80,7 @@ const Header = () => {
                 width={100}
                 height={100}
                 loading="lazy"
-                className={`transition-opacity ease-in-out w-[120px] ${isHomePage ? (scrolled ? "opacity-100" : "opacity-0") : "opacity-100"}`}
+                className={`transition-opacity ease-in-out w-[125px] ${isHomePage ? (scrolled ? "opacity-100" : "opacity-0") : "opacity-100"}`}
               />
             </Link>
           </div>

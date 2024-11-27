@@ -30,7 +30,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
 
       </div>
       <nav className="py-5">
-        <ul className="py-2 space-y-2">
+        <ul className="py-2 space-y-5">
           <li className="relative group flex items-start space-x-2">
             <div>
               <Link
@@ -38,9 +38,9 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500"
                 onClick={toggleMenu}
               >
-                <h4>Offres d&#39;emploi</h4>
+                <h4 className="text-lg">Offres d&#39;emploi</h4>
               </Link>
-              <p className="text-xs pt-1">Nos offres actuelles</p>
+              <p className="text-xs">Nos offres actuelles</p>
             </div>
           </li>
           <li className="relative group flex items-start space-x-2">
@@ -50,9 +50,9 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
                 className="transition-colors duration-300 ease-in-out hover:text-yellow-500"
                 onClick={toggleMenu}
               >
-                <h4>Contact</h4>
+                <h4 className="text-lg">Contact</h4>
               </Link>
-              <p className="text-xs pt-1">Nous contacter</p>
+              <p className="text-xs">Nous contacter</p>
             </div>
           </li>
         </ul>
