@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
   return (
     <div
-      className={`sidebar fixed top-0 left-0 py-12 px-10 w-full sm:w-[375px] h-full ${colorChanged ? "bg-black text-white border-r-2" : "bg-white text-black "} transform z-[9999] ${isMenuOpen ? "open" : "closing"
+      className={`sidebar fixed top-0 left-0 py-12 px-10 w-full sm:w-[475px] h-full ${colorChanged ? "bg-black text-white border-r-2" : "bg-white text-black "} transform z-[9999] ${isMenuOpen ? "open" : "closing"
         } flex flex-col md:rounded-se-[50px] overflow-hidden `}
     >
       <div className="w-full flex justify-between items-center">

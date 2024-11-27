@@ -9,7 +9,7 @@ export default function PaddingAdjuster({ children }) {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            setPaddingTop(pathname !== "/" ? "134px" : "0");
+            setPaddingTop(pathname !== "/" ? "150px" : "0");
         }
     }, [pathname]);
 

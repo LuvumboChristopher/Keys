@@ -3,21 +3,34 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Sidebar from "./SideBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaFileUpload, FaLocationArrow, FaUser } from "react-icons/fa";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const logoVisibility = pathname === "/" ? true : true;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -28,11 +41,11 @@ const Header = () => {
           right: 0,
           zIndex: 50,
           transition: "all 0.3s ease-in-out",
-          backgroundColor: "white",
+          backgroundColor: scrolled ? "white" : "transparent",
           color: "black",
         }}
       >
-        <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[145px]">
+        <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[150px]">
           <motion.div
             className="hidden lg:flex gap-5"
             initial={{ opacity: 0 }}
@@ -63,7 +76,7 @@ const Header = () => {
                 width={100}
                 height={100}
                 loading="lazy"
-                className={`transition-opacity ease-in-out ${logoVisibility ? "opacity-100" : "opacity-0"} w-[130px]`}
+                className={`transition-opacity ease-in-out w-[120px] ${scrolled ? "opacity-100" : "opacity-0"}`}
               />
             </Link>
           </div>

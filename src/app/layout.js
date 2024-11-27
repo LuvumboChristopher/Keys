@@ -1,8 +1,7 @@
-"use client";
-
 import "./globals.css";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
+import PaddingAdjuster from "@/components/Layout/PaddingAdjuster";
 import Header from "@/components/Layout/Header";
 
 export default function RootLayout({ children }) {
@@ -29,7 +28,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
-        <div>{children}</div>
+        <PaddingAdjuster>{children}</PaddingAdjuster>
         <Footer />
         <ScrollToTop />
       </body>
