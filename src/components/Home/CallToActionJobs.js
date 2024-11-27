@@ -6,7 +6,7 @@ export const CallToActionJobs = () => {
     return (
         <motion.div
         id="keys-recrute"
-            className="mt-2 max-w-7xl mx-auto  bg-yellow-500 text-black  py-12 px-6 rounded-3xl "
+            className="mt-2 container  max-w-7xl mx-auto  bg-yellow-500 text-black  py-12 px-6 rounded-3xl "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -39,7 +39,7 @@ export const CallToActionJobs = () => {
             </motion.h1>
 
             <motion.p
-                className="text-md text-center mt-4 max-w-7xl mx-auto"
+                className="text-sm md:text-md text-center mt-4 max-w-7xl mx-auto"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}

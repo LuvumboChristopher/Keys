@@ -47,6 +47,9 @@ const Header = () => {
           transition: "all 0.3s ease-in-out",
           backgroundColor: scrolled ? "white" : "transparent",
           color: "black",
+          boxShadow: scrolled
+          ? "0px 4px 6px rgba(0, 0, 0, 0.2)" 
+          : "none",
         }}
       >
         <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[150px]">

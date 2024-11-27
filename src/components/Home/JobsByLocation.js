@@ -47,9 +47,9 @@ const JobsByLocation = () => {
         </p>
       </div>
 
-      <div className="container gap-6 md:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
+      <div className="container gap-6 flex flex-col gap-8 md:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
         {cities.map((city, index) => (
-          <Link key={index} href={`/jobs/${index}`} passHref>
+          <Link key={index} href={`/jobs`} >
             <div className="relative group overflow-hidden cursor-pointer rounded-3xl shadow-lg">
               <div className="h-[300px] transition-all duration-500 group-hover:scale-105">
                 <Image
