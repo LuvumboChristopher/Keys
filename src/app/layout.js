@@ -1,3 +1,5 @@
+"use client";
+
 import "./globals.css";
 import Footer from "@/components/Layout/Footer";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
