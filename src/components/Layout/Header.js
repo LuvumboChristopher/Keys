@@ -3,61 +3,32 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Sidebar from "./SideBar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaFileUpload, FaLocationArrow, FaUser } from "react-icons/fa";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import HamburgerMenu from "./HamburgerMenu";
-import { SearchComponentWhite } from "./SearchComponentWhite";
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [showBar, setShowBar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [location, setLocation] = useState("");
   const pathname = usePathname();
-
-  const checkScrollPosition = () => {
-    const scrollThreshold = window.innerHeight * 0.35;
-    const scrollTop = window.scrollY;
-
-    setScrolled(scrollTop > 0);
-    setShowBar(scrollTop >= scrollThreshold);
-  };
-
-  useEffect(() => {
-    checkScrollPosition();
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", checkScrollPosition);
-    return () => {
-      window.removeEventListener("scroll", checkScrollPosition);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const logoVisibility = pathname === "/"
-    ? scrolled || window.scrollY > 0
-    : true;
+  const logoVisibility = pathname === "/" ? true : true;
 
   return (
     <>
       <header
         style={{
           position: "fixed",
-      
           left: 0,
           right: 0,
           zIndex: 50,
           transition: "all 0.3s ease-in-out",
-          backgroundColor: scrolled ? "white" : "transparent",
-          boxShadow: scrolled
-          ? "0px 4px 6px rgba(0, 0, 0, 0.2)" 
-          : "none",
+          backgroundColor: "white",
           color: "black",
         }}
       >
@@ -102,10 +73,10 @@ const Header = () => {
             className="flex justify-between items-center gap-8"
           >
             <div className="hidden lg:flex items-center">
-                <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
-                    <FaUser />
-                    Mon compte
-                </Link>
+              <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
+                <FaUser />
+                Mon compte
+              </Link>
             </div>
 
             <HamburgerMenu
@@ -114,17 +85,7 @@ const Header = () => {
             />
           </motion.div>
         </div>
-        {/**
-         *   <SearchComponentWhite
-          scrolled={scrolled}
-          showBar={showBar}
-          location={location}
-          setLocation={setLocation}
-        />
-         * 
-         */}
-      
-        </header>
+      </header>
       <Sidebar
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
