@@ -47,7 +47,7 @@ const SecteursActivite = () => {
 
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
-      spaceBetween: 12,
+      spaceBetween: 24,
       centeredSlides: true,
       initialSlide: 1,
       loop: true,
@@ -65,6 +65,9 @@ const SecteursActivite = () => {
         crossFade: true,
       },
       breakpoints: {
+        1280: {
+          slidesPerView: 3.5,
+        },
         1024: {
           slidesPerView: 3,
         },
@@ -146,7 +149,7 @@ const SecteursActivite = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-              secteurs
+                secteurs
               </motion.span>
               d’activité
             </h2>
@@ -175,10 +178,9 @@ const SecteursActivite = () => {
               et trouvez la clé de votre succès professionnel avec nous.
             </p>
           </div>
-
           <motion.div
             ref={swiperRef}
-            className="max-w-7xl mx-auto swiper-container slider-center-inline"
+            className="swiper-container slider-center-inline"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
             transition={{ duration: 0.6 }}
@@ -191,20 +193,23 @@ const SecteursActivite = () => {
                   role="group"
                   aria-label={`${index + 1} / ${sectors.length}`}
                   key={index}
+
                 >
-                  <div className="group relative rounded-3xl overflow-hidden cursor-pointer">
-                    <div className="relative width-[616px] h-[400px] xl:h-[310px]  w-full overflow-hidden">
+                  <div className="group relative rounded-3xl overflow-hidden cursor-pointer"
+                    style={{
+                      boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.52)",
+                    }}>
+                    <div className="relative width-[616px] h-[400px] xl:h-[300px]  w-full overflow-hidden transition-all duration-500 group-hover:scale-110">
                       <Image
                         src={sector.image}
                         alt={`secteur-${sector.name}`}
                         width={616}
                         height={390}
-                        className="h-full w-full object-cover transition-all duration-500 ease-in-out"
+                        className="h-full w-full object-cover duration-500  transition-all duration-500 ease-in-out"
                       />
-                      <div className="absolute inset-0 bg-black opacity-60"></div>
-
+                      <div className="absolute inset-0 bg-black duration-500  opacity-60 group-hover:opacity-40"></div>
                     </div>
-                    <div className="w-[calc(100%-4px)] text-center absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
+                    <div className="w-[calc(100%-4px)] text-left absolute bottom-0 flex flex-col justify-between items-start gap-y-8 p-7 sm:flex-row sm:items-center">
                       <div className="flex-1 text-colorButteryWhite">
                         <h1 className="w-full mx-auto mb-[15px] text-white text-2xl font-thin transition-all duration-300"
                           style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}>

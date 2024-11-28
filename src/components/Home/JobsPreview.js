@@ -9,13 +9,11 @@ import { motion } from "framer-motion";
 
 export default function JobsPreview() {
     const [selectedSector, setSelectedSector] = useState("All");
-
     const filteredJobs = selectedSector === "All"
         ? jobs.slice(0, 4)
         : jobs.filter(job => job.sector === selectedSector).slice(0, 4);
-
     return (
-        <section id="dernières-offres-d'emploi" className="bg-gray-100 py-12 border-t border-b">
+        <section id="dernières-offres-d'emploi" className="bg-gray-100 pt-7 pb-10 border-t border-b">
             <div className="container">
                 <div className="relative z-10">
                     <h2 className="text-center text-3xl lg:text-4xl py-2">
@@ -25,7 +23,7 @@ export default function JobsPreview() {
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                        offres
+                            offres
                         </motion.span>
                         d&#39;emploi
                     </h2>
@@ -33,15 +31,14 @@ export default function JobsPreview() {
                         Découvrez les dernières opportunités d&#39;emploi dans divers secteurs. Sélectionnez un secteur pour voir les offres les plus pertinentes.
                     </p>
                 </div>
-
                 <div className="flex justify-center items-center mb-4 space-x-4 overflow-scroll ">
                     <button
                         className={`font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-xl overflow-hidden`}
                         onClick={() => setSelectedSector("All")}
+                        
                     >
                         <p className="text-sm p-3">Tous</p>
                     </button>
-
                     {sectors && sectors.length > 0 ? (
                         sectors.map((sector) => (
                             <button
@@ -56,7 +53,6 @@ export default function JobsPreview() {
                         <p className="text-black">Aucun secteur disponible.</p>
                     )}
                 </div>
-
                 {filteredJobs.length === 0 ? (
                     <div className="text-center py-24">
                         <FaRegSadCry className="w-full text-7xl text-black mb-4 text-center" />
@@ -66,54 +62,54 @@ export default function JobsPreview() {
                 ) : (
                     <div className="grid gap-6 md:grid-cols-2 py-4">
                         {filteredJobs.map((job, index) => (
-                            <div
+                            <motion.div
                                 key={job.id}
-                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer rounded-3xl overflow-hidden group"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.2 }}
+                                className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer rounded-3xl overflow-hidden hover:outline outline-gray-400 duration-300 transition group"
+                                style={{
+                                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
+                                }}
                             >
-                                <div className="absolute inset-0 bg-white clip-path-triangle"></div>
-                                <div className="absolute top-0 right-0 bottom-0 flex justify-end items-center z-10 pr-4">
-
-                                </div>
-
-                                <Link href={`/jobs/${job.id}`} passHref>
-                                    <div className="absolute top-6 right-6 z-10 ">
-                                        <FaKey
-                                            className="text-3xl group-hover:scale-110 transition-all duration-300"
-                                        />
-                                        <div className="w-32 absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pl-2 text-sm">
-                                            Voir l&#39;offre
+                                <Link href={`/jobs`} passHref>
+                                    <div className="absolute inset-0 bg-white clip-path-triangle"></div>
+                                    <div className="absolute top-0 right-0 bottom-0 flex justify-end items-center z-10 pr-4">
+                                    </div>
+                                    <div className="absolute top-6 right-6 z-10 group">
+                                        <FaKey className="text-black text-3xl group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 opacity-100 " />
+                                    </div>
+                                    <div className="job-card-content relative z-10 text-black">
+                                        <h3 className="text-xl font-semibold pb-4">{job.title}</h3>
+                                        <div className="space-y-1">
+                                            <div className="flex items-center">
+                                                <FaBuilding className="mr-3 text-gray-600" />
+                                                <p className="text-gray-700">{job.company}</p>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <FaMapMarkerAlt className="mr-3 text-gray-600" />
+                                                <p className="text-gray-700">{job.location}</p>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <FaClock className="mr-3 text-gray-600" />
+                                                <p className="text-gray-700">{job.contractType} - {job.type}</p>
+                                            </div>
                                         </div>
+                                        <div className="py-4">
+                                            <p className="text-gray-700">Expérience requise: {job.experienceRequired}</p>
+                                        </div>
+                                        <p className="text-gray-700 mb-4">{job.description}</p>
                                     </div>
                                 </Link>
-
-                                <div className="job-card-content relative z-10 text-black">
-                                    <h3 className="text-xl font-semibold pb-4">{job.title}</h3>
-                                    <div className="space-y-1">
-                                        <div className="flex items-center">
-                                            <FaBuilding className="mr-3 text-gray-600" />
-                                            <p className="text-gray-700">{job.company}</p>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <FaMapMarkerAlt className="mr-3 text-gray-600" />
-                                            <p className="text-gray-700">{job.location}</p>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <FaClock className="mr-3 text-gray-600" />
-                                            <p className="text-gray-700">{job.contractType} - {job.type}</p>
-                                        </div>
-                                    </div>
-                                    <div className="py-4">
-                                        <p className="text-gray-700">Expérience requise: {job.experienceRequired}</p>
-                                    </div>
-                                    <p className="text-gray-700 mb-4">{job.description}</p>
-                                </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 )}
-
-                <Link href="/jobs" className="mt-4 w-96 mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-3 transition-all duration-400 rounded-3xl overflow-hidden">
-                        Voir toutes les offres
+                <Link href="/jobs" className="mt-6 w-max mx-auto bg-white hover:bg-black hover:text-white border flex items-center justify-center bg-transparent font-semibold px-12 py-5 transition-all duration-400 rounded-3xl overflow-hidden"
+                    style={{
+                        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
+                    }}>
+                    Voir toutes les offres
                 </Link>
             </div>
         </section>

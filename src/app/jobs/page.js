@@ -100,7 +100,7 @@ const JobsPage = () => {
                         className="bg-gray-100 "
                     >
                     <motion.div
-                        className=" w-full max-w-7xl mx-auto "
+                        className="w-full max-w-7xl mx-auto "
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
@@ -121,7 +121,6 @@ const JobsPage = () => {
                                     sectors={sectors}
                                 />
                             </motion.div>
-
                             <div className="w-4/5">
                                 <JobList 
                                 jobs={jobs} currentJobs={currentJobs} totalPages={totalPages} currentPage={currentPage} handlePageChange={handlePageChange}

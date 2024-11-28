@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -23,13 +22,13 @@ const Footer = () => {
         {/* Logo & Description */}
         <div className="w-full lg:w-2/5 flex flex-col items-start lg:border-r pr-6">
           <Image
-            layout="responsive"
-            width={16}
-            height={9}
-            className="max-w-[100px]"
             src="/images/keyslogos/Keys-logo-black.svg"
+            width={100}
+            height={56} // Proporción 16:9
+            className="object-contain"
             alt="Logo"
           />
+
           <p className="text-sm mt-6 max-w-md mr-auto">
             Créé en 2017, Keys a pour ambition de s&#39;imposer durablement sur le
             marché de l&#39;emploi. Nous vous mettons à disposition nos experts
@@ -37,18 +36,18 @@ const Footer = () => {
             vos attentes.
           </p>
           <ul className="mt-8 flex gap-8">
-            <Link href="https://www.linkedin.com/company/keys-int%C3%A9rim-recrutement">
+            <a href="https://www.linkedin.com/company/keys-int%C3%A9rim-recrutement">
               <li className="cursor-pointer flex items-center gap-2 text-sm">
                 Linkedin
                 <FaLinkedin className="text-sm md:text-md hover:text-gray-600" />
               </li>
-            </Link>
-            <Link href="https://www.instagram.com/keysrecrutement">
+            </a>
+            <a href="https://www.instagram.com/keysrecrutement">
               <li className="cursor-pointer flex items-center gap-2 text-sm">
                 Instagram
                 <FaInstagram className="text-sm md:text-md hover:text-gray-600" />
               </li>
-            </Link>
+            </a>
           </ul>
         </div>
 
@@ -58,24 +57,24 @@ const Footer = () => {
             <h4 className="text-md font-semibold mb-4">Navigation</h4>
             <ul className="space-y-1">
               <li>
-                <Link href="/#secteurs-d'activité" className="text-sm hover:underline">
+                <a href="/#secteurs-d'activité" className="text-sm hover:underline">
                   Secteurs d’activité
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/#emplois-par-localisation" className="text-sm hover:underline">
+                <a href="/#emplois-par-localisation" className="text-sm hover:underline">
                   Emplois par localisation
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/#dernières-offres-d'emploi" className="text-sm hover:underline">
+                <a href="/#dernières-offres-d'emploi" className="text-sm hover:underline">
                   Dernières offres d&#39;emploi
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/#nos-agences" className="text-sm hover:underline">
+                <a href="/#nos-agences" className="text-sm hover:underline">
                   Nos agences
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -83,24 +82,24 @@ const Footer = () => {
             <h4 className="text-md font-semibold mb-4">Nos solutions</h4>
             <ul className="space-y-1">
               <li>
-                <Link href="/mon-application" className="text-sm hover:underline">
+                <a href="/mon-application" className="text-sm hover:underline">
                   Mon compte
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/mon-application" className="text-sm hover:underline">
+                <a href="/mon-application" className="text-sm hover:underline">
                   Mon application
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="https://www.keys-rh.fr/worker/security/login" className="text-sm hover:underline">
+                <a href="https://www.keys-rh.fr/worker/security/login" className="text-sm hover:underline">
                   Espace candidat
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="https://www.keys-rh.fr/company/security/login" className="text-sm hover:underline">
+                <a href="https://www.keys-rh.fr/company/security/login" className="text-sm hover:underline">
                   Espace recruteur
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -108,26 +107,24 @@ const Footer = () => {
             <h4 className="text-md font-semibold mb-4">Liens utiles</h4>
             <ul className="space-y-1">
               <li>
-                <Link href="https://www.keys-rh.fr/worker/security/register" className="text-sm hover:underline">
+                <a href="https://www.keys-rh.fr/worker/security/register" className="text-sm hover:underline">
                   Créer un compte
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/politique-de-gestion-des-cookies" className="text-sm hover:underline">
+                <a href="/politique-de-gestion-des-cookies" className="text-sm hover:underline">
                   Politique de gestion des cookies
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/politique-de-confidentialite" className="text-sm hover:underline">
+                <a href="/politique-de-confidentialite" className="text-sm hover:underline">
                   Politique de confidentialité
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </motion.footer>
-
-      {/* Bottom Footer */}
       <motion.footer
         className="bg-white py-6 border-t"
         initial={{ opacity: 0 }}
@@ -138,27 +135,27 @@ const Footer = () => {
           <p>Copyright © {currentYear || "loading..."} Keys - Intérim & Recrutement</p>
           <p>
             Réalisation par 🚀
-            <Link
+            <a
               href="https://www.linkedin.com/in/christopher-luvumbo/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold ml-1 hover:text-yellow-400"
             >
               L.Christopher
-            </Link>
+            </a>
           </p>
           <div className="flex space-x-2">
-            <Link href="/mentions-legales" className="hover:underline">
+            <a href="/mentions-legales" className="hover:underline">
               Mentions légales
-            </Link>
+            </a>
             <span>|</span>
-            <Link href="/cgu" className="hover:underline">
+            <a href="/cgu" className="hover:underline">
               CGU
-            </Link>
+            </a>
             <span>|</span>
-            <Link href="/plan-du-site" className="hover:underline">
+            <a href="/plan-du-site" className="hover:underline">
               Plan du site
-            </Link>
+            </a>
           </div>
         </div>
       </motion.footer>

@@ -8,10 +8,12 @@ import { FaFileUpload, FaLocationArrow, FaUser } from "react-icons/fa";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import HamburgerMenu from "./HamburgerMenu";
+import { SearchComponent } from "./SearchComponent";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showBar, setShowBar] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -20,10 +22,17 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50 && !scrolled) {
         setScrolled(true);
-      } else {
+      } else if (scrollPosition <= 50 && scrolled) {
         setScrolled(false);
+      }
+
+      if (scrollPosition > 450 && !showBar) {
+        setShowBar(true);
+      } else if (scrollPosition <= 150 && showBar) {
+        setShowBar(false);
       }
     };
 
@@ -32,7 +41,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrolled, showBar]);
 
   const isHomePage = pathname === "/";
 
@@ -47,9 +56,6 @@ const Header = () => {
           transition: "all 0.3s ease-in-out",
           backgroundColor: scrolled ? "white" : "transparent",
           color: "black",
-          boxShadow: scrolled
-          ? "0px 4px 6px rgba(0, 0, 0, 0.2)" 
-          : "none",
         }}
       >
         <div className="container mx-auto flex justify-end lg:justify-between items-center relative h-[150px]">
@@ -63,10 +69,10 @@ const Header = () => {
                 <Link href="https://www.keys-rh.fr/worker/" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
                   <FaFileUpload />
                   Candidature
-                </Link> 
+                </Link>
               </li>
               <li>
-                <Link href="#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all `}>
+                <Link href="#nos-agences" className={`flex items-center gap-2 p-[7px] px-[10px] sm:gap-4 hover:transform hover:translate-y-[-3px] transition-all`}>
                   <FaLocationArrow />
                   Trouver une agence
                 </Link>
@@ -74,7 +80,7 @@ const Header = () => {
             </ul>
           </motion.div>
 
-          <div className="absolute left-1/2 transform -translate-x-1/2 hover:transform hover:translate-y-[-3px] transition-all">
+          <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link href="/">
               <Image
                 src="/images/keyslogos/Keys-logo-black-yellow.svg"
@@ -83,7 +89,7 @@ const Header = () => {
                 width={100}
                 height={100}
                 loading="lazy"
-                className={`transition-opacity ease-in-out w-[125px] ${isHomePage ? (scrolled ? "opacity-100" : "opacity-0") : "opacity-100"}`}
+                className={`transition-opacity ease-in-out w-[145px] ${isHomePage ? (scrolled ? "opacity-100" : "opacity-0") : "opacity-100"}`}
               />
             </Link>
           </div>
@@ -98,24 +104,32 @@ const Header = () => {
                 Mon compte
               </Link>
             </div>
-
             <HamburgerMenu
               isMenuOpen={isMenuOpen}
               toggleMenu={toggleMenu}
             />
           </motion.div>
         </div>
+        <SearchComponent
+          scrolled={scrolled}
+          showBar={showBar}
+        />
       </header>
+
+
       <Sidebar
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
       />
+
       {isMenuOpen && (
         <div
-          className={`overlay-opacity ${isMenuOpen ? "open" : ""}`}
+          className={`fixed inset-0 bg-black ${isMenuOpen ? "opacity-80" : "opacity-0"
+            } transition-all duration-[900ms] ease z-[9993]`}
           onClick={toggleMenu}
         ></div>
       )}
+
     </>
   );
 };

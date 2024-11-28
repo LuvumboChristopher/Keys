@@ -5,14 +5,12 @@
 @font-face {
   font-family: "Plus Jakarta Sans";
   src: url("/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
-  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Plus Jakarta Sans Bold";
   src: url("/fonts/PlusJakartaSans-ExtraBold.ttf") format("truetype");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -29,7 +27,7 @@
 }
 
 html {
-  scroll-padding-top: 150px;
+  scroll-padding-top: 235px;
   scroll-behavior: smooth;
 
 }
@@ -82,11 +80,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .hamburger-btn.open .line:nth-child(3) {
   transform: translateY(-14px) rotate(-45deg);
-}
-
-.hamburger-btn:hover {
-  transform: scale(1.05);
-  
 }
 
 

@@ -26,7 +26,7 @@ const JobsByLocation = () => {
 
   return (
     <section id="emplois-par-localisation" className="bg-gray-50 border-t border-b">
-      <div className="container text-center w-full mx-auto py-10">
+      <div className="container text-center w-full mx-auto pt-7 pb-10">
         <h2 className="text-center text-3xl lg:text-4xl py-2 text-shadow-xl"
         >
           Emplois par{" "}
@@ -47,11 +47,15 @@ const JobsByLocation = () => {
         </p>
       </div>
 
-      <div className="container gap-6 flex flex-col gap-8 md:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
+      <div className="bg-gray-50 max-w-7xl mx-auto flex flex-col gap-6 md:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 overflow-hidden">
         {cities.map((city, index) => (
           <Link key={index} href={`/jobs`} >
-            <div className="relative group overflow-hidden cursor-pointer rounded-3xl shadow-lg">
-              <div className="h-[300px] transition-all duration-500 group-hover:scale-105">
+            <div className="relative group overflow-hidden cursor-pointer rounded-3xl"
+             style={{
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.12)",
+          }}
+            >
+              <div className="h-[290px] transition-all duration-500 group-hover:scale-105">
                 <Image
                   width={1000}
                   height={1000}

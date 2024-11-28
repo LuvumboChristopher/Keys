@@ -18,7 +18,7 @@ const JobList = ({ jobs, currentJobs, totalPages, currentPage, handlePageChange 
                                 transition={{ duration: 1, delay: 1 }}
                                 className="relative job-card bg-white p-10 transition-transform transform duration-300 cursor-pointer rounded-3xl overflow-hidden hover:outline outline-gray-400 duration-300 transition group"
                             >
-                                <Link href={`/jobs/${job.id}`} passHref>
+                                <Link href={`/jobs`} passHref>
                                     <div className="absolute top-6 right-6 z-10 group">
                                         <FaKey className="text-black text-3xl group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 opacity-100 " />
                                     </div>

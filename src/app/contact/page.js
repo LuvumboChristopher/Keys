@@ -11,7 +11,7 @@ const ContactPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className={`grid grid-cols-1 md:grid-cols-2 relative bg-gray-100 md:h-[670px] ${isRecruiter ? "h-[1100px]" : "h-[970px]"} `}
+        className={`grid grid-cols-1 md:grid-cols-2 relative bg-gray-100 md:h-[680px] ${isRecruiter ? "h-[1100px]" : "h-[970px]"} `}
       >
         <motion.div
           className="md:rounded-ee-[100px] overflow-hidden"
@@ -191,7 +191,7 @@ const ContactPage = () => {
                     <textarea
                       id="message"
                       name="message"
-                      rows={isRecruiter ? "3" : "6"}
+                      rows={isRecruiter ? "3" : "7"}
                       required
                       className="mt-1 py-2 block w-full bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none resize-none"
                     />
@@ -200,7 +200,7 @@ const ContactPage = () => {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="w-full py-4 mt-4 text-md font-semibold text-white bg-yellow-500 hover:bg-yellow-400 rounded-lg"
+                      className="w-full py-4 mt-4 text-md font-semibold text-white bg-yellow-500 hover:bg-black rounded-lg"
                     >
                       Envoyer
                     </button>

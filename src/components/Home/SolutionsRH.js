@@ -65,7 +65,8 @@ const SolutionsRH = () => {
                 <div className="w-3xl">
                 <div className="w-3xl flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center justify-between gap-4">
                 <h3 className="pt-4 sm:pt-0 text-lg xl:text-xl">Espace intérimaire</h3>
-                        <Link href="/https://www.keys-rh.fr/worker/security/login" className="bg-black text-white text-sm p-2 px-10  border border-white hover:bg-transparent hover:text-black hover:border-black inline-block rounded-3xl overflow-hidden">
+                        <Link href="/https://www.keys-rh.fr/worker/security/login" className="bg-black text-white text-sm p-2 px-10  border border-white hover:bg-transparent hover:text-black hover:border-black inline-block rounded-3xl overflow-hidden"
+                        >
                             J&#39;y vais !
                         </Link>
                     </div>

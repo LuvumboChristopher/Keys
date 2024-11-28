@@ -1,16 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { TfiSearch, TfiLocationArrow, TfiWand } from "react-icons/tfi";
 import Link  from 'next/link';
 
 const JobSearchBar = ({ location, setLocation }) => {
-    return (
+    const firstInputRef = useRef(null);
 
+    useEffect(() => {
+        // Cuando el componente se monta, poner el foco en el primer input
+        if (firstInputRef.current) {
+            firstInputRef.current.focus();
+        }
+    }, []);
+
+    return (
         <div className="w-full max-w-7xl py-7 mx-auto flex gap-4 flex-row items-center duration-300 cursor-pointer ">
             <div className="w-full bg-white border-b lg:border rounded-3xl px-10 flex items-center group focus-within:border-gray-400">
                 <TfiSearch className="text-xl text-gray-700" />
                 <input
+                    ref={firstInputRef} 
                     placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise"
                     className="w-full px-3 py-[31px] text-gray-800 focus:outline-none text-sm"
                 />
@@ -32,9 +41,7 @@ const JobSearchBar = ({ location, setLocation }) => {
                 </div>
             </Link>
         </div>
-
     );
 };
 
 export default JobSearchBar;
-
