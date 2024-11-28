@@ -11,7 +11,7 @@ const ContactPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className={`grid grid-cols-1 md:grid-cols-2 relative bg-gray-100 md:h-[680px] ${isRecruiter ? "h-[1100px]" : "h-[970px]"} `}
+        className={`grid grid-cols-1 md:grid-cols-2 relative bg-gray-100  ${isRecruiter ? "h-[800px]" : "h-[700px]"} `}
       >
         <motion.div
           className="md:rounded-ee-[100px] overflow-hidden"
@@ -95,7 +95,6 @@ const ContactPage = () => {
               className={`section-form bg-gray-100 p-6 sm:p-8 md:p-10 lg:p-12 xl:p-0 xl:py-12 xl:pl-12`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
               layout
             >
               <div className="mt-6 md:m-0">
@@ -103,7 +102,7 @@ const ContactPage = () => {
                   {/* Campos comunes */}
                   <div className="w-full gap-10 flex">
                     <div className="w-1/2">
-                      <label htmlFor="name" className="block text-sm font-medium">
+                      <label htmlFor="name" className="block text-sm font-medium mb-3">
                         Nom <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -111,11 +110,11 @@ const ContactPage = () => {
                         id="name"
                         name="name"
                         required
-                        className="w-full mx-auto mt-1 py-2 block bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                        className="w-full mx-auto mt-1 p-4 block bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                       />
                     </div>
                     <div className="w-1/2">
-                      <label htmlFor="surname" className="block text-sm font-medium">
+                      <label htmlFor="surname" className="block text-sm font-medium mb-3">
                         Prénom <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -123,12 +122,12 @@ const ContactPage = () => {
                         id="surname"
                         name="surname"
                         required
-                        className="w-full mx-auto mt-1 py-2 block bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                        className="w-full mx-auto mt-1 p-4 block bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium">
+                    <label htmlFor="email" className="block text-sm font-medium mb-3">
                       E-mail <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -136,11 +135,11 @@ const ContactPage = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full mt-1 py-2 block w-full bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                      className="w-full mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium">
+                    <label htmlFor="phone" className="block text-sm font-medium mb-3">
                       Téléphone <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -148,14 +147,14 @@ const ContactPage = () => {
                       id="phone"
                       name="phone"
                       required
-                      className="mt-1 py-2 block w-full bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                      className="mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                     />
                   </div>
                   {/* Campos específicos para los reclutadores */}
                   {isRecruiter && (
                     <div className="gap-10 flex flex-col lg:flex-row">
                       <div className="w-full lg:w-1/2">
-                        <label htmlFor="companyName" className="block text-sm font-medium">
+                        <label htmlFor="companyName" className="block text-sm font-medium mb-3">
                           Nom de l&#39;entreprise <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -163,18 +162,18 @@ const ContactPage = () => {
                           id="companyName"
                           name="companyName"
                           required
-                          className="mt-1 py-2 block w-full bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                          className="mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                         />
                       </div>
                       <div className="w-full lg:w-1/2">
-                        <label htmlFor="companySize" className="block text-sm font-medium">
+                        <label htmlFor="companySize" className="block text-sm font-medium mb-3">
                           Taille de l&#39;entreprise <span className="text-red-500">*</span>
                         </label>
                         <select
                           id="companySize"
                           name="companySize"
                           required
-                          className="mt-1 py-2 block w-full bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none"
+                          className="mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                         >
                           <option value="small">Petite</option>
                           <option value="medium">Moyenne</option>
@@ -185,15 +184,15 @@ const ContactPage = () => {
                   )}
                   {/* Campo para el mensaje */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium">
+                    <label htmlFor="message" className="block text-sm font-medium mb-3">
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={isRecruiter ? "3" : "7"}
+                      rows={isRecruiter ? "5" : "5"}
                       required
-                      className="mt-1 py-2 block w-full bg-transparent border-b border-black focus:border-yellow-500 focus:ring-yellow-500 outline-none resize-none"
+                      className="mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none resize-none"
                     />
                   </div>
                   {/* Botón de envío */}

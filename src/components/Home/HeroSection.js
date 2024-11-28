@@ -98,7 +98,7 @@ const HeroSection = () => {
                     </motion.div>
                     <div className="w-full mx-auto">
                         <motion.div
-                            className="w-full max-w-5xl  mx-auto  mx-auto "
+                            className="w-full max-w-5xl  mx-auto  mx-auto pt-3 pb-7"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeInOut" }}
@@ -133,7 +133,7 @@ const HeroSection = () => {
                     </div>
                 </div>
                 <motion.p
-                    className="container text-lg sm:text-2xl lg:text-3xl text-center antialiased tracking-tight pt-16"
+                    className="container text-lg sm:text-2xl lg:text-3xl text-center antialiased tracking-tight pt-6"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
