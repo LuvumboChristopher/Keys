@@ -123,7 +123,7 @@ const HeroSection = () => {
                                     />
                                 </div>
                                 <Link className="w-1/2 mx-auto group" href="/jobs">
-                                    <button className="w-max flex  justify-center items-center gap-2 hover:gap-4 text-md text-center mx-auto px-6 py-[19px]  bg-black text-white font-semibold hover:bg-white hover:text-black transition-all duration-400 group rounded-3xl overflow-hidden">
+                                    <button className="w-full flex  justify-center items-center gap-2 hover:gap-4 text-md text-center mx-auto px-6 py-[19px]  bg-black text-white font-semibold hover:bg-white hover:text-black transition-all duration-400 group rounded-3xl overflow-hidden">
                                         <span className="group-hover:scale-125 text-3xl transition-all duration-400">👊 </span>
                                         <span>C&#39;est partie ! </span>
                                     </button>

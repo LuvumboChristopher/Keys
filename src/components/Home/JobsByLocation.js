@@ -29,7 +29,7 @@ const JobsByLocation = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const index = entry.target.getAttribute("data-index");
+        const index = parseInt(entry.target.getAttribute("data-index"), 10);
         if (entry.isIntersecting) {
           setIsVisible((prev) => {
             const updatedVisibility = [...prev];
@@ -41,16 +41,19 @@ const JobsByLocation = () => {
     }, { threshold: 0.5 });
 
     sectionRef.current.forEach((item) => {
-      observer.observe(item);
+      if (item) {
+        observer.observe(item);
+      }
     });
 
     return () => {
       sectionRef.current.forEach((item) => {
-        observer.unobserve(item);
+        if (item) {
+          observer.unobserve(item);
+        }
       });
     };
   }, []);
-
   return (
     <section id="emplois-par-localisation" className="bg-gray-50 border-t border-b">
       <div className="container text-center w-full mx-auto pt-7 pb-10">
