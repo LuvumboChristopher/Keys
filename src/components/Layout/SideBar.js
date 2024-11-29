@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { TfiBell, TfiBriefcase, TfiEmail, TfiKey, TfiLayoutListThumbAlt, TfiLocationPin } from "react-icons/tfi";
+import { TfiAgenda, TfiBell, TfiBriefcase, TfiEmail, TfiKey, TfiLayoutListThumbAlt, TfiLocationPin, TfiUser } from "react-icons/tfi";
 
 export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
   const [currentYear, setCurrentYear] = useState(null);
@@ -53,80 +53,78 @@ export default function Sidebar({ isMenuOpen, toggleMenu, colorChanged }) {
         <nav className="py-2">
           <ul className="py-2 grid grid-cols-1 lg:grid-cols-2 gap-4">
             <a href="/#secteurs-d'activité" className="transition-all duration-300 ease-in-out" onClick={toggleMenu}>
-              <li className="h-full group flex flex-row gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
-                <TfiBriefcase className="block text-lg lg:text-2xl mb-4 mr-auto" />
+              <li className="h-full group flex flex-col gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
+                <TfiBriefcase className="block text-lg lg:text-xl mr-auto" />
                 <div className="w-full">
                   <p className="text-sm mb-1" style={{ fontFamily: "Plus Jakarta Sans Bold" }}>Secteurs d’activité</p>
-                  <p className="text-xs">Explorez les secteurs d’activité</p>
-                </div>
+                  <p className="text-xs">Découvrez nos offres dans divers secteurs professionnels</p>
+                  </div>
               </li>
             </a>
 
             <a href="/#emplois-par-localisation" className="transition-all duration-300 ease-in-out" onClick={toggleMenu}>
-              <li className="h-full group flex flex-row gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
-                <TfiLocationPin className="block text-lg lg:text-2xl mb-4 mr-auto" />
+              <li className="h-full group flex flex-col gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
+                <TfiLocationPin className="block text-lg lg:text-xl mr-auto" />
                 <div className="w-full">
                   <p className="text-sm mb-1" style={{ fontFamily: "Plus Jakarta Sans Bold" }}>Emplois par localisation</p>
-                  <p className="text-xs">Trouvez un emploi selon votre localisation</p>
+                  <p className="text-xs">Recherchez un emploi selon votre région ou votre ville</p>
                 </div>
               </li>
             </a>
 
             <a href="/#dernières-offres-d'emploi" className="transition-all duration-300 ease-in-out" onClick={toggleMenu}>
-              <li className="h-full group flex flex-row gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
-                <TfiBell className="block text-lg lg:text-2xl mb-4 mr-auto" />
+              <li className="h-full group flex flex-col gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
+                <TfiBell className="block text-lg lg:text-xl mr-auto" />
                 <div className="w-full">
                   <p className="text-sm mb-1" style={{ fontFamily: "Plus Jakarta Sans Bold" }}>Dernières offres d'emploi</p>
-                  <p className="text-xs">Découvrez nos dernières offres</p>
+                  <p className="text-xs">Découvrez toutes les offres d'emploi récemment publiées</p>
                 </div>
               </li>
             </a>
 
             <a href="/#nos-agences" className="transition-all duration-300 ease-in-out" onClick={toggleMenu}>
-              <li className="h-full group flex flex-row gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
-                <TfiKey className="block text-lg lg:text-2xl mb-4 mr-auto" />
+              <li className="h-full group flex flex-col gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
+                <TfiKey className="block text-lg lg:text-xl mr-auto" />
                 <div className="w-full">
                   <p className="text-sm mb-1" style={{ fontFamily: "Plus Jakarta Sans Bold" }}>Nos agences</p>
-                  <p className="text-xs">Trouvez nos agences à travers la France</p>
+                  <p className="text-xs">Localisez facilement nos agences partenaires en France</p>
                 </div>
               </li>
             </a>
 
             <a href="/jobs" className="transition-all duration-300 ease-in-out" onClick={toggleMenu}>
-              <li className="h-full group flex flex-row gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
-                <TfiLayoutListThumbAlt className="block text-lg lg:text-2xl mb-4 mr-auto" />
+              <li className="h-full group flex flex-col gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
+                <TfiLayoutListThumbAlt className="block text-lg lg:text-xl mr-auto" />
                 <div className="w-full">
                   <p className="text-sm mb-1" style={{ fontFamily: "Plus Jakarta Sans Bold" }}>Opportunités de carrière</p>
-                  <p className="text-xs">Découvrez toutes nos offres</p>
+                  <p className="text-xs">Accédez à une liste complète de nos opportunités de carrière</p>
                 </div>
               </li>
             </a>
 
             <a href="/contact" className="transition-all duration-300 ease-in-out" onClick={toggleMenu}>
-              <li className="h-full group flex flex-row gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
-                <TfiEmail className="block text-lg lg:text-2xl mb-4 mr-auto" />
+              <li className="h-full group flex flex-col gap-4 justify-start items-start px-6 py-3 md:py-6 rounded-2xl border border-gray-100 hover:bg-gray-100 hover:border-gray-400 cursor-pointer hover:shadow-md">
+                <TfiEmail className="block text-lg lg:text-xl mr-auto" />
                 <div className="w-full">
                   <p className="text-sm mb-1" style={{ fontFamily: "Plus Jakarta Sans Bold" }}>Contact</p>
-                  <p className="text-xs">Nous contacter</p>
+                  <p className="text-xs">Obtenez nos informations de contact et envoyez un message</p>
                 </div>
               </li>
             </a>
           </ul>
-
         </nav>
         <div className="border-t py-6">
-          <div className="w-full flex flex-col md:flex-row items-center justifity-start gap-4">
-            <a href="https://www.keys-rh.fr/worker/" className="w-full mx-auto" onClick={toggleMenu}>
-              <div className={`w-full flex flex-row gap-6 items-center justify-center p-4 px-6 border rounded-3xl hover:border-gray-400 hover:shadow-md hover:bg-gray-100 hover:text-black  cursor-pointer hover:shadow-md transition-all duration-200 group ease-in-out`}>
-                <span className="text-4xl">🧑🏼‍🏭</span>
-                <p className="w-full text-sm text-center ">Vous êtes candidat ?</p>
+          <div className="w-max flex flex-col md:flex-row items-center justifity-center gap-4">
+            <a href="https://www.keys-rh.fr/worker/" className="w-max mx-auto" onClick={toggleMenu}>
+              <div className={`w-max flex flex-rox gap-3 items-center justify-center p-4 border rounded-3xl hover:border-gray-400 hover:shadow-md hover:bg-gray-100 hover:text-black  cursor-pointer hover:shadow-md transition-all duration-200 group ease-in-out`}>
+              <TfiUser className="block text-lg lg:text-xl mr-auto" />
+              <p className="w-full text-xs text-center ">Espace candidat</p>
               </div>
             </a>
-
-            <a href="https://www.keys-rh.fr/company/security/login" className="w-full mx-auto" onClick={toggleMenu}>
-              <div className={`w-full flex flex-row gap-6 items-center justify-center p-4 px-6 border rounded-3xl border text-black hover:border-gray-400 hover:shadow-md hover:bg-gray-100 cursor-pointer hover:shadow-md transition-all duration-200 group ease-in-out`}>
-                <span className="text-4xl">👨🏼‍💻</span>
-                <p className="w-full text-sm text-center">Vous êtes Recruteur ?</p>
+            <a href="https://www.keys-rh.fr/company/security/login" className="w-max mx-auto" onClick={toggleMenu}>
+              <div className={`w-max flex flex-row gap-3 items-center justify-center p-4 border rounded-3xl border text-black hover:border-gray-400 hover:shadow-md hover:bg-gray-100 cursor-pointer hover:shadow-md transition-all duration-200 group ease-in-out`}>
+              <TfiAgenda className="block text-lg lg:text-xl mr-auto" />
+              <p className="w-full text-xs text-center">Espace Recruteur</p>
               </div>
             </a>
           </div>

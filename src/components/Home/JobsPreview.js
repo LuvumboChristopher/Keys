@@ -1,23 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FaBuilding, FaMapMarkerAlt, FaClock, FaRegSadCry, FaKey } from "react-icons/fa";
 import { jobs } from "@/utils/jobs";
 import { sectors } from "../../utils/sectors.js";
 import { motion } from "framer-motion";
 
-
 export default function JobsPreview() {
     const [selectedSector, setSelectedSector] = useState("All");
     const filteredJobs = selectedSector === "All"
         ? jobs.slice(0, 4)
         : jobs.filter(job => job.sector === selectedSector).slice(0, 4);
+
+    const jobRefs = useRef([]);
+
+    useEffect(() => {
+        jobRefs.current = jobRefs.current.slice(0, filteredJobs.length);
+    }, [filteredJobs]);
+
+    const variants = {
+        hidden: { opacity: 0  },
+        visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
+    };
+
     return (
         <section id="dernières-offres-d'emploi" className="bg-gray-100 pt-7 pb-10 border-t border-b">
             <div className="container">
                 <div className="relative z-10">
                     <h2 className="text-center text-3xl lg:text-4xl py-2">
-                        Dernières<motion.span
+                        Dernières
+                        <motion.span
                             className="px-3 bg-yellow-500 cursor-pointer rounded-lg"
                             style={{ display: "inline-block" }}
                             whileHover={{ scale: 1.05 }}
@@ -35,7 +47,6 @@ export default function JobsPreview() {
                     <button
                         className={`font-semibold ${selectedSector === "All" ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-xl overflow-hidden`}
                         onClick={() => setSelectedSector("All")}
-                        
                     >
                         <p className="text-sm p-3">Tous</p>
                     </button>
@@ -43,7 +54,7 @@ export default function JobsPreview() {
                         sectors.map((sector) => (
                             <button
                                 key={sector.name}
-                                className={`  font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-xl overflow-hidden`}
+                                className={`font-semibold ${selectedSector === sector.name ? "bg-yellow-500 hover:bg-yellow-400 text-black" : "bg-white text-black border"} rounded-xl overflow-hidden`}
                                 onClick={() => setSelectedSector(sector.name)}
                             >
                                 <p className="text-sm p-3">{sector.name}</p>
@@ -64,9 +75,11 @@ export default function JobsPreview() {
                         {filteredJobs.map((job, index) => (
                             <motion.div
                                 key={job.id}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 1, delay: 0.2 }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: false, amount: 0.2 }}
+                                variants={variants}
+                                ref={(el) => (jobRefs.current[index] = el)}
                                 className="relative job-card bg-white p-6 transition-transform transform duration-300 cursor-pointer rounded-3xl overflow-hidden hover:outline outline-gray-400 duration-300 transition group"
                                 style={{
                                     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
@@ -80,25 +93,61 @@ export default function JobsPreview() {
                                         <FaKey className="text-black text-3xl group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 opacity-100 " />
                                     </div>
                                     <div className="job-card-content relative z-10 text-black">
-                                        <h3 className="text-xl font-semibold pb-4">{job.title}</h3>
+                                        <motion.h3 
+                                            className="text-xl font-semibold pb-4"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.4, delay: 0.2 }}
+                                        >
+                                            {job.title}
+                                        </motion.h3>
                                         <div className="space-y-1">
-                                            <div className="flex items-center">
+                                            <motion.div
+                                                className="flex items-center"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.3, delay: 0.4 }}
+                                            >
                                                 <FaBuilding className="mr-3 text-gray-600" />
                                                 <p className="text-gray-700">{job.company}</p>
-                                            </div>
-                                            <div className="flex items-center">
+                                            </motion.div>
+                                            <motion.div
+                                                className="flex items-center"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.3, delay: 0.6 }}
+                                            >
                                                 <FaMapMarkerAlt className="mr-3 text-gray-600" />
                                                 <p className="text-gray-700">{job.location}</p>
-                                            </div>
-                                            <div className="flex items-center">
+                                            </motion.div>
+                                            <motion.div
+                                                className="flex items-center"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.3, delay: 0.8 }}
+                                            >
                                                 <FaClock className="mr-3 text-gray-600" />
                                                 <p className="text-gray-700">{job.contractType} - {job.type}</p>
-                                            </div>
+                                            </motion.div>
                                         </div>
                                         <div className="py-4">
-                                            <p className="text-gray-700">Expérience requise: {job.experienceRequired}</p>
+                                            <motion.p
+                                                className="text-gray-700"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.3, delay: 1 }}
+                                            >
+                                                Expérience requise: {job.experienceRequired}
+                                            </motion.p>
                                         </div>
-                                        <p className="text-gray-700 mb-4">{job.description}</p>
+                                        <motion.p
+                                            className="text-gray-700 mb-4"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.3, delay: 1.2 }}
+                                        >
+                                            {job.description}
+                                        </motion.p>
                                     </div>
                                 </Link>
                             </motion.div>

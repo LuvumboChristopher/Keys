@@ -11,7 +11,7 @@ const ContactPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className={`grid grid-cols-1 md:grid-cols-2 relative bg-gray-100  ${isRecruiter ? "h-[800px]" : "h-[700px]"} `}
+        className={`grid grid-cols-1 md:grid-cols-2 relative bg-gray-100  ${isRecruiter ? "h-[830px]" : "h-[700px]"} `}
       >
         <motion.div
           className="md:rounded-ee-[100px] overflow-hidden"
@@ -150,7 +150,6 @@ const ContactPage = () => {
                       className="mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none"
                     />
                   </div>
-                  {/* Campos específicos para los reclutadores */}
                   {isRecruiter && (
                     <div className="gap-10 flex flex-col lg:flex-row">
                       <div className="w-full lg:w-1/2">
@@ -182,7 +181,6 @@ const ContactPage = () => {
                       </div>
                     </div>
                   )}
-                  {/* Campo para el mensaje */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-3">
                       Message <span className="text-red-500">*</span>
@@ -195,11 +193,10 @@ const ContactPage = () => {
                       className="mt-1 p-4 block w-full bg-white border rounded-xl border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 outline-none resize-none"
                     />
                   </div>
-                  {/* Botón de envío */}
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="w-full py-4 mt-4 text-md font-semibold text-white bg-yellow-500 hover:bg-black rounded-lg"
+                      className="w-full py-4 mt-4 text-md font-semibold text-white bg-yellow-500 hover:bg-black rounded-lg duration-300"
                     >
                       Envoyer
                     </button>

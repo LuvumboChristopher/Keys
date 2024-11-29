@@ -30,7 +30,7 @@ const SecteursActivite = () => {
         }
       });
     }, {
-      threshold: 0.5
+      threshold: 0.1
     });
 
     const element = swiperRef.current;
@@ -140,14 +140,23 @@ const SecteursActivite = () => {
     <section className="bg-gray-50 border-t border-b pb-14">
       <div className="">
         <div className="relative group/nav">
-          <div id="secteurs-d'activité" className="container py-8">
+          <motion.div
+            id="secteurs-d'activité"
+            className="container py-8"
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 200, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ amount: 0.2 }}
+          >
             <h2 className="text-center text-3xl lg:text-4xl pb-6 lg:py-2">
               Tous nos
               <motion.span
                 className="px-3 bg-yellow-500 cursor-pointer rounded-lg"
                 style={{ display: "inline-block" }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 250 }}
               >
                 secteurs
               </motion.span>
@@ -168,7 +177,6 @@ const SecteursActivite = () => {
                 professionnel avec nous.
               </p>
             </div>
-            {/* Texto para pantallas grandes */}
             <p className="hidden sm:block max-w-5xl mx-auto text-center py-4">
               Chez Keys, nous mettons à votre disposition une expertise diversifiée pour répondre
               aux besoins spécifiques de chaque secteur d&#39;activité. Que ce soit dans le
@@ -177,7 +185,7 @@ const SecteursActivite = () => {
               chaque entreprise et de chaque candidat. Découvrez nos domaines d&#39;intervention
               et trouvez la clé de votre succès professionnel avec nous.
             </p>
-          </div>
+          </motion.div>
           <motion.div
             ref={swiperRef}
             className="swiper-container slider-center-inline"
