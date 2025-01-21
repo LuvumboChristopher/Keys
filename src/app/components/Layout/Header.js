@@ -84,7 +84,7 @@ const Header = () => {
           <motion.div>
             <Link href="/">
               <Image
-                src="/images/keyslogos/Keys-logo-new.svg"
+                src="/images/keyslogos/Keys-logo-new.png"
                 alt="Keys"
                 title="Keys"
                 width={2000}

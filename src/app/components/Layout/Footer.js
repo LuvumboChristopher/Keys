@@ -24,7 +24,7 @@ const Footer = () => {
             width={2000}
             height={2000}
             className="max-w-[140px]"
-            src="/images/keyslogos/Keys-logo-new.svg"
+            src="/images/keyslogos/Keys-logo-new.png"
             alt="Logo"
           />
           <p className="mt-6 max-w-md mr-auto ">

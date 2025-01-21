@@ -60,7 +60,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu, toggleSavedJobsMenu })
     >
       <div className="w-full flex justify-between items-center pb-5">
         <Image
-          src={"/images/keyslogos/Keys-logo-new.svg"}
+          src={"/images/keyslogos/Keys-logo-new.png"}
           alt="Logo de Keys-RH"
           width={1000}
           height={1000}
