@@ -1,0 +1,243 @@
+"use client";
+
+import React, { useState, useEffect, useMemo, useRef } from "react";
+import { TfiSearch, TfiLocationArrow, TfiBolt, TfiLightBulb, TfiIdBadge } from "react-icons/tfi";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSearch } from "@/app/context/SearchContext";
+import Features from "./Features";
+import { heroImages } from "@/app/utils/heroImages";
+import { metiers } from "@/app/utils/metiers";
+
+const Hero = () => {
+    const [currentImage, setCurrentImage] = useState(0);
+    const [currentJob, setCurrentJob] = useState("");
+    const [jobIndex, setJobIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [cursorBlink, setCursorBlink] = useState(true);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+
+    const firstInputRef = useRef(null);
+    const secondInputRef = useRef(null);
+    const { jobTitle, setJobTitle, location, setLocation, handleSearch } = useSearch();
+    const jobs = useMemo(() => metiers, []);
+
+    const totalImages = heroImages.length;
+
+    const nextImage = () => {
+        setCurrentImage((prevImage) => (prevImage + 1) % totalImages);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            if (e.target === firstInputRef.current) {
+                secondInputRef.current.focus();
+            }
+            else if (e.target === secondInputRef.current) {
+                handleSearch();
+            }
+        }
+    };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            nextImage();
+        }, 2000);
+
+        return () => clearInterval(intervalId);
+    }, [totalImages]);
+
+    useEffect(() => {
+        const typingSpeed = isDeleting ? 120 : 150;
+        const delay = isDeleting && charIndex === 0 ? 1000 : typingSpeed;
+    
+        const typeTimeout = setTimeout(() => {
+            const job = jobs[jobIndex] || "";
+            if (!isDeleting && charIndex < job.length) {
+                setCurrentJob(job.slice(0, charIndex + 1));
+                setCharIndex(charIndex + 1);
+            } else if (isDeleting && charIndex > 0) {
+                setCurrentJob(job.slice(0, charIndex - 1));
+                setCharIndex(charIndex - 1);
+            } else if (!isDeleting && charIndex === job.length) {
+                setIsDeleting(true);
+            } else if (isDeleting && charIndex === 0) {
+                setIsDeleting(false);
+                setJobIndex((jobIndex + 1) % jobs.length);
+            }
+        }, delay);
+    
+        return () => clearTimeout(typeTimeout);
+    }, [charIndex, isDeleting, jobIndex, jobs]);
+    
+
+    useEffect(() => {
+        const cursorTimeout = setInterval(() => {
+            setCursorBlink((prev) => !prev);
+        }, 500);
+
+        return () => clearInterval(cursorTimeout);
+    }, []);
+
+    useEffect(() => {
+        if (firstInputRef.current) {
+            firstInputRef.current.focus();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!isHovered) {
+            const interval = setInterval(() => {
+                setActiveIndex((prevIndex) => (prevIndex + 1) % 3);
+            }, 4000);
+            return () => clearInterval(interval);
+        }
+    }, [isHovered]);
+
+    return (
+        <div className="w-full mx-auto flex items-center justify-center">
+            <motion.section
+                className="w-full h-full py-[45px] md:py-[77.5px] mx-auto relative transition-transform transform duration-300 flex flex-col justify-center items-center overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1, ease: "easeOut" }}
+            >
+                <AnimatePresence>
+                    <motion.div
+                        className="absolute inset-0 bg-cover bg-center"
+                        key={currentImage}
+                        style={{ backgroundImage: `url(${heroImages[currentImage].src})` }}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.1 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                    />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-black opacity-[70%]"></div>
+                <div className="container w-full flex items-center justify-center pt-[22.5px]">
+                    <div
+                        className="w-full xs:max-w-sm sm:max-w-md md:max-w-xl lg:max-w-full xl:max-w-5xl lg:w-full z-10 h-full flex flex-col gap-10 lg:flex-row  lg:gap-16 xl:gap-24 justify-center items-center pt-8 "
+                    >
+                        <div
+                            className="w-full flex flex-col items-center justify-center gap-3 max-w-sm md:max-w-xl xl:max-w-full  mx-auto"
+                        >
+                            <motion.div
+                                className="w-full mx-auto"
+                                initial={{ opacity: 0, y: -30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, ease: "easeOut" }}
+                            >
+                                <motion.h1
+                                    className="text-responsive-lg font-bold text-white shadow-text leading-7 xs:leading-8 sm:leading-9 md:leading-10 lg:leading-11"
+                                    initial={{ y: -30, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 0.3 }}
+                                >
+                                    Keys<br />Interim <span className="text-yellow-500">&</span><br /> Recrutement
+                                </motion.h1>
+                                <motion.div
+                                    initial={{ y: -20, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 1.5 }}
+                                >
+                                    <motion.p
+                                        className="text-xxs sm:text-xs space-x-1 text-white text-left shadow-text flex pt-4"
+                                        initial={{ y: -20, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        transition={{ duration: 1, delay: 0.8 }}
+                                    >
+                                        <span className="block sm:inline">Découvrez votre prochain</span>
+                                        <span className="text-yellow-500 block sm:inline">emploi</span>
+                                        <span className="block sm:inline">en toute</span>
+                                        <span className="text-yellow-500 block sm:inline">simplicité</span>
+                                    </motion.p>
+                                </motion.div>
+                            </motion.div>
+                            <motion.div
+                                className="w-full mx-auto flex flex-col items-center gap-4 duration-300 cursor-pointer pt-4"
+                                initial={{ y: -20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, ease: "easeInOut" }}
+                            >
+                                <div className="w-full relative border bg-white rounded-xl px-7 flex items-center group focus-within:border-gray-400">
+                                    <TfiSearch className="text-md md:text-base text-gray-700" />
+                                    <input
+                                        ref={firstInputRef}
+                                        placeholder="Indiquez un métier"
+                                        className="w-full px-6 py-4 text-gray-800 focus:outline-none text-xxs lg:text-xs text-center"
+                                        value={jobTitle}
+                                        onChange={(e) => setJobTitle(e.target.value.replace(/\b\w/g, (char) => char.toUpperCase()))}
+                                        onKeyDown={handleKeyDown}
+                                    />
+                                    {jobTitle && (
+                                        <button
+                                            onClick={() => setJobTitle("")}
+                                            className="absolute right-5 text-gray-500 hover:text-gray-800"
+                                        >
+                                            ✕
+                                        </button>
+                                    )}
+                                </div>
+                                <div className="w-full relative border bg-white rounded-xl px-7 flex items-center focus-within:border-gray-400">
+                                    <TfiLocationArrow className="text-md md:text-base text-gray-700" />
+                                    <input
+                                        ref={secondInputRef}
+                                        className="w-full px-6 py-4 text-gray-800 focus:outline-none text-xxs lg:text-xs text-center"
+                                        placeholder="Sélectionnez un lieu"
+                                        name="location"
+                                        value={location}
+                                        onChange={(e) => setLocation(e.target.value.replace(/\b\w/g, (char) => char.toUpperCase()))}
+                                        onKeyDown={handleKeyDown}
+                                    />
+                                    {location && (
+                                        <button
+                                            onClick={() => setLocation("")}
+                                            className="absolute right-5 text-gray-500 hover:text-gray-800"
+                                        >
+                                            ✕
+                                        </button>
+                                    )}
+                                </div>
+                                <button
+                                    onClick={handleSearch}
+                                    className="w-full mx-auto group"
+                                >
+                                    <div className="w-full flex justify-center items-center gap-3 text-xxs lg:text-xs text-center mx-auto px-6 py-4 font-bold bg-yellow-500 text-black hover:bg-gray-100 hover:outline-[1px] hover:shadow-md hover:text-black transition-all duration-300 group rounded-xl overflow-hidden">
+                                        Consultez nos offres
+                                    </div>
+                                </button>
+                                <motion.div
+                                    className="container py-3 flex flex-wrap gap-2 justify-center items-center flex-col xxs:flex-row text-white text-xs md:text-md text-center antialiased tracking-tight"
+                                    initial={{ opacity: 0, y: 40 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                                >
+                                    <p>
+                                        Keys recherche
+                                    </p>
+                                    <div className="pr-2">
+                                        <span className="text-yellow-500 ml-2">{currentJob}</span>
+                                        <span className="text-white">{cursorBlink ? "|" : ""}</span>
+                                    </div>
+                                    <p>
+                                        pour relation longue durée.
+                                    </p>
+                                </motion.div>
+                            </motion.div>
+                        </div>
+                        <div className="w-full pt-3">
+                            <Features/>
+                        </div>
+                    </div>
+                </div>
+            </motion.section>
+           
+        </div>
+    );
+};
+
+export default Hero;
