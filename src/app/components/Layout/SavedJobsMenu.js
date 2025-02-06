@@ -8,6 +8,7 @@ import { FaEye } from "react-icons/fa";
 import { BsBookmark, BsFillBookmarkFill, BsFillHandThumbsUpFill, BsHandThumbsUp } from 'react-icons/bs';
 
 import { motion } from 'framer-motion';
+import { formatSalary } from "@/app/utils/utils";
 
 function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
     const { filteredJobs } = useContext(JobsContext);
@@ -48,15 +49,15 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
     return (
         <>
             <div
-                className={`savedMenu fixed top-[2%] bottom-[2%] left-[2.5%] h-[96%] md:top-[5%] md:bottom-[5%] md:left-[5%] md:h-[90%] p-7 sm:p-10  w-[95%] md:w-[600px] h-full bg-white transform z-[9999] rounded-3xl ${isSavedJobsMenuOpen ? "open" : "closing"} flex flex-col overflow-hidden`}
+                className={`savedMenu fixed md:left-[2%] h-[96vh] md:top-[3%] md:bottom-[3%] md:h-[94%] p-9 w-full md:w-[600px] h-full bg-white transform z-[9999] md:rounded-3xl ${isSavedJobsMenuOpen ? "open" : "closing"} flex flex-col overflow-hidden`}
             >
                 <div className="w-full flex justify-between items-center pb-5">
                     <Image
-                        src={"/images/keyslogos/Keys-logo-new.svg"}
+                        src={"/images/keyslogos/Keys-logo-black-yellow.svg"}
                         alt="Logo de Keys-RH"
                         width={1000}
                         height={1000}
-                        className="transition-transform duration-500 ease-in-out w-[125px] sm:w-[150px]"
+                        className="transition-transform duration-500 ease-in-out w-[85px] sm:w-[95px]"
                     />
                     <button
                         onClick={toggleSavedJobsMenu}
@@ -74,23 +75,27 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
                         <div>
                             <h2 className="flex items-center gap-4 text-base border-b pb-6"> {favorites.length === 0 ? <BsHandThumbsUp /> : <BsFillHandThumbsUpFill />} Favoris</h2>
                             {favorites.length === 0 ? (
-                                <p className="font-semibold text-sm my-6">Aucun emploi ajouté aux favoris.</p>
+                                <p className="text-sm my-6">Aucun emploi ajouté aux favoris.</p>
                             ) : (
-                                <ul className="my-5 space-y-5">
+                                <ul className="my-5 space-y-6">
                                     {favorites.map((job, index) => (
-                                        <li className="bg-gray-50 hover:bg-gray-100 p-4 rounded-xl border shadow-sm w-full flex flex-wrap sm:flex-nowrap  justify-between items-center" key={`${job?.offer_id}-${index}`} text-md >
+                                        <li className="bg-gray-50 hover:bg-gray-100 p-6 md:p-5 rounded-xl border shadow-sm w-full flex flex-wrap sm:flex-nowrap  justify-between items-center" key={`${job?.offer_id}-${index}`} text-md >
                                             <div className="w-full min-w-[100px] mx-auto">
-                                                <h4 className="w-full capitalize text-sm font-semibold truncate">{job?.job_title || "Emploi inconnu"}</h4>
+                                                <h4 className="w-full capitalize text-sm truncate">{job?.job_title || "Emploi inconnu"}</h4>
                                                 <p className="text-xs text-gray-500 py-1">{job?.contract_type || "Type de contrat inconnu"} - {job?.town_name || "Ville inconnue"}</p>
                                             </div>
-                                            <div className="w-full flex items-center justify-end gap-3">
+                                            <div className="w-full flex items-center justify-start sm:justify-end gap-3 pt-4 sm:pt-0">
                                                 <motion.div
                                                     initial={{ scale: 0.8 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ duration: 0.5, delay: 0.9 }}
                                                     className={`w-max text-xxs bg-gray-100 border text-center p-3 rounded-lg `}
                                                 >
-                                                    {job?.hourly_rate} €<small className="text-xxs">/ heure</small>
+                                                    {job.hourly_rate > 0
+                                                        ? <>
+                                                            {formatSalary(job.hourly_rate)}
+                                                        </>
+                                                        : <span className="text-gray-500">N/R</span>}
                                                 </motion.div>
                                                 <button
                                                     onClick={() => navigateToJobDetails(job.offer_id)}
@@ -113,23 +118,27 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
                         <div className="pt-4">
                             <h2 className="flex items-center gap-4 text-base border-b pb-6"> {savedForLater.length === 0 ? <BsBookmark /> : <BsFillBookmarkFill />} Enregistré pour plus tard</h2>
                             {savedForLater.length === 0 ? (
-                                <p className="font-semibold text-sm my-6">Aucun emploi enregistré pour plus tard.</p>
+                                <p className="text-sm my-6">Aucun emploi enregistré pour plus tard.</p>
                             ) : (
-                                <ul className="my-5 space-y-5">
+                                <ul className="my-5 space-y-6">
                                     {savedForLater.map((job, index) => (
-                                        <li className="bg-gray-50 hover:bg-gray-100 p-4 rounded-xl border shadow-sm w-full flex flex-wrap sm:flex-nowrap  justify-between items-center " key={`${job?.offer_id}-${index}`} text-md >
+                                        <li className="bg-gray-50 hover:bg-gray-100 p-6 md:p-5 rounded-xl border shadow-sm w-full flex flex-wrap sm:flex-nowrap  justify-between items-center " key={`${job?.offer_id}-${index}`} text-md >
                                             <div className="w-full min-w-[100px] mx-auto">
-                                                <h4 className="w-full capitalize text-sm font-semibold truncate">{job?.job_title || "Emploi inconnu"}</h4>
+                                                <h4 className="w-full capitalize text-sm truncate">{job?.job_title || "Emploi inconnu"}</h4>
                                                 <p className="text-xs text-gray-500 py-1">{job?.contract_type || "Type de contrat inconnu"} - {job?.town_name || "Ville inconnue"}</p>
                                             </div>
-                                            <div className="w-full flex items-center justify-end gap-3">
+                                            <div className="w-full flex items-center justify-start sm:justify-end  gap-3 pt-4 sm:pt-0">
                                                 <motion.div
                                                     initial={{ scale: 0.8 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ duration: 0.5, delay: 0.9 }}
                                                     className={`w-max text-xxs bg-gray-100 w-full border text-center p-3 rounded-lg `}
                                                 >
-                                                    {job?.hourly_rate} €<small className="text-xxs">/ heure</small>
+                                                    {job.hourly_rate > 0
+                                                    ? <>
+                                                        {formatSalary(job.hourly_rate)}
+                                                    </>
+                                                    : <span className="text-gray-500">N/R</span>}
                                                 </motion.div>
                                                 <button
                                                     onClick={() => navigateToJobDetails(job.offer_id)}

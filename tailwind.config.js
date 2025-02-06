@@ -1,5 +1,6 @@
 /** @type {import("tailwindcss").Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,11 +17,11 @@ module.exports = {
         xs: '426px',
       },
       colors: {
-        black: "#171B1F",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
       fontSize: {
+        '3xs': '0.65rem',
         'xxs': '0.7rem',
         'xs': '0.8rem',
         'sm': '0.875rem',
@@ -36,7 +37,7 @@ module.exports = {
         '7xl': '5rem',
         '8xl': '6rem',
         '9xl': '8rem',
-        'responsive-lg': 'clamp(2.75rem, 11vw, 3.55rem)',
+        'responsive-lg': 'clamp(2.75rem, 12vw, 3.40rem)',
       },
     },
   },

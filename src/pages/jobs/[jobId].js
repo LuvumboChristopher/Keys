@@ -11,15 +11,12 @@ import JobMap from '@/app/components/Job/JobMap';
 import JobInfo from '@/app/components/Job/JobInfo';
 import JobActions from '@/app/components/Job/JobActions';
 import JobDetails from '@/app/components/Job/JobDetails';
+import JobAgency from '@/app/components/Job/JobAgency';
+import { CallToActionInfo } from '@/app/components/Home/CallToActionInfo';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const staggerContainer = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
 const Job = () => {
@@ -116,7 +113,7 @@ const Job = () => {
             {capitalizeTitle(job?.job_title)} | Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH
           </title>
         </Head>
-        <motion.div className="bg-gray-100" initial="initial" animate="animate">
+        <motion.div className="dark:bg-gray-900 bg-gray-100 pb-10" initial="initial" animate="animate">
           <motion.section initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }} className="container py-8">
@@ -132,7 +129,7 @@ const Job = () => {
                     )}
                   </span>
                   {job?.offer_id && (
-                    <small className="text-xxs  text-gray-500">
+                    <small className="text-xxs  text-gray-200">
                       Référence : {job.offer_id}
                     </small>
                   )}
@@ -144,10 +141,9 @@ const Job = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-
             >
               <motion.div
-                className="w-full xl:w-[65%] bg-white border p-8 md:p-12 rounded-3xl overflow-hidden"
+                className="w-full xl:w-[65%] dark: bg-white border p-8 md:p-12 rounded-3xl overflow-hidden"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -178,11 +174,16 @@ const Job = () => {
                 className="w-full xl:w-[35%] flex flex-col  gap-8"
                 variants={fadeIn}
               >
-                {/** <JobAgency job={job} /> */}
-                <JobMap job={job} />
+                <div className='flex flex-col md:flex-row xl:flex-col items-end gap-8'>
+                  <div className='w-full md:w-[40%] xl:w-full'>
+                    <JobAgency job={job} />
+                  </div>
+                  <div className='w-full md:w-[60%] xl:w-full'>
+                    <JobMap job={job} />
+                  </div>
+                </div>
                 <SimilarJobs jobId={jobId} />
               </motion.div>
-
             </motion.div>
           </motion.section>
         </motion.div></>

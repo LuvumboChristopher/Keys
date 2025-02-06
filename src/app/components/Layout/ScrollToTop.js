@@ -37,7 +37,7 @@ export default function ScrollToTop() {
 
     return (
         <div
-            className={`fixed w-[2.5rem] h-[2.5rem] cursor-pointer flex items-center justify-center shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010]
+            className={`fixed w-[2.25rem] h-[2.25rem] cursor-pointer flex items-center justify-center shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010]
             transition-all duration-200 ease-linear  right-4 bottom-5  rounded-md overflow-hidden
             ${isVisible ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-3"}
             ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}
@@ -56,7 +56,7 @@ export default function ScrollToTop() {
                     className="fill-yellow-500 transition-all duration-200 ease-linear"
                 />
             </svg>
-            <span className="relative text-center leading-[2.3rem] text-[1.2rem] font-Unicons">
+            <span className="relative text-center leading-[2.3rem] text-[1rem] font-Unicons">
                 <FaArrowUp />
             </span>
         </div>

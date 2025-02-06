@@ -7,6 +7,7 @@ import { MdOutlineSaveAlt, MdOutlineRemoveCircle } from "react-icons/md";
 import { motion } from "framer-motion";
 import { JobsContext } from "@/app/context/JobContext";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
+import { formatSalary } from "@/app/utils/utils";
 
 export default function JobsPreview() {
     const { filteredJobs, loading } = useContext(JobsContext);
@@ -29,13 +30,13 @@ export default function JobsPreview() {
     }
 
     return (
-        <section id="dernieres-offres-emploi" className="bg-gray-100 border-t-[1px] border-b-[1px] border-gray-300">
-            <div className="container py-10 md:py-12">
+        <section id="dernieres-offres-emploi" className="bg-gray-100 dark:bg-gray-900 border-t border-b border-gray-300 dark:border-none">
+            <div className="container py-8 md:py-12">
                 <div className="relative z-10">
-                    <h2 className="text-left md:text-center text-xl md:text-2xl md:text-3xl py-2">
+                    <h2 className="dark:text-white text-left md:text-center text-xl md:text-2xl md:text-3xl py-2">
                         Dernières
                         <motion.span
-                            className="px-1 bg-yellow-500 cursor-pointer rounded-md"
+                            className="dark:text-black  px-1 bg-yellow-500 cursor-pointer rounded-md"
                             style={{ display: "inline-block" }}
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
@@ -44,7 +45,7 @@ export default function JobsPreview() {
                         </motion.span>
                         d&#39;emploi
                     </h2>
-                    <p className="w-full mx-auto text-left md:text-center text-xs md:text-xs md:text-xs md:text-md text-black py-3 mb-6 max-w-4xl">
+                    <p className="dark:text-white w-full mx-auto text-left md:text-center text-xs md:text-xs md:text-xs md:text-md text-black py-3 mb-6 max-w-4xl">
                         Découvrez les dernières opportunités d&#39;emploi dans divers secteurs. Que vous cherchiez à débuter ou à progresser dans votre carrière, explorez les offres récentes qui correspondent à vos compétences et aspirations.</p>
                 </div>
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 md:py-2">
@@ -56,7 +57,7 @@ export default function JobsPreview() {
                             viewport={{ once: false, amount: 0.2 }}
                             variants={variants}
                             ref={(el) => (jobRefs.current[index] = el)}
-                            className="bg-white p-6 md:p-8 transition-transform transform duration-300 cursor-pointer overflow-hidden rounded-2xl hover:shadow-md  md:hover:outline outline-gray-400 outline-[1px] duration-300 transition group"
+                            className="bg-white p-6 md:p-8 transition-transform transform duration-300 cursor-pointer overflow-hidden rounded-2xl hover:shadow-md  md:hover:outline outline-gray-400 dark:outline-white outline-[1px] duration-300 transition group"
                             style={{
                                 boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
                             }}
@@ -77,17 +78,15 @@ export default function JobsPreview() {
                                         <FaKey className="text-black text-2xl group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 opacity-100 " />
                                     </div>
                                     <div className="flex flex-col xs:flex-row sm:flex-col md:flex-row rounded-xl overflow-hidden my-7 border">
-                                        <div className="w-full md:w-2/3 space-y-4  text-md p-4">
+                                        <div className="w-full md:w-2/3 space-y-1  text-md bg-gray-50 p-4">
                                             <motion.div
                                                 className="flex items-center "
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 transition={{ duration: 0.3, delay: 0.4 }}
                                             >
-                                                  <div className="p-3 bg-blue-100 rounded-xl border ">
-                                                    <FaBuilding className="text-md text-blue-400" />
-                                                </div>
-                                                <p className="ml-3 text-xs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job.agency_name}</p>
+                                                <FaBuilding className="mr-3 dark:text-blue-500" />
+                                                <p className="text-xs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job.agency_name}</p>
                                             </motion.div>
                                             <motion.div
                                                 className="flex items-center "
@@ -95,16 +94,26 @@ export default function JobsPreview() {
                                                 animate={{ opacity: 1 }}
                                                 transition={{ duration: 0.3, delay: 0.6 }}
                                             >
-                                                <div className="p-3 bg-green-100 rounded-xl border ">
-                                                    <FaMapMarkerAlt className="text-md text-green-500" />
-                                                </div>
-                                                <p className="ml-3 text-xs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job.town_name}</p>
+                                                <FaMapMarkerAlt className="mr-3 dark:text-emerald-600" />
+                                                <p className="text-xs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job.town_name}</p>
+                                            </motion.div>
+                                            <motion.div
+                                                className="flex items-center "
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.3, delay: 0.8 }}
+                                            >
+                                                <FaClock className="mr-3 dark:text-amber-500" />
+                                                <p className="text-xs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job.contract_type}</p>
                                             </motion.div>
                                         </div>
-                                        <div className="w-full md:w-1/3 flex items-center justify-center bg-gray-50">
+                                        <div className="w-full md:w-[40%] flex items-center justify-center bg-gray-200">
                                             <div className="w-full text-xs md:text-sm text-center p-5">
-                                                {job.hourly_rate} €<small className="text-xxs xs:text-xs">/ heure</small>
-                                            </div>
+                                            {job?.hourly_rate > 0
+                                                ? <>
+                                                    {formatSalary(job.hourly_rate)}
+                                                </>
+                                                : <span className="text-gray-500">N/R</span>}                                            </div>
                                         </div>
                                     </div>
                                     <motion.div
@@ -121,7 +130,7 @@ export default function JobsPreview() {
                                             </button>
                                         </div>
                                         <Link href={`/jobs/${job.offer_id}`} passHref className="w-full md:w-max">
-                                            <button className="w-full md:w-max mr-auto bg-black text-white text-center text-xs px-10 py-4 hover:bg-yellow-500 hover:text-black hover:shadow-md transition-all duration-300 rounded-xl">
+                                            <button className="w-full md:w-max mr-auto bg-black text-white text-center text-xxs px-10 py-4 hover:bg-yellow-500 hover:text-black hover:shadow-md transition-all duration-300 rounded-xl">
                                                 Voir l'offre
                                             </button>
                                         </Link>
@@ -131,7 +140,7 @@ export default function JobsPreview() {
                         </motion.div>
                     ))}
                 </div>
-                <Link href="/jobs" className="text-xs md:text-xs md:text-md mt-8 w-max mx-auto bg-white hover:bg-black hover:text-white  flex items-center justify-center bg-transparent font-semibold px-16 py-4 transition-all duration-300 rounded-xl overflow-hidden"
+                <Link href="/jobs" className="text-xxs md:text-xs  mt-8 w-max mx-auto bg-white dark:hover:bg-yellow-500 hover:bg-black hover:text-white dark:hover:text-black  flex items-center justify-center bg-transparent font-semibold px-16 py-4 transition-all duration-300 rounded-xl overflow-hidden"
                     style={{
                         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
                     }}>

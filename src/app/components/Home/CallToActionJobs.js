@@ -5,14 +5,13 @@ import Link from "next/link";
 
 export const CallToActionJobs = () => {
     return (
-        <div className="">
+        <div className="container pt-0 pb-12">
             <motion.div
                 id="keys-recrute"
-                className="container relative rounded-2xl overflow-hidden bg-yellow-500 py-12 text-black "
+                className="relative rounded-2xl overflow-hidden bg-yellow-500 dark:bg-gray-900 py-16 dark:text-white text-black "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-
             >
                 <motion.div
                     className="absolute inset-0 bg-cover bg-center hidden"
@@ -28,16 +27,13 @@ export const CallToActionJobs = () => {
                 <div className="absolute inset-0 bg-black opacity-0"></div>
                 <div className="absolute inset-0 heropath"></div>
                 <motion.div
-                    className="container relative z-10"
+                    className="max-w-[85%] mx-auto relative z-10"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)" }}
                 >
-
-
                     <motion.h1
-                        className="max-w-7xl mx-auto text-2xl md:text-[32px] font-extrabold text-center md:leading-tight"
+                        className="text-[20px] sm:text-3xl md:text-[32px] font-extrabold text-center md:leading-tight"
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
@@ -45,7 +41,7 @@ export const CallToActionJobs = () => {
                         Rejoignez l&#39;équipe KEYS ! 🚀 <br />
                         Keys
                         <motion.span
-                            className="px-3 bg-white cursor-pointer rounded-lg"
+                            className="px-3 bg-white dark:bg-yellow-500 cursor-pointer rounded-lg"
                             style={{ display: "inline-block" }}
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 300 }}
@@ -62,7 +58,7 @@ export const CallToActionJobs = () => {
                         </motion.span>
                     </motion.h1>
                     <motion.p
-                        className="text-xs md:text-sm text-center mt-4 max-w-md mx-auto"
+                        className="text-xxs sm:text-xs md:text-sm text-center mt-4 max-w-md mx-auto"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
@@ -76,11 +72,9 @@ export const CallToActionJobs = () => {
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
                         <Link href="/#nos-agences"
-                            className="flex items-center gap-2 hover:gap-4 text-xs  w-max mx-auto px-5 md:px-10 mt-8 py-2 font-semibold bg-black text-white hover:bg-white hover:text-black  transition-all duration-400 group rounded-xl overflow-hidden"
-                            style={{
-                                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
-                            }}>
-                            <span className="group-hover:scale-125 text-2xl transition-all duration-400">👊 </span>Postuler maintnant !
+                            className="flex items-center gap-2 hover:gap-4 text-[11px] xs:text-xs  w-max mx-auto px-5 md:px-10 mt-8 py-2 bg-black dark:bg-white  dark:text-black text-white hover:bg-white hover:text-black  transition-all duration-400 group rounded-xl overflow-hidden"
+                        >
+                            <span className="group-hover:scale-125 text-xl transition-all duration-400">👊 </span>Postuler maintnant !
                         </Link>
                     </motion.div>
                 </motion.div>

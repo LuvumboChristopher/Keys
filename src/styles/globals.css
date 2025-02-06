@@ -32,6 +32,39 @@
   }
 }
 
+html {
+  scroll-padding-top: 110px;
+}
+
+@media (min-width: 1024px) {
+  html {
+      scroll-padding-top: 130px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+      scroll-padding-top: 208px;
+  }
+}
+
+input,
+textarea,
+select,
+button,
+a {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-shadow: inherit;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -113,7 +146,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-11px) rotate(-45deg);
   }
 }
-
 
 .sideBar {
   opacity: 0;
@@ -229,3 +261,4 @@ input[type="range"]::-ms-thumb {
   border-radius: 50%;
   cursor: pointer;
 }
+

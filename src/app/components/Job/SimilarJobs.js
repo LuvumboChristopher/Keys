@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaBuilding, FaMapMarkerAlt, FaClock, FaKey, FaHeart, FaRegHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { JobsContext } from "@/app/context/JobContext";
-import { calculateDistance } from "@/app/utils/utils";
+import { calculateDistance, formatSalary } from "@/app/utils/utils";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import { MdOutlineRemoveCircle, MdOutlineSaveAlt } from "react-icons/md";
 
@@ -48,7 +48,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="text-md md:text-lg font-semibold">Voir plus d'annonces</h2>
+                <h2 className="dark:text-white text-md md:text-lg font-semibold">Voir plus d'annonces</h2>
                 <div className="w-full overflow-x-auto flex flex-nowrap justify-start items-center no-scrollbar pt-6">
                     <ul className="flex items-end  gap-x-6">
                         {(similarJobsToDisplay.length > 0 ? similarJobsToDisplay : fallbackJobs).slice(0, 4).map((job, index) => (
@@ -59,7 +59,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                 className="flex items-end"
                                 key={job.offer_id}
                             >
-                                <div className="w-[90vw] xs:w-[80vw] sm:w-full sm:min-w-[420px] xl:w-[80px]  p-10 border bg-white group rounded-3xl hover:border hover:border-gray-400">
+                                <div className="w-[90vw] xs:w-[80vw] sm:w-full sm:min-w-[420px] xl:w-[80px]  p-10 border bg-white group rounded-3xl hover:border hover:border-gray-300">
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-center gap-6 group">
                                             <motion.h3
@@ -80,8 +80,8 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3, delay: 0.4 }}
                                                 >
-                                                    <FaBuilding className="mr-3 text-gray-600" />
-                                                    <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.agency_name}</p>
+                                                <FaBuilding className="mr-3 dark:text-blue-500" />
+                                                <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.agency_name}</p>
                                                 </motion.div>
                                                 <motion.div
                                                     className="flex items-center"
@@ -89,8 +89,8 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3, delay: 0.6 }}
                                                 >
-                                                    <FaMapMarkerAlt className="mr-3 text-gray-600" />
-                                                    <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.town_name}</p>
+                                                <FaMapMarkerAlt className="mr-3 dark:text-emerald-600" />
+                                                <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.town_name}</p>
                                                 </motion.div>
                                                 <motion.div
                                                     className="flex items-center"
@@ -98,14 +98,17 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3, delay: 0.8 }}
                                                 >
-                                                    <FaClock className="mr-3 text-gray-600" />
-                                                    <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.contract_type}</p>
+                                                <FaClock className="mr-3 dark:text-amber-500" />
+                                                <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.contract_type}</p>
                                                 </motion.div>
                                             </div>
-                                            <div className="w-full xs:w-1/3 lg:w-full xl:w-1/3 xl:flex-row flex items-center justify-center bg-gray-200 ">
+                                            <div className="w-full xs:w-[40%] lg:w-full xl:w-[40%] xl:flex-row flex items-center justify-center bg-gray-200 ">
                                                 <div className="w-full text-xxs md:text-xs text-center p-5">
-                                                    {job?.hourly_rate} €<mdall className="text-xxs">/ heure</mdall>
-                                                </div>
+                                                {job?.hourly_rate > 0
+                                                ? <>
+                                                    {formatSalary(job.hourly_rate)}
+                                                </>
+                                                : <span className="text-gray-500">N/R</span>}                                                </div>
                                             </div>
                                         </div>
                                         <motion.div

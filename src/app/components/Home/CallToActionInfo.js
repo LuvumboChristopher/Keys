@@ -1,18 +1,31 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { IoClose } from "react-icons/io5";
 
 export const CallToActionInfo = () => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    if (!isVisible) return null;
+
     return (
         <motion.div
             id="keys-recrute"
-            className="bg-yellow-500 text-black py-10 px-6"
+            className="relative bg-gray-900 dark:bg-yellow-500 text-white dark:text-black py-8 hidden lg:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
         >
+            <button
+                className="absolute top-6 right-6 text-white text-2xl p-1"
+                onClick={() => setIsVisible(false)}
+            >
+                <IoClose />
+            </button>
+            
             <motion.h1
-                className="max-w-7xl mx-auto text-xl md:text-4xl  font-extrabold text-center"
+                className="text-xl md:text-3xl font-extrabold text-center"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
@@ -21,7 +34,7 @@ export const CallToActionInfo = () => {
             </motion.h1>
 
             <motion.p
-                className="text-sm text-center mt-2 max-w-7xl mx-auto"
+                className="text-xxs text-center mt-2 mx-auto"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}

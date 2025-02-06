@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Swiper from "swiper/bundle";
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { sectors } from "@/app/utils/sectors";
 
 const SecteursActivite = () => {
@@ -100,7 +99,7 @@ const SecteursActivite = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5 }}
       >
-        <div className="relative group/nav py-10 md:py-12">
+        <div className="relative group/nav py-8 md:py-14">
           <div className="container">
             <h2 className="text-left md:text-center text-xl md:text-2xl md:text-3xl mb-3 truncate">
               Tous nos
@@ -140,7 +139,7 @@ const SecteursActivite = () => {
           </div>
           <motion.div
             ref={swiperRef}
-            className="swiper-container  slider-center-inline w-[90%] xs:w-full lg:w-[90%] lg:max-w-[1440px] mx-auto overflow-hidden md:pb-4"
+            className="swiper-container slider-center-inline w-[90%] xs:w-full lg:w-[90%] lg:max-w-[1440px] mx-auto overflow-hidden "
             style={{ overflow: "hidden" }}
           >
             <div className="swiper-wrapper text-white ">
@@ -156,7 +155,7 @@ const SecteursActivite = () => {
                       boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.52)",
                     }}
                   >
-                    <div className="relative h-[260px] xs:h-[280px] lg:md:h-[360px] xl:h-[280px] w-full overflow-hidden transition-all duration-500 group-hover:scale-110 ">
+                    <div className="relative h-[260px] xs:h-[320px] lg:md:h-[360px] xl:h-[300px] w-full overflow-hidden transition-all duration-500 group-hover:scale-110 ">
                       <Image
                         src={sector.image}
                         alt={`secteur-${sector.name}`}

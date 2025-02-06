@@ -90,7 +90,7 @@ const HeroSection = () => {
                             transition={{ duration: 1, ease: "easeInOut" }}
                         >
                             <div className="w-full md:w-[450px] mx-auto flex flex-col items-center duration-300 cursor-pointer space-y-5">
-                                <div className="w-full relative border rounded-2xl px-5 flex items-center group focus-within:border-gray-400">
+                                <div className="w-full relative border rounded-2xl px-5 flex items-center group focus-within:border-gray-300">
                                     <TfiSearch className="text-lg text-gray-700" />
                                     <input
                                         ref={firstInputRef}
@@ -108,7 +108,7 @@ const HeroSection = () => {
                                         </button>
                                     )}
                                 </div>
-                                <div className="w-full relative border rounded-2xl px-5 flex items-center focus-within:border-gray-400">
+                                <div className="w-full relative border rounded-2xl px-5 flex items-center focus-within:border-gray-300">
                                     <TfiLocationArrow className="text-lg text-gray-700" />
                                     <input
                                         className="w-full px-3 py-5 text-gray-800 focus:outline-none text-sm text-center"

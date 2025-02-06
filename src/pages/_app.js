@@ -7,10 +7,12 @@ import { FavoritesProvider } from "@/app/context/FavoritesContext";
 import { SearchProvider } from "@/app/context/SearchContext";
 import "@/styles/globals.css";
 import Footer from "@/app/components/Layout/Footer";
+import { UIProvider } from "@/app/context/UIContext";
 
 function MyApp({ Component, pageProps }) {
   return (
     <JobsProvider>
+      <UIProvider>
       <FavoritesProvider>
         <SearchProvider>
           <Header />
@@ -24,6 +26,7 @@ function MyApp({ Component, pageProps }) {
           <ScrollToTop />
         </SearchProvider>
       </FavoritesProvider>
+      </UIProvider>
     </JobsProvider>
   );
 }

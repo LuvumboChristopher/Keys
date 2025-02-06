@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
             <Head>
                 <title>{pageTitles.politiqueConfidentialite}</title>
             </Head>
-            <main className="py-6 md:py-12 bg-gray-100 text-justify text-xs sm:text-sm lg:text-md ">
+            <main className="py-6 md:py-12 dark:bg-gray-900  bg-gray-100 text-left text-xs sm:text-sm lg:text-md ">
                 <div className="container bg-white shadow-md rounded-2xl p-8">
 
                     <h1 className="text-xl md:text-2xl md:text-3xl font-bold text-left mb-8">

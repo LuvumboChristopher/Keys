@@ -8,7 +8,7 @@ const MentionsLegales = () => {
             <Head>
                 <title>{pageTitles.mentionsLegales}</title>
             </Head>
-            <main className="py-6 md:py-12 bg-gray-100 text-justify text-xs sm:text-sm lg:text-md ">
+            <main className="py-6 md:py-12 dark:bg-gray-900  bg-gray-100 text-left text-xs sm:text-sm lg:text-md ">
                 <div className="container bg-white shadow-md rounded-2xl p-8">
                     <h1 className="text-xl md:text-2xl md:text-3xl font-bold text-left mb-12">
                         Mentions légales
@@ -77,7 +77,7 @@ const MentionsLegales = () => {
                     </section>
                     <section className="space-y-3 mt-6">
                         <h2 className="text-lg lg:text-xl font-semibold mb-6">Développement du site sur mesure</h2>
-                        <p className="mb-4">Développé par <strong> Christopher Luvumbo</strong>, développeur web freelance, ce site a été conçu sur mesure pour répondre aux besoins spécifiques de l'agence de travail temporaire Keys-RH. Grâce à une approche personnalisée et à l'utilisation des dernières technologies, ce site garantit une expérience utilisateur fluide et moderne.</p>
+                        <p className="mb-4">Développé par <strong> Christopher Luvumbo</strong>.Ce site a été conçu sur mesure pour répondre aux besoins spécifiques de l'agence de travail temporaire Keys-RH. Grâce à une approche personnalisée et à l'utilisation des dernières technologies, ce site garantit une expérience utilisateur fluide et moderne.</p>
                     </section>
                     <section className="space-y-3 mt-6">
                         <h2 className="text-lg lg:text-xl font-semibold mb-6">Hébergeur</h2>

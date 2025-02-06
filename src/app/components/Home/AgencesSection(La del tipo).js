@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import AgenciesCarousel from '@/app/components/Home/AgencesCarrousel';
+import { FaBuilding } from "react-icons/fa";
+import { agencies } from "@/app/utils/agencies";
 
 const AgencesSection = () => {
     const [isVisible1, setIsVisible1] = useState(false);
@@ -42,12 +43,12 @@ const AgencesSection = () => {
     }, []);
 
     return (
-        <section id="nos-agences" className="bg-gray-100 py-8 md:py-14 border-t-[1px] border-b-[1px] dark:border-b-0 dark:bg-gray-900 border-gray-300 dark:border-none">
-            <div className="container lg:border-[1px] bg-white rounded-3xl md:px-10 p-12 md:p-16 bg-white flex flex-col md:flex-row-reverse items-start justify-center gap-10">
-                <div className="w-full h-full xl:w-[70%] xl:pr-14 mx-auto flex flex-col lg:flex-col justify-between gap-6">
+        <section id="nos-agences" className="dark:bg-gray-900 bg-gray-100 py-16">
+            <div className="container lg:border-[1px] bg-white rounded-3xl md:px-10 md:py-14 bg-white flex flex-col md:flex-row-reverse items-start justify-center gap-10">
+                <div className="w-full h-full xl:w-[70%] mx-auto flex flex-col lg:flex-col justify-between gap-6">
                     <div className="space-y-6 ">
                         <motion.h2
-                            className="text-lg md:text-[22px] xl:text-2xl font-extrabold text-left"
+                            className="text-base md:text-lg md:text-xl lg:text-lg xl:text-2xl font-extrabold text-left"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{
                                 y: isVisible1 ? 0 : -20,
@@ -73,8 +74,6 @@ const AgencesSection = () => {
                             transition={{ duration: 0.5 }}
                         >
                             Avec nos agences situées à Lyon, Toulouse, Chambéry, Meyzieu, et Marne La Vallée, Keys est déjà proche de vous. Nous nous engageons à vous offrir un service de qualité et de proximité, afin de répondre rapidement à vos besoins.
-
-
                         </motion.p>
                         <motion.p
                             className="w-full mr-auto text-left text-xs sm:text-sm md:text-md text-black  mb-6"
@@ -88,11 +87,36 @@ const AgencesSection = () => {
                             à l&#39;écoute pour plus de nouvelles !
                         </motion.p>
                     </div>
-                    <div className="overflow-hidden">
-                        <AgenciesCarousel />
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 py-6">
+                        {agencies.map((agency, index) => (
+                            <div key={index} className="w-full group  cursor-pointer">
+                                <div className="w-full mx-auto text-left">
+                                    <h1 className="flex items-center gap-1 pb-3 text-black text-sm md:text-md font-semibold transition-all duration-300 text-shadow-sm">
+                                        <FaBuilding className="inline-block mr-2 text-md md:text-base" />
+                                        Agence de {agency.name}
+                                    </h1>
+                                    <div className="text-black text-xs sm:text-sm">
+                                        <a
+                                            href={agency.mapLink}
+                                            target="_blank"
+                                            className="w-full inline-block hover:text-yellow-500"
+                                        >
+                                            {agency.address}
+                                        </a><br />
+                                        <a
+                                            href={agency.phoneLink}
+                                            target="_blank"
+                                            className="w-full inline-block hover:text-yellow-500"
+                                        >
+                                            {agency.phone}
+                                        </a><br />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
-                <div className="hidden md:block xl:w-max flex items-start xl:items-center justify-center mx-auto">
+                <div className="hidden lg:block xl:w-max flex items-start xl:items-center justify-center mx-auto">
                     <motion.img
                         src="/images/country.svg"
                         alt="France Icon"

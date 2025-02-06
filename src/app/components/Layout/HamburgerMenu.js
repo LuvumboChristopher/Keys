@@ -1,7 +1,7 @@
 "use client";
 
 const HamburgerMenu = ({ isMenuOpen, toggleMenu, isHomePage, scrolled }) => {
-    const lineColor = isHomePage && !scrolled ? "bg-white" : "bg-black";
+    const lineColor = isHomePage && !scrolled ? "bg-white " : "bg-black dark:bg-white";
     const textColor = isHomePage && !scrolled ? "text-white" : "text-black";
 
     return (

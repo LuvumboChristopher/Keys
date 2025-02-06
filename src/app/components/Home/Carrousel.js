@@ -45,7 +45,7 @@ const Carousel = () => {
                         onClick={() => handleImageClick((currentIndex + 1) % cities.length)}
                         className="w-full sm:w-[430px] h-[240px] relative group overflow-hidden cursor-pointer shadow-lg rounded-2xl mx-2 md:mx-3"
                     >
-                        <div className="h-[440px] sm:h-[240px] transition-all duration-300 group-hover:scale-105">
+                        <div className="h-[440px] sm:h-[240px] transition-all duration-300 md:group-hover:scale-105">
                         <img
                                 width={1000}
                                 height={1000}
@@ -54,11 +54,11 @@ const Carousel = () => {
                                 className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                             />
                         </div>
-                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-60"></div>
+                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-55"></div>
                         <div className="absolute top-1/4 sm:top-1/3 flex w-full z-10">
                             <div className="relative max-w-[60%] sm:max-w-[80%] mx-auto text-center sm:text-left text-white group">
                                 <h1
-                                    className="text-2xl font-bold transition-all duration-300 group-hover:text-[26px]"
+                                    className="text-2xl font-bold transition-all duration-300 md:group-hover:text-[26px]"
                                     style={{
                                         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
                                     }}
@@ -83,7 +83,7 @@ const Carousel = () => {
                         onClick={() => handleCityClick(cities[currentIndex].name)}
                         className="w-full mx-auto sm:w-[430px]  h-[240px] md:h-[280px] relative group overflow-hidden cursor-pointer shadow-lg rounded-2xl mx-2 md:mx-3"
                     >
-                        <div className="h-[240px] sm:h-full transition-all duration-300 group-hover:scale-105">
+                        <div className="h-[240px] sm:h-full transition-all duration-300 md:group-hover:scale-105">
                             <img
                                 width={1000}
                                 height={1000}
@@ -92,18 +92,18 @@ const Carousel = () => {
                                 className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                             />
                         </div>
-                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-60"></div>
+                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-55"></div>
                         <div className="absolute top-1/4 sm:top-1/3 flex w-full z-10">
                             <div className="relative max-w-[60%] sm:max-w-[80%] mx-auto text-center sm:text-left text-white group">
                                 <h1
-                                    className="text-2xl font-bold transition-all duration-300 group-hover:text-[26px]"
+                                    className="text-2xl font-bold transition-all duration-300 md:group-hover:text-[26px]"
                                     style={{
                                         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
                                     }}
                                 >
                                     {cities[currentIndex].name}
                                 </h1>
-                                <small className="block text-yellow-500 text-xxs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <small className="block text-yellow-500 text-xxs md:opacity-0 py-2 md:py-0 md:group-hover:opacity-100 transition-opacity duration-300">
                                     Voir les offres
                                 </small>
                                 <p className="text-xxs mt-2 line-clamp-3">{cities[(currentIndex + cities.length) % cities.length].description}</p>
@@ -122,7 +122,7 @@ const Carousel = () => {
                         onClick={() => handleImageClick((currentIndex + 1) % cities.length)}
                         className="w-full sm:w-[430px] h-[240px] relative group overflow-hidden cursor-pointer shadow-lg rounded-2xl mx-2 md:mx-3"
                     >
-                        <div className="h-[440px] sm:h-full transition-all duration-300 group-hover:scale-105">
+                        <div className="h-[440px] sm:h-full transition-all duration-300 md:group-hover:scale-105">
                             <img
                                 width={1000}
                                 height={1000}
@@ -131,16 +131,17 @@ const Carousel = () => {
                                 className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                             />
                         </div>
-                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-60"></div>
+                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-55"></div>
                         <div className="absolute top-1/4 sm:top-1/3 flex w-full z-10 ">
                             <div className="relative max-w-[60%] sm:max-w-[80%] mx-auto text-center sm:text-left text-white group">
                                 <h1
-                                    className="text-2xl font-bold transition-all duration-300 group-hover:text-[26px]"
+                                    className="text-2xl font-bold transition-all duration-300 md:group-hover:text-[26px]"
                                     style={{
                                         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
                                     }}
                                 >
-                                    {cities[(currentIndex + 1 + cities.length) % cities.length].name}                                </h1>
+                                    {cities[(currentIndex + 1 + cities.length) % cities.length].name}
+                                </h1>
                                 <small className="block text-yellow-500 text-xxs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     Voir les offres
                                 </small>

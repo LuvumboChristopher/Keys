@@ -1,77 +1,74 @@
 "use client";
 
 import { FaCheckCircle } from "react-icons/fa";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import StatsSection from "./StatsSection";
+
+const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+            when: "beforeChildren",
+            staggerChildren: 0.3,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 export default function AboutKeys() {
-  return (
-    <div className="container">
-      <div className="flex flex-wrap items-center my-14">
+    return (
+        <div id="keys" className="bg-white">
+            <motion.div
+                className="container flex flex-col lg:flex-row gap-6 lg:gap-12 items-center py-8 lg:py-16"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
+                <motion.div className="w-full lg:w-[40%] xl:w-[45%]">
+                    <motion.div variants={itemVariants}>
+                        <h2 className="text-xxs md:text-xs uppercase text-gray-500 mb-3">Qui Sommes-Nous ?</h2>
+                        <h2 className="text-lg md:text-[22px] xl:text-2xl  text-left pb-6 leading-tight">
+                            Une agence de recrutement qui valorise la stratégie et l&apos;engagement humain.
+                        </h2>
+                        <p className="text-xs xl:text-md mb-6">
+                            Chez Keys, nous croyons en l&apos;importance d&apos;une approche sur-mesure pour chaque client et candidat.
+                            Notre équipe s&apos;efforce d&apos;identifier des talents qui correspondent parfaitement aux besoins des entreprises
+                            tout en respectant les aspirations des individus.
+                        </p>
+                    </motion.div>
+                    <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 py-2 text-xxs xs:text-xs xl:text-md">
+                        {[
+                            "Recrutement sur mesure pour chaque poste clé.",
+                            "Suivi personnalisé pour les entreprises et candidats.",
+                            "Stratégie de recrutement alignée sur vos objectifs.",
+                            "Accompagnement continu pour une intégration réussie.",
+                        ].map((text, index) => (
+                            <motion.li
+                                key={index}
+                                className="flex items-center mb-3"
+                                variants={itemVariants}
+                            >
+                                <FaCheckCircle className="text-yellow-500 mr-3" />
+                                {text}
+                            </motion.li>
+                        ))}
+                    </motion.div>
 
-        <motion.div
-          className="w-full lg:w-7/12 px-6 "
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="text-xs sm:text-sm lg:text-md">
-            <h2 className="text-sm uppercase text-gray-500 mb-3">Qui Sommes-Nous ?</h2>
-            <h3 className="text-2xl font-bold mb-5">
-              Une agence de recrutement qui valorise la stratégie et l&#39;engagement humain.
-            </h3>
-            <p className="mb-6">
-              Chez Keys, nous croyons en l&#39;importance d&#39;une approche sur-mesure pour chaque client et candidat. 
-              Notre équipe s&#39;efforce d&#39;identifier des talents qui correspondent parfaitement aux besoins des entreprises 
-              tout en respectant les aspirations des individus.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap mt-3 text-xxs sm:text-xs lg:text-md">
-            <div className="w-full px-4">
-              <ul className="list-none mb-0">
-                <li className="flex items-center mb-3">
-                  <FaCheckCircle className="text-yellow-500 mr-3" />
-                  Recrutement sur mesure pour chaque poste clé.
-                </li>
-                <li className="flex items-center mb-3">
-                  <FaCheckCircle className="text-yellow-500 mr-3" />
-                  Suivi personnalisé pour les entreprises et candidats.
-                </li>
-              </ul>
-            </div>
-
-            <div className="w-full px-4">
-              <ul className="list-none mb-0">
-                <li className="flex items-center mb-3">
-                  <FaCheckCircle className="text-yellow-500 mr-3" />
-                  Stratégie de recrutement alignée sur vos objectifs.
-                </li>
-                <li className="flex items-center mb-3">
-                  <FaCheckCircle className="text-yellow-500 mr-3" />
-                  Accompagnement continu pour une intégration réussie.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="w-full lg:w-5/12 px-6 mt-10 lg:mt-0"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <Image
-            src="/images/contact/candidate-image.webp"
-            alt="Image descriptive"
-            width={1000}
-            height={1000}
-            className="w-full rounded-xl shadow-lg h-[300px] object-cover"
-          />
-        </motion.div>
-
-      </div>
-    </div>
-  );
+                    </motion.div>
+                    <div
+                        className="w-full lg:w-[60%] xl:w-[55%] lg:mt-0"
+                    >
+                        <StatsSection />
+                    </div>
+                </motion.div>
+        </div>
+    );
 }

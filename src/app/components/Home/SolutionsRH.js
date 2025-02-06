@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const SolutionsRH = () => {
     const [isVisible1, setIsVisible1] = useState(false);
@@ -35,82 +36,77 @@ const SolutionsRH = () => {
         const element1 = elementRef1.current;
         const element2 = elementRef2.current;
 
-        if (element1) {
-            observer.observe(element1);
-        }
-        if (element2) {
-            observer.observe(element2);
-        }
+        if (element1) observer.observe(element1);
+        if (element2) observer.observe(element2);
 
         return () => {
-            if (element1) {
-                observer.unobserve(element1);
-            }
-            if (element2) {
-                observer.unobserve(element2);
-            }
+            if (element1) observer.unobserve(element1);
+            if (element2) observer.unobserve(element2);
         };
     }, []);
 
     return (
-        <div
-            id="solutions-rh"
-            className="container mx-auto px-4 sm:px-6 md:max-w-6xl text-center sm:text-left flex flex-col lg:flex-row items-center justify-center py-8 xl:py-14 sm:space-y-10 lg:space-y-0 lg:gap-6 overflow-hidden"
-        >
-            <motion.section
-                ref={elementRef1}
-                className="w-full max-w-full md:w-4/5 lg:w-1/2 p-2 xl:p-0 flex flex-col sm:flex-row justify-center items-center sm:gap-6 md:gap-4"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: isVisible1 ? 1 : 0, x: isVisible1 ? 0 : -100 }}
-                transition={{ duration: 0.5 }}
+        <section className="bg-gray-50 border-t border-b">
+            <div
+                id="solutions-rh"
+                className="container flex flex-col lg:flex-row items-center justify-center py-8 xl:py-14 gap-6 overflow-hidden"
             >
-                <span className="text-5xl sm:text-6xl">🧑🏼‍🏭</span>
-                <div className="w-full">
-                    <div className="w-full flex flex-col py-3 sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center justify-between gap-4">
-                        <h3 className="pt-4 sm:pt-0 text-base sm:text-lg">Espace intérimaire</h3>
-                        <Link
-                            href="/https://www.keys-rh.fr/worker/security/login"
-                            className="bg-black text-white text-xs p-3 px-6 sm:px-10 border rounded-md border-white hover:bg-transparent hover:text-black hover:border-black inline-block overflow-hidden"
-                        >
-                            J&#39;y vais !
-                        </Link>
-                    </div>
-                    <p className="text-xs sm:text-sm md:text-md py-4">
-                        Les compétences de Keys sont mises à disposition de nos clients afin de répondre au mieux à l’ensemble de leurs besoins.
-                    </p>
-                </div>
-            </motion.section>
-            <motion.div
-                className="bg-gray-200 my-4 md:my-6 w-full h-px lg:w-px lg:h-[120px] lg:mx-4 xl:mx-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-            />
-            <motion.section
-                ref={elementRef2}
-                className="w-full max-w-full md:w-4/5 lg:w-1/2 p-2 xl:p-0 flex flex-col sm:flex-row justify-center items-center sm:gap-6 md:gap-4"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: isVisible2 ? 1 : 0, x: isVisible2 ? 0 : 100 }}
-                transition={{ duration: 0.5 }}
-            >
-                <span className="text-5xl sm:text-6xl">👨🏼‍💻</span>
-                <div className="w-full">
-                    <div className="w-full flex flex-col py-3 sm:flex-row lg:flex-col xl:flex-row items-center md:items-start xl:items-center justify-between gap-4">
-                        <h3 className="pt-4 sm:pt-0 text-base sm:text-lg">Espace Entreprise</h3>
-                        <Link
-                            href="/https://www.keys-rh.fr/company/security/login"
-                            className="bg-black text-white text-xs p-3 px-6 sm:px-10 border rounded-md border-white hover:bg-transparent hover:text-black hover:border-black inline-block overflow-hidden"
-                        >
-                            C&#39;est parti !
-                        </Link>
-                    </div>
-                    <p className="text-xs sm:text-sm md:text-md py-4">
-                        Nous proposons des solutions sur mesure pour répondre aux besoins de recrutement et d’emploi de votre entreprise.
-                    </p>
-                </div>
-            </motion.section>
-        </div>
+                {[{
+                    ref: elementRef1,
+                    isVisible: isVisible1,
+                    imgSrc: "/images/contact/candidate-image.webp",
+                    alt: "Espace intérimaire",
+                    title: "Espace intérimaire",
+                    emoji: "🧑🏼‍💼",
+                    description: "Keys met ses compétences à votre disposition pour recruter les meilleurs talents pour vos missions temporaires.",
+                    link: "https://www.keys-rh.fr/worker/security/login",
+                    buttonText: "J'y vais !"
+                }, {
+                    ref: elementRef2,
+                    isVisible: isVisible2,
+                    imgSrc: "/images/contact/recruiter-image.webp",
+                    alt: "Espace Entreprise",
+                    title: "Espace Entreprise",
+                    emoji: "👨🏼‍💻",
+                    description: "Nous proposons des solutions sur mesure pour répondre aux besoins de recrutement de votre entreprise.",
+                    link: "https://www.keys-rh.fr/company/security/login",
+                    buttonText: "C'est parti !"
+                }].map((item, index) => (
+                    <motion.section
+                        key={index}
+                        ref={item.ref}
+                        className="relative w-full lg:w-1/2 aspect-[16/9] flex flex-col justify-center items-center overflow-hidden rounded-xl"
+                        initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
+                        animate={{ opacity: item.isVisible ? 1 : 0, x: item.isVisible ? 0 : (index === 0 ? -100 : 100) }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <Image 
+                            src={item.imgSrc} 
+                            alt={item.alt} 
+                            layout="fill" 
+                            objectFit="cover" 
+                            className="absolute inset-0 z-0" 
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
+                        <div className="relative z-30 w-full px-8 py-6 text-white text-center">
+                            <div className="flex flex-col items-center">
+                                <h3 className="pt-2 text-xl font-bold">{item.title}</h3>
+                            </div>
+                            <p className="text-sm py-4 leading-relaxed">
+                                {item.description}
+                            </p>
+                            <Link
+                                href={item.link}
+                                className="bg-white text-black text-sm py-3 px-10 border rounded-xl hover:bg-transparent hover:text-white hover:border-white transition"
+                            >
+                                {item.buttonText}
+                            </Link>
+                        </div>
+                    </motion.section>
+                ))}
+            </div>
+        </section>
     );
 };
 

@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaBuilding, FaCalendar, FaUserFriends, FaUserMd } from "react-icons/fa";
 
 const StatsSection = () => {
   const [isVisible1, setIsVisible1] = useState(false);
@@ -54,61 +53,61 @@ const StatsSection = () => {
   return (
     <section className="mx-auto text-black bg-cover bg-center relative">
       <div className="relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center items-center">
+        <div className="grid grid-cols-2 gap-6 justify-items-center items-center ">
           {/* Stat 1 */}
-          <div ref={elementRef1} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef1} className="bg-gray-50 w-full rounded-xl border p-5 px-10 flex flex-col items-center text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible1 ? 1 : 0, scale: isVisible1 ? 1 : 0.5 }}
               transition={{ duration: 0.5 }}
-              className="font-extrabold mb-4 flex items-center justify-center gap-4"
+              className="font-extrabold mb-2 flex items-center justify-center gap-3"
             >
-              <span className="text-md md:text-xl dark:text-blue-500"><FaCalendar/></span>
-              <h2 className="text-md text-left">Depuis 2021</h2>
+              <span className="text-4xl md:text-6xl">🗓️</span>
+              <h2 className="text-4xl">2021</h2>
             </motion.div>
-            <p className="text-xxs text-left line-clamp-3 ">Depuis 2021, nous évoluons pour répondre aux défis actuels du marché et anticiper les besoins de demain.</p>
+            <p className="text-xs ">Depuis 2021</p>
           </div>
 
           {/* Stat 2 */}
-          <div ref={elementRef2} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef2} className="bg-gray-50 w-full rounded-xl border p-5 px-10  flex flex-col items-center text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible2 ? 1 : 0, scale: isVisible2 ? 1 : 0.5 }}
               transition={{ duration: 0.5 }}
-              className="font-extrabold mb-4 flex items-center justify-center gap-4"
+              className="font-extrabold mb-2 flex items-center justify-center gap-3"
             >
-              <span className="text-md md:text-xl dark:text-amber-500"><FaBuilding/></span>
-              <h2 className="text-md text-left">5 Agences</h2>
+              <span className="text-4xl md:text-6xl">🏬</span>
+              <h2 className="text-4xl">5</h2>
             </motion.div>
-            <p className="text-xxs text-left line-clamp-3 ">Pour accompagner nos clients partout sur le territoire avec des solutions adaptées et un service de proximité.</p>
+            <p className="text-xs ">Agences en France</p>
           </div>
 
           {/* Stat 3 */}
-          <div ref={elementRef3} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef3} className="bg-gray-50 w-full rounded-xl border p-5 px-10 flex flex-col items-center text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible3 ? 1 : 0, scale: isVisible3 ? 1 : 0.5 }}
               transition={{ duration: 0.5 }}
-              className="font-extrabold mb-4 flex items-center justify-center gap-4"
+              className="font-extrabold mb-2 flex items-center justify-center gap-3"
             >
-              <span className="text-md md:text-xl dark:text-yellow-500"><FaUserMd/></span>
-              <h2 className="text-md text-left">300+ Intérimaires</h2>
+              <span className="text-4xl md:text-6xl">👨🏽‍🔧</span>
+              <h2 className="text-4xl">300+</h2>
             </motion.div>
-            <p className="text-xxs text-left line-clamp-3 ">Prêts à répondre aux besoins des entreprises en apportant leur expertise, leur flexibilité et leur savoir-faire sur le terrain.</p>
+            <p className="text-xs ">Intérimaires</p>
           </div>
 
           {/* Stat 4 */}
-          <div ref={elementRef4} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef4} className="bg-gray-50 w-full rounded-xl border p-5 px-10 flex flex-col items-center text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible4 ? 1 : 0, scale: isVisible4 ? 1 : 0.5 }}
               transition={{ duration: 0.5 }}
-              className="font-extrabold mb-4 flex items-center justify-center gap-4"
+              className="font-extrabold mb-2 flex items-center justify-center gap-3"
             >
-              <span className="text-md md:text-xl dark:text-emerald-600"><FaUserFriends/></span>
-              <h2 className="text-md text-left">200+ Clients</h2>
+              <span className="text-4xl md:text-6xl">👬</span>
+              <h2 className="text-4xl">200+</h2>
             </motion.div>
-            <p className="text-xxs text-left line-clamp-3 ">Qui nous font confiance grâce à la qualité de nos services, notre réactivité et notre engagement à répondre à leurs attentes. </p>
+            <p className="text-xs ">Clients satisfaits</p>
           </div>
         </div>
       </div>

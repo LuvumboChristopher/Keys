@@ -24,7 +24,7 @@ const Breadcrumb = ({ jobId, jobTitle }) => {
     });
 
     return (
-        <nav aria-label="Breadcrumb" className="text-xxs md:text-xs text-gray-700 capitalize">
+        <nav aria-label="Breadcrumb" className="text-xxs md:text-xs dark:text-gray-200 text-gray-700 capitalize">
             <ul className="flex space-x-2">
                 <li>
                     <Link href="/">

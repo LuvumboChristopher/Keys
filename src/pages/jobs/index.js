@@ -7,6 +7,8 @@ import { useSearch } from "@/app/context/SearchContext";
 import Head from "next/head";
 import { pageTitles } from "@/app/utils/titles";
 import { JobsContext } from "@/app/context/JobContext";
+import { CallToActionInfo } from "@/app/components/Home/CallToActionInfo";
+import AnimatedText from "@/app/components/Home/AnimatedText";
 
 const JobsPage = () => {
     const { jobs, loading, setLoading } = useContext(JobsContext);
@@ -27,6 +29,7 @@ const JobsPage = () => {
         locationCoordinates,
         handleSearch,
         handleRemoveFilter,
+        agency,
     } = useSearch();
 
     useEffect(() => {
@@ -44,6 +47,12 @@ const JobsPage = () => {
             if (location) {
                 filtered = filtered.filter(job =>
                     job.town_name?.toLowerCase().includes(location.toLowerCase())
+                );
+            }
+
+            if (agency) {
+                filtered = filtered.filter(job =>
+                    job.agency_name?.toLowerCase().includes(agency.toLowerCase())
                 );
             }
 
@@ -104,9 +113,8 @@ const JobsPage = () => {
         applyFilters();
     }, [
         jobTitle, location, salaryMin, salaryMax, contractType, experience, postedDate, jobLevel, startDate, endDate, jobs,
-        locationCoordinates, filterJobsByDistance
+        locationCoordinates, filterJobsByDistance, agency
     ]);
-
 
     return (
         <>
@@ -119,10 +127,10 @@ const JobsPage = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="bg-gray-100"
+                        className="dark:bg-gray-900 bg-gray-100 "
                     >
+                        <AnimatedText/>
                         <motion.div
-                            className="container py-4"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
@@ -133,25 +141,32 @@ const JobsPage = () => {
                                 keyword={jobTitle}
                             />
                         </motion.div>
-                        <div className="container flex flex-col md:flex-row lg:flex-col xl:flex-row w-full gap-10 pb-10">
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="w-full md:w-1/3 lg:w-full xl:w-1/6"
-                            >
-                                <JobFilters 
-                                    filters={{
-                                    jobTitle, location, salaryMin, salaryMax, contractType, experience, postedDate, jobLevel, startDate, endDate, filterJobsByDistance
-                                }} 
-                                    handleRemoveFilter={handleRemoveFilter}
-                                    onFilterChange={handleSearch} 
-                                />
-                            </motion.div>
-                            <div className="w-full md:w-2/3 lg:w-full xl:w-5/6">
-                                <JobList jobs={filteredJobs} loading={loading} />
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="dark:bg-gray-900 py-4 md:py-8"
+                        >
+                            <div className="container flex flex-col md:flex-row lg:flex-col xl:flex-row w-full gap-10 ">
+                                <motion.div
+                                    initial={{ opacity: 0, x: -50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    className="w-full md:w-[35%] lg:w-full xl:w-1/6"
+                                >
+                                    <JobFilters 
+                                        filters={{
+                                            jobTitle, location, salaryMin, salaryMax, contractType, experience, postedDate, jobLevel, startDate, endDate, filterJobsByDistance, agency
+                                        }} 
+                                        handleRemoveFilter={handleRemoveFilter}
+                                        onFilterChange={handleSearch} 
+                                    />
+                                </motion.div>
+                                <div className="w-full  md:w-2/3 lg:w-full xl:w-5/6">
+                                    <JobList jobs={filteredJobs} loading={loading} />
+                                </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>

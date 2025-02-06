@@ -6,54 +6,44 @@ import Image from "next/image";
 
 export const DownloadApp = () => {
     return (
-        <section className="w-full flex justify-center items-center bg-gray-50 py-12 border-t border-b">
+        <div id="app" className="bg-gray-100 dark:bg-gray-900 py-12 border-t border-b border-gray-300">
             <motion.div
-                id="keys-recrute"
-                className="container flex flex-col lg:flex-row items-center justify-between rounded-2xl overflow-hidden bg-white text-black shadow-lg border relative"
+                className="w-[90%] mx-auto flex flex-col lg:flex-row gap-7 items-center justify-between overflow-hidden text-black relative"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                {/* Mockup del teléfono */}
-                <div className="w-full lg:w-[60%] xl:w-[30%]  relative overflow-hidden lg:h-[550px] border-r bg-yellow-500">
-                    <div className="absolute px-4 top-[40%] left-1/2 transform -translate-x-1/2 scale-[2]">
-                        <Image
-                            src="/images/banner/keys-app-iphone.png"
-                            alt="Mockup del téléphone"
-                            width={5000}
-                            height={5000}
-                            className="object-cover"
-                        />
-                    </div>
+                <div className="hidden lg:block w-full lg:w-[35%] relative overflow-hidden md:h-[470px] rounded-3xl">
+                    <Image
+                        src="/images/banner/utilisateur-app-keys.webp"
+                        alt="Mockup del téléphone"
+                        width={5000}
+                        height={5000}
+                        className="object-cover h-full"
+                    />
                 </div>
 
-                {/* Texto descriptivo */}
-                <div className="w-full lg:w-[70%] p-8 lg:p-12">
-                    <div className="text-center lg:text-left">
-                        {/* Título principal */}
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 leading-9 tracking-tight">
+                <div className="w-full h-full mx-auto lg:w-[65%] md:h-[470px] rounded-3xl bg-white p-10 md:p-14 flex items-center justify-center border border-gray-300">
+                    <div className="w-max text-center lg:text-left">
+                        <h1 className="text-2xl md:text-3xl font-extrabold mb-4 lg:mb-2 leading-9 tracking-tight">
                             Simplifiez votre recherche d’emploi
                         </h1>
-                        {/* Subtítulo */}
-                        <h2 className="text-xl font-bold mb-4">
+                        <h2 className="text-md lg:text-lg font-bold mb-4">
                             Téléchargez notre application mobile
                         </h2>
-                        {/* Texto de descripción */}
-                        <p className="text-xs sm:text-sm lg:text-md mb-6">
+                        <p className="text-md mb-6 max-w-xl">
                             Découvrez des centaines d’offres d’emploi adaptées à vos compétences, postulez en un clic et suivez l’évolution de vos candidatures en temps réel.
                         </p>
-                        {/* Beneficios destacados */}
-                        <ul className="text-sm sm:text-md lg:text-base mb-6 space-y-1">
+                        <ul className="text-xs mb-6 space-y-2">
                             <li>✔ Trouvez des missions près de chez vous.</li>
                             <li>✔ Gérez facilement votre emploi du temps.</li>
                             <li>✔ Recevez des notifications en temps réel.</li>
                         </ul>
-                        {/* Llamado a la acción */}
-                        <p className="text-xs sm:text-sm lg:text-md font-medium mb-6">
+                        <p className="text-md font-medium mb-6">
                             Ne manquez aucune opportunité : téléchargez l’application dès maintenant !
                         </p>
 
-                        <div className="w-full flex justify-center lg:justify-start  items-center space-x-4">
+                        <div className="w-full flex justify-center pt-2 md:pt-0 lg:justify-start items-center space-x-4">
                             <Link
                                 href="https://play.google.com/store"
                                 target="_blank"
@@ -84,6 +74,6 @@ export const DownloadApp = () => {
                     </div>
                 </div>
             </motion.div>
-        </section>
+        </div>
     );
 };

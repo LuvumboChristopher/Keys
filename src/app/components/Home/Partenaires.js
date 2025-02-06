@@ -16,13 +16,13 @@ const partenaires = [
 
 const Partenaires = () => {
     return (
-        <section className="container mx-auto">
-            <div className="w-full sm:max-w-[90%] mx-auto pt-12">
-                <h1 className="text-md sm:text-base text-center pb-4">
+        <section className="container mx-auto ">
+            <div className="w-full sm:max-w-[90%] mx-auto py-14 md:py-12">
+                <h1 className="text-md sm:text-base text-center">
                     Ils nous font confiance
                 </h1>
-                <div className="relative z-20">
-                    <div className="w-full flex justify-start xl:justify-center items-center overflow-x-auto whitespace-nowrap gap-6 py-4 scrollbar-hide relative">
+                <div className="relative z-20 py-2 md:py-6">
+                    <div className="w-full flex justify-start xl:justify-center items-center overflow-x-auto whitespace-nowrap gap-6 scrollbar-hide relative">
                         {partenaires.map((partenaire, index) => (
                             <motion.div
                                 key={partenaire.name}
@@ -36,13 +36,13 @@ const Partenaires = () => {
                                     height={10000}
                                     src={partenaire.image}
                                     alt={partenaire.name}
-                                    className="h-auto object-contain w-[100px] hover:scale-110 duration-300 cursor-pointer"
+                                    className="h-auto object-contain w-[110px] hover:scale-110 duration-300 cursor-pointer"
                                 />
                             </motion.div>
                         ))}
                     </div>
                     <motion.div
-                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8 flex flex-row items-center gap-2 gap-2 z-30 text-xxs xl:hidden"
+                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-3 flex flex-row items-center gap-2 gap-2 z-30 text-xxs xl:hidden"
                         initial={{ opacity: 0 }}
                         animate={{
                             opacity: [0, 1, 0],

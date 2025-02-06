@@ -14,7 +14,7 @@ export default function JobAgency({ job }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-white border rounded-2xl p-10 flex flex-col items-center justify-center lg:items-start"
+            className="bg-white border rounded-2xl p-10 flex flex-col items-center justify-center lg:items-start h-full md:h-[300px] xl:h-full"
         >
             <div>
                 <h2 className="text-base md:text-lg font-semibold mb-6">Agence de recrutement</h2>

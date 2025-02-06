@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="fr" className="scroll-pt-[130px] xl:scroll-pt-[208px] scroll-smooth">
+    <Html lang="fr" className="scroll-smooth">
     <Head>
       <meta charSet="UTF-8" />
       <meta

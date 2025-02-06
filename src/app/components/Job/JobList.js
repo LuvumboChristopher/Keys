@@ -1,11 +1,13 @@
 "use client"
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { FaBell, FaBuilding, FaClock, FaEye, FaHeart, FaKey, FaMapMarkerAlt, FaRegHeart, FaThLarge, FaThList } from "react-icons/fa";
+import { FaBell, FaBuilding, FaChevronDown, FaClock, FaEye, FaHeart, FaKey, FaMapMarkerAlt, FaRegHeart, FaThLarge, FaThList } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import { MdOutlineRemoveCircle, MdOutlineSaveAlt } from "react-icons/md";
+import { TfiBag } from "react-icons/tfi";
+import { formatSalary } from "@/app/utils/utils";
 
 const JobList = ({ jobs, loading }) => {
     const [isListView, setIsListView] = useState(false);
@@ -95,10 +97,10 @@ const JobList = ({ jobs, loading }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3, delay: 0.4 }}
-                        className={`${isListView ? "sm:pb-6 justify-start" : "sm:mb-1 justify-between"} w-full flex items-center gap-2`}
+                        className={`${isListView ? "sm:pb-6 justify-start" : "sm:mb-1 justify-between"} w-full flex items-center gap-5`}
 
                     >
-                        <h3 className="w-full capitalize text-base sm:text-lg font-semibold">
+                        <h3 className="w-full capitalize text-base sm:text-lg font-semibold truncate whitespace-nowrap">
                             {job.job_title}
                         </h3>
                         <FaKey
@@ -122,7 +124,7 @@ const JobList = ({ jobs, loading }) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3, delay: 0.6 }}
                                 >
-                                    <FaBuilding className="mr-3" />
+                                    <FaBuilding className="mr-3 dark:text-blue-500" />
                                     <p className="capitalize truncate whitespace-nowrap">
                                         {job.agency_name}
                                     </p>
@@ -133,7 +135,7 @@ const JobList = ({ jobs, loading }) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3, delay: 0.7 }}
                                 >
-                                    <FaMapMarkerAlt className="mr-3" />
+                                    <FaMapMarkerAlt className="mr-3 dark:text-emerald-600" />
                                     <p className="capitalize truncate whitespace-nowrap">
                                         {job.town_name}
                                     </p>
@@ -144,7 +146,7 @@ const JobList = ({ jobs, loading }) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3, delay: 0.8 }}
                                 >
-                                    <FaClock className="mr-3" />
+                                    <FaClock className="mr-3 dark:text-amber-500" />
                                     <p className="capitalize truncate whitespace-nowrap">
                                         {job.contract_type}
                                     </p>
@@ -161,7 +163,7 @@ const JobList = ({ jobs, loading }) => {
                                 >
                                     {job.hourly_rate > 0
                                         ? <>
-                                            {job.hourly_rate} €<small className="text-xxs">/ heure</small>
+                                            {formatSalary(job.hourly_rate)}
                                         </>
                                         : <span className="text-gray-500">N/R</span>}
                                 </motion.div>
@@ -237,7 +239,7 @@ const JobList = ({ jobs, loading }) => {
                             </div>
                             <Link
                                 href={`/jobs/${job.offer_id}`}
-                                className={`${isListView ? "w-full ml-auto " : "w-full xs:w-max ml-auto xs:px-10"} p-4 h-full block bg-black text-white text-center text-xxs xs:text-xs  hover:bg-yellow-500 hover:text-black hover:shadow-sm transition-all duration-100 rounded-xl border`}
+                                className={`${isListView ? "w-full ml-auto " : "w-full xs:w-max ml-auto xs:px-10"} p-4 h-full block bg-black text-white text-center text-xxs xl:text-xs  hover:bg-yellow-500 hover:text-black hover:shadow-sm transition-all duration-100 rounded-xl border cursor-pointer`}
                             >
                                 {isListView ? (
                                     <FaEye />
@@ -253,44 +255,55 @@ const JobList = ({ jobs, loading }) => {
     };
 
     return (
-        <>
-            <div className="min-h-[70px] flex flex-wrap gap-6 justify-between items-center border-b pb-6">
-                <h2 className="text-base font-semibold">Offres d&#39;emploi</h2>
-                <div className="w-full flex flex-row items-center justify-start md:justify-end xl:flex-wrap gap-4 text-xs">
+        <section id="offresdemploi">
+            <div  className="min-h-[70px] flex flex-col justify-start sm:flex-row  gap-6 xs:justify-between items-center border-b py-10 md:py-0 lg:py-10 xl:py-0 xl:pb-6">
+
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-max dark:text-white w-full mr-auto text-left  text-base font-semibold flex items-center gap-5"
+                >
+                    <TfiBag className="dark:text-white text-base md:hidden" />
+                    <h2 className="w-max dark:text-white text-base text-left font-semibold ">Offres d&#39;emploi</h2>
+                </motion.div>
+
+                <div className="w-full sm:w-max flex items-center justify-start lg:justify-end xl:flex-wrap gap-4 text-xs">
                     <button
-                        className="w-full md:w-max flex items-center justify-center gap-2 border bg-gray-200 py-3 px-6 group hover:bg-black transition duration-100 rounded-lg text-xxs shadow-sm"
+                        className="w-full sm:w-max flex items-center justify-center gap-2 border bg-gray-200 p-3 md:p-4 lg:p-3 lg:px-6 group hover:bg-black transition duration-100 rounded-lg text-xxs shadow-sm"
                         onClick={() => router.push('https://www.keys-rh.fr/worker/security/login')}>
-                        <FaBell className="w-max text-xs group-hover:text-white" />
-                        <p className="w-max group-hover:text-white font-bold">Créer une alerte</p>
+                        <FaBell className="w-max text-xxs group-hover:text-white" />
+                        <p className="w-max block md:hidden lg:block group-hover:text-white">Créer une alerte</p>
                     </button>
 
-                    <div className="w-full md:w-max px-3 bg-white border rounded-lg overflow-hidden shadow-sm">
+                    <div className="w-full sm:w-max flex items-center justify-center gap-2 px-3 bg-white border rounded-lg overflow-hidden shadow-sm">
                         <select
                             id="filter"
                             name="filter"
                             value={filter}
                             onChange={handleFilterChange}
-                            className="w-full focus:outline-none py-3 text-xxs"
+                            className="w-full sm:w-max focus:outline-none py-3 text-xxs bg-white text-center"
                         >
                             <option value="pertinence">Trier par pertinence</option>
                             <option value="alphabetical">Trier par ordre alphabétique</option>
                             <option value="salary-asc">Trier par salaire croissant</option>
                             <option value="salary-desc">Trier par salaire décroissant</option>
                         </select>
+                        <FaChevronDown className="text-gray-600 text-xxs" />
                     </div>
 
-                    <div className="hidden lg:block flex flex-row rounded-lg border overflow-hidden shadow-sm">
+                    <div className="w-max hidden lg:inline flex flex-row rounded-l-lg  overflow-hidden shadow-sm">
                         <button
-                            className={`inline  py-3 px-4 ${!isListView ? "bg-black" : "bg-white"}`}
+                            className={`inline rounded-l-lg p-4 px-5 text-xxs ${!isListView ? "bg-black dark:bg-emerald-600" : "bg-white"}`}
                             onClick={() => setIsListView(false)}
                         >
-                            <FaThLarge className={!isListView ? "text-white" : "text-black"} />
+                            <FaThLarge className={!isListView ? "dark:text-black text-white" : "text-black"} />
                         </button>
                         <button
-                            className={`inline  py-3 px-4 ${isListView ? "bg-black" : "bg-white"}`}
+                            className={`inline rounded-r-lg  p-4 px-5 text-xxs ${isListView ? "bg-black dark:bg-emerald-600" : "bg-white"}`}
                             onClick={() => setIsListView(true)}
                         >
-                            <FaThList className={isListView ? "text-white" : "text-black"} />
+                            <FaThList className={isListView ? "dark:text-black text-white" : "text-black"} />
                         </button>
                     </div>
                 </div>
@@ -300,13 +313,13 @@ const JobList = ({ jobs, loading }) => {
                     Nombre total de résultats:
                 </p>
                 <p className="text-gray-500">
-                    <strong className="pr-1 text-gray-800">{jobs?.length}</strong> 0ffres d&#39;emploi
+                    <strong className="pr-1 dark:text-white text-gray-800">{jobs?.length}</strong> 0ffres d&#39;emploi
                 </p>
             </div>
             <div className={`min-h-[105px] ${jobs?.length > 0 ? (isListView ? "flex flex-col gap-8 py-5" : "grid grid-cols-1 lg:grid-cols-2 gap-8 py-5") : "w-full flex justify-center items-center"}`}>
                 {renderJobs()}
             </div>
-        </>
+        </section>
     );
 };
 

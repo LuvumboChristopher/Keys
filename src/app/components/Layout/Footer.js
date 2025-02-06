@@ -5,28 +5,55 @@ import Link from "next/link";
 import React from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { currentYear } from '@/app/utils/utils';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   return (
-    <>
+    <section className={isHomePage ? "bg-white dark:bg-gray-900 dark:text-white" : "bg-white"}>
       <motion.footer
-        className="container py-14 mt-0 text-black flex flex-col lg:flex-row  gap-16 lg:gap-8 items-start lg:items-center justify-between text-xs sm:text-sm"
+        className={`container py-16 flex flex-col lg:flex-row gap-16 lg:gap-8 items-start lg:items-center justify-between text-xs sm:text-sm 
+    ${isHomePage ? "" : ""}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+
         {/* Logo & Description */}
         <div className="w-full lg:w-2/5 flex flex-col items-start lg:border-r lg:pr-12">
-          <Image
-            title="Keys"
-            width={2000}
-            height={2000}
-            className="max-w-[140px]"
-            src="/images/keyslogos/Keys-logo-new.png"
-            alt="Logo"
-          />
+          {isHomePage ?
+            <>
+              <Image
+                title="Keys"
+                width={2000}
+                height={2000}
+                className="dark:block hidden max-w-[90px]"
+                src="/images/keyslogos/Keys-logo-white.svg"
+                alt="Logo"
+              />
+              <Image
+                title="Keys"
+                width={2000}
+                height={2000}
+                className="dark:hidden block max-w-[90px]"
+                src="/images/keyslogos/Keys-logo-black.svg"
+                alt="Logo"
+              />
+            </>
+            :
+            <Image
+              title="Keys"
+              width={2000}
+              height={2000}
+              className="max-w-[90px]"
+              src="/images/keyslogos/Keys-logo-black.svg"
+              alt="Logo"
+            />
+          }
           <p className="mt-6 max-w-md mr-auto ">
             Créé en 2017, Keys a pour ambition de s&#39;imposer durablement sur le
             marché de l&#39;emploi. Nous vous mettons à disposition nos experts
@@ -85,7 +112,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/mon-application" className=" hover:underline">
+                <Link href="/#app" className=" hover:underline">
                   Mon application
                 </Link>
               </li>
@@ -123,15 +150,14 @@ const Footer = () => {
           </div>
         </div>
       </motion.footer>
-
       {/* Bottom Footer */}
       <motion.footer
-        className="bg-white py-6 border-t"
+        className="container py-6 border-t"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="container flex flex-col lg:flex-row justify-between items-center text-xxs text-gray-900 gap-4 py-2">
+        <div className="flex flex-col lg:flex-row justify-between items-center text-xxs gap-4 py-2">
           <p>Copyright © {currentYear} Keys - Intérim & Recrutement</p>
           <p>
             Réalisation par 🚀
@@ -155,7 +181,7 @@ const Footer = () => {
           </div>
         </div>
       </motion.footer>
-    </>
+    </section>
   );
 };
 

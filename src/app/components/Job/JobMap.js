@@ -14,7 +14,7 @@ export default function JobMap({ job }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 >
-                    <h2 className="w-full text-md md:text-lg font-semibold mb-6">Localisation</h2>
+                    <h2 className="dark:text-white  w-full text-md md:text-lg font-semibold mb-6">Localisation</h2>
                     <iframe
                         src={`https://www.google.com/maps?q=${encodeURIComponent(job.town_name)}&output=embed&hl=fr&z=12`}
                         width="100%"

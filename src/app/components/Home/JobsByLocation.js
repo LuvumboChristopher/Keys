@@ -1,14 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import Carrousel from '@/app/components/Home/Carrousel';
 import { ImageCarousel } from "./ImageCarousel";
 
 const JobsByLocation = () => {
   return (
     <>
-      <section id="emplois-par-localisation" className="container flex flex-col lg:flex-row items-center gap-10 overflow-hidden ">
-        <div className="w-full xl:w-[58%] text-left py-10 md:py-12">
+      <section id="emplois-par-localisation" className="container flex flex-col lg:flex-row items-center gap-10 overflow-hidden">
+        <div className="w-full xl:w-[58%] text-left py-8 md:py-20">
           <h2 className="text-left md:text-center lg:text-left text-xl md:text-2xl md:text-3xl py-2">
             Emplois par{" "}
             <span

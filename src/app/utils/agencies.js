@@ -1,17 +1,17 @@
 export const agencies = [
     {
-        name: "Toulouse",
-        address: "52 Bd Déodat de Sévérac, 31300 Toulouse",
-        phone: "05 61 80 49 50",
-        mapLink: "https://www.google.com/maps?q=52+Bd+Déodat+de+Séverac,+31300+Toulouse",
-        phoneLink: "tel:+33561804950"
-    },
-    {
         name: "Chambéry",
         address: "30 Allée Albert Sylvestre, 73000 Chambéry",
         phone: "04 37 65 34 56",
         mapLink: "https://www.google.com/maps?q=30+Allée+Albert+Sylvestre,+73000+Chambéry",
         phoneLink: "tel:+33437653456"
+    },
+    {
+        name: "Meyzieu",
+        address: "107 Avenue de Verdun, 69330 Meyzieu",
+        phone: "04 87 65 72 91",
+        mapLink: "https://www.google.com/maps?q=107+Avenue+de+Verdun,+69330+Meyzieu",
+        phoneLink: "tel:+33487657291"
     },
     {
         name: "Marne La Vallée",
@@ -28,10 +28,10 @@ export const agencies = [
         phoneLink: "tel:+33491901835"
     },
     {
-        name: "Meyzieu",
-        address: "107 Avenue de Verdun, 69330 Meyzieu",
-        phone: "04 87 65 72 91",
-        mapLink: "https://www.google.com/maps?q=107+Avenue+de+Verdun,+69330+Meyzieu",
-        phoneLink: "tel:+33487657291"
-    },
+        name: "Toulouse",
+        address: "52 Bd Déodat de Sévérac, 31300 Toulouse",
+        phone: "05 61 80 49 50",
+        mapLink: "https://www.google.com/maps?q=52+Bd+Déodat+de+Séverac,+31300+Toulouse",
+        phoneLink: "tel:+33561804950"
+    }
 ];
