@@ -79,7 +79,7 @@ const Processus = () => {
                         >
                             <div className="flex flex-row items-center mb-4">
                                 <span>{step.icon}</span>
-                                <h3 className="w-full text-sm xs:text-md font-semibold">{step.title}</h3>
+                                <h3 className="w-full text-xs sm:text-sm xs:text-md font-semibold">{step.title}</h3>
                             </div>
                             <p className="text-xxs text-gray-600">{step.text}</p>
                         </motion.div>

@@ -48,7 +48,7 @@ const Header = () => {
                 width={2000}
                 height={2000}
                 loading="lazy"
-                className={`block dark:hidden transition-opacity ease-in-out w-[95px]  sm:w-[105px] md:w-[115px] ${scrolled || !isHomePage ? "opacity-100" : "opacity-0"
+                className={`block dark:hidden transition-opacity ease-in-out w-[90px] sm:w-[105px] md:w-[115px] ${scrolled || !isHomePage ? "opacity-100" : "opacity-0"
                   }`}
               />
               <Image

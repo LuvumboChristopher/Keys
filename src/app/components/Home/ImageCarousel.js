@@ -104,7 +104,7 @@ export function ImageCarousel() {
                 className="h-full w-full object-cover transition-transform duration-500 ease-in-out lg:group-hover:scale-110"
               />
             </div>
-            <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 md:group-hover:opacity-55"></div>
+            <div className="absolute inset-0 bg-black opacity-70 md:opacity-50  transition-opacity duration-500 md:group-hover:opacity-55"></div>
             <div className="absolute bottom-14 flex w-full z-10">
               <div className="relative max-w-[80%] mx-auto text-left text-white">
                 <h1 className="pb-8 text-2xl font-bold transition-all duration-300 md:group-hover:text-[26px]" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>
@@ -120,13 +120,13 @@ export function ImageCarousel() {
         </motion.div>
         <button
           onClick={prevImage}
-          className="absolute left-0 z-20 text-white bg-black p-2 rounded-full top-1/2 transform -translate-y-1/2"
+          className="absolute left-0 z-20 text-white bg-black p-4 md:p-2 rounded-full top-1/2 transform -translate-y-1/2"
         >
           <FaArrowLeft />
         </button>
         <button
           onClick={nextImage}
-          className="absolute right-[20%] z-20 text-white bg-black p-2 rounded-full top-1/2 transform -translate-y-1/2"
+          className="absolute right-[20%] z-20 text-white bg-black p-4 md:p-2 rounded-full top-1/2 transform -translate-y-1/2"
         >
           <FaArrowRight />
         </button>

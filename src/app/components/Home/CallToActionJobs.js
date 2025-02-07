@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const CallToActionJobs = () => {
     return (
-        <div className="container pt-0 pb-20">
+        <div className="container pb-10 md:pb-20">
             <motion.div
                 id="keys-recrute"
                 className="relative rounded-2xl overflow-hidden py-16 text-black bg-yellow-500"
@@ -14,7 +14,7 @@ export const CallToActionJobs = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center filter brightness-[95%] contrast-[122%]"
+                    className="absolute inset-0 bg-cover bg-center filter brightness-[95%] contrast-[122%] bg-right sm:bg-center"
                     style={{ backgroundImage: "url('/images/heroImages/background.png')" }}
                 ></div>
                 

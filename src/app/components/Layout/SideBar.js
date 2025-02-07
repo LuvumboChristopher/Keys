@@ -54,7 +54,7 @@ export default function Sidebar({ isMenuOpen, toggleMenu, toggleSavedJobsMenu })
 
   return (
     <div
-      className={`sideBar fixed md:right-[2%] md:top-[3%] md:bottom-[3%] h-[96vh] md:h-[94%] p-9  w-full  md:w-[600px] h-full bg-white transform z-[9999] md:rounded-3xl ${isMenuOpen ? "open" : "closing"
+      className={`sideBar fixed md:right-[2%] md:top-[3%] md:bottom-[3%] h-[96vh] md:h-[94%] p-7 md:p-9 w-full  md:w-[600px] h-full bg-white transform z-[9999] md:rounded-3xl ${isMenuOpen ? "open" : "closing"
         } flex flex-col overflow-hidden transixtion-all duration-300 ease-in-out`}
     >
       <div className="w-full flex justify-between items-center pb-6">

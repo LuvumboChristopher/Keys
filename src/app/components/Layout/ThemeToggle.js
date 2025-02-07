@@ -42,9 +42,9 @@ export const ThemeToggle = () => {
     return (
         <button
             className={`relative w-16 h-8 flex items-center 
-                bg-gray-300 dark:bg-gray-500 rounded-full p-1 
+                bg-gray-300 dark:bg-gray-300 rounded-full p-1 
                 transition-colors duration-300 cursor-pointer 
-                ${!scrolled && theme === "dark" ? "dark:bg-gray-300" : "bg-gray-300"}`}
+                ${!scrolled ? "dark:bg-gray-300 " : "bg-gray-300 dark:bg-gray-500"}`}
             onClick={handleThemeChange}
         >
             <motion.div

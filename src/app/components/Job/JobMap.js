@@ -18,11 +18,11 @@ export default function JobMap({ job }) {
                     <iframe
                         src={`https://www.google.com/maps?q=${encodeURIComponent(job.town_name)}&output=embed&hl=fr&z=12`}
                         width="100%"
-                        height="300"
+                        height="100%"
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
-                        className="shadow-md border rounded-xl overflow-hidden"
+                        className="shadow-md border rounded-xl overflow-hidden h-[180px] md:h-[300px]"
                     ></iframe>
                 </motion.div>
             )}

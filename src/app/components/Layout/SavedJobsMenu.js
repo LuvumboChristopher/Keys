@@ -49,7 +49,7 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
     return (
         <>
             <div
-                className={`savedMenu fixed md:left-[2%] h-[96vh] md:top-[3%] md:bottom-[3%] md:h-[94%] p-9 w-full md:w-[600px] h-full bg-white transform z-[9999] md:rounded-3xl ${isSavedJobsMenuOpen ? "open" : "closing"} flex flex-col overflow-hidden`}
+                className={`savedMenu fixed md:left-[2%] h-[96vh] md:top-[3%] md:bottom-[3%] md:h-[94%] p-7 md:p-9 w-full md:w-[600px] h-full bg-white transform z-[9999] md:rounded-3xl ${isSavedJobsMenuOpen ? "open" : "closing"} flex flex-col overflow-hidden`}
             >
                 <div className="w-full flex justify-between items-center pb-5">
                     <Image
@@ -73,9 +73,9 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
                         className={`transition-all duration-500 ease-in-out ${isSavedJobsMenuOpen ? "max-h-screen" : "max-h-0 overflow-hidden"}`}
                     >
                         <div>
-                            <h2 className="flex items-center gap-4 text-base border-b pb-6"> {favorites.length === 0 ? <BsHandThumbsUp /> : <BsFillHandThumbsUpFill />} Favoris</h2>
+                            <h2 className="flex items-center gap-4 text-sm md:text-base border-b pb-6"> {favorites.length === 0 ? <BsHandThumbsUp /> : <BsFillHandThumbsUpFill />} Favoris</h2>
                             {favorites.length === 0 ? (
-                                <p className="text-sm my-6">Aucun emploi ajouté aux favoris.</p>
+                                <p className="text-xs md:text-sm my-6">Aucun emploi ajouté aux favoris.</p>
                             ) : (
                                 <ul className="my-5 space-y-6">
                                     {favorites.map((job, index) => (
@@ -89,7 +89,7 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
                                                     initial={{ scale: 0.8 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ duration: 0.5, delay: 0.9 }}
-                                                    className={`w-max text-xxs bg-gray-100 border text-center p-3 rounded-lg `}
+                                                    className={`w-full sm:w-max text-xxs bg-gray-100 border text-center p-3 rounded-lg `}
                                                 >
                                                     {job.hourly_rate > 0
                                                         ? <>
@@ -116,9 +116,9 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
                             )}
                         </div>
                         <div className="pt-4">
-                            <h2 className="flex items-center gap-4 text-base border-b pb-6"> {savedForLater.length === 0 ? <BsBookmark /> : <BsFillBookmarkFill />} Enregistré pour plus tard</h2>
+                            <h2 className="flex items-center gap-4 text-sm md:text-base border-b pb-6"> {savedForLater.length === 0 ? <BsBookmark /> : <BsFillBookmarkFill />} Enregistré pour plus tard</h2>
                             {savedForLater.length === 0 ? (
-                                <p className="text-sm my-6">Aucun emploi enregistré pour plus tard.</p>
+                                <p className="text-xs md:text-sm my-6">Aucun emploi enregistré pour plus tard.</p>
                             ) : (
                                 <ul className="my-5 space-y-6">
                                     {savedForLater.map((job, index) => (
@@ -132,7 +132,7 @@ function SavedJobsMenu({ isSavedJobsMenuOpen, toggleSavedJobsMenu }) {
                                                     initial={{ scale: 0.8 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ duration: 0.5, delay: 0.9 }}
-                                                    className={`w-max text-xxs bg-gray-100 w-full border text-center p-3 rounded-lg `}
+                                                    className={`w-full sm:w-max  text-xxs bg-gray-100 w-full border text-center p-3 rounded-lg `}
                                                 >
                                                     {job.hourly_rate > 0
                                                     ? <>

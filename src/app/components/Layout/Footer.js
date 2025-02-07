@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <section className={isHomePage ? "bg-white dark:bg-gray-900 dark:text-white" : "bg-white"}>
       <motion.footer
-        className={`container py-16 flex flex-col lg:flex-row gap-16 lg:gap-8 items-start lg:items-center justify-between text-xs sm:text-sm 
+        className={`container py-10 md:py-16 flex flex-col lg:flex-row gap-16 lg:gap-8 items-start lg:items-center justify-between text-xs sm:text-sm 
     ${isHomePage ? "" : ""}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -31,7 +31,7 @@ const Footer = () => {
                 title="Keys"
                 width={2000}
                 height={2000}
-                className="dark:block hidden max-w-[90px]"
+                className="dark:block hidden w-[80px] sm:w-[105px] max-w-[90px]"
                 src="/images/keyslogos/Keys-logo-white.svg"
                 alt="Logo"
               />
@@ -39,7 +39,7 @@ const Footer = () => {
                 title="Keys"
                 width={2000}
                 height={2000}
-                className="dark:hidden block max-w-[90px]"
+                className="dark:hidden block w-[80px] sm:w-[105px] max-w-[90px]"
                 src="/images/keyslogos/Keys-logo-black.svg"
                 alt="Logo"
               />
@@ -49,7 +49,7 @@ const Footer = () => {
               title="Keys"
               width={2000}
               height={2000}
-              className="max-w-[90px]"
+              className="w-[80px] sm:w-[105px] max-w-[90px]"
               src="/images/keyslogos/Keys-logo-black.svg"
               alt="Logo"
             />

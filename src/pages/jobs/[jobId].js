@@ -115,14 +115,14 @@ const Job = () => {
             {capitalizeTitle(job?.job_title)} | Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH
           </title>
         </Head>
-        <motion.div className="dark:bg-gray-900 bg-gray-100 pb-10" initial="initial" animate="animate">
+        <motion.div className="dark:bg-gray-900 bg-gray-100 py-8  md:py-4" initial="initial" animate="animate">
           <motion.section initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }} className="container py-8">
+            transition={{ duration: 0.5, delay: 0.5 }} className="container md:py-8">
             <div>
               {(jobId || job?.job_title || job?.offer_id) && (
                 <motion.div
-                  className="flex flex-col lg:flex-row justify-center sm:justify-between items-center mb-6 gap-3 "
+                  className="flex flex-col lg:flex-row justify-center sm:justify-between items-center md:mb-6 gap-3 "
                   variants={fadeIn}
                 >
                   <span className='hidden lg:block'>
@@ -131,7 +131,7 @@ const Job = () => {
                     )}
                   </span>
                   {job?.offer_id && (
-                    <small className="text-xxs  text-black dark:text-gray-200">
+                    <small className="hidden md:block text-xxs  text-black dark:text-gray-200">
                       Référence : {job.offer_id}
                     </small>
                   )}
@@ -145,7 +145,7 @@ const Job = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <motion.div
-                className="w-full xl:w-[65%] dark: bg-white border p-8 md:p-12 rounded-3xl overflow-hidden"
+                className="w-full xl:w-[65%] dark: bg-white border p-6 md:p-12 rounded-3xl overflow-hidden"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}

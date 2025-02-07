@@ -43,11 +43,11 @@ const AgencesSection = () => {
 
     return (
         <section id="nos-agences" className="bg-gray-100 py-8 md:py-14 border-t-[1px] border-b-[1px] dark:border-b-0 dark:bg-gray-900 border-gray-300 dark:border-none">
-            <div className="container lg:border-[1px] bg-white rounded-3xl md:px-10 p-12 md:p-16 bg-white flex flex-col md:flex-row-reverse items-start justify-center gap-10">
+            <div className="container lg:border-[1px] bg-white rounded-3xl p-8 md:p-12 md:p-16 bg-white flex flex-col md:flex-row-reverse items-start justify-center gap-10">
                 <div className="w-full h-full xl:w-[70%] xl:pr-14 mx-auto flex flex-col lg:flex-col justify-between gap-6">
                     <div className="space-y-6 ">
                         <motion.h2
-                            className="text-lg md:text-[22px] xl:text-2xl font-extrabold text-left"
+                            className="text-left text-lg md:text-[22px] xl:text-2xl font-extrabold text-left"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{
                                 y: isVisible1 ? 0 : -20,
@@ -67,8 +67,8 @@ const AgencesSection = () => {
                             </motion.span>
                         </motion.h2>
                         <motion.p
-                            className="w-full mr-auto text-left text-xs sm:text-sm lg:text-md text-black mb-6"
-                            initial={{ opacity: 0 }}
+                            className="text-left w-full mr-auto text-left text-xxs sm:text-sm lg:text-md text-black mb-6"
+                            initial={{ opacity: 1 }}
                             animate={{ opacity: isVisible1 ? 1 : 0 }}
                             transition={{ duration: 0.5 }}
                         >
@@ -77,8 +77,8 @@ const AgencesSection = () => {
 
                         </motion.p>
                         <motion.p
-                            className="w-full mr-auto text-left text-xs sm:text-sm md:text-md text-black  mb-6"
-                            initial={{ opacity: 0 }}
+                            className="w-full mr-auto text-left text-xxs sm:text-sm md:text-md text-black  mb-6"
+                            initial={{ opacity: 1 }}
                             animate={{ opacity: isVisible1 ? 1 : 0 }}
                             transition={{ duration: 0.5 }}
                         >

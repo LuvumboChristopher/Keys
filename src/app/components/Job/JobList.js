@@ -70,9 +70,12 @@ const JobList = ({ jobs, loading }) => {
 
         if (jobs.length === 0) {
             return (
-                <div className="w-full h-[50vh] flex justify-center items-center mx-auto p-10 text-center">
-                    <p className="text-xs lg:text-xs leading-7 font-semibold dark:text-white">
-                        Aucune offre ne correspond à vos critères.<br /> Veuillez ajuster vos filtres et réessayer.
+                <div className="w-full h-[50vh] flex flex-col justify-center items-center mx-auto p-10 text-center">
+                    <p className="text-xxs lg:text-xs leading-7 dark:text-white">
+                        Aucune offre ne correspond à vos critères.
+                    </p>
+                    <p className="text-xxs lg:text-xs leading-7 dark:text-white">
+                        Veuillez ajuster vos filtres et réessayer.
                     </p>
                 </div>
             );
@@ -256,16 +259,16 @@ const JobList = ({ jobs, loading }) => {
 
     return (
         <section id="offresdemploi">
-            <div  className="min-h-[70px] flex flex-col justify-start sm:flex-row  gap-6 xs:justify-between items-center border-b py-10 md:py-0 lg:py-10 xl:py-0 xl:pb-6">
+            <div  className="min-h-[70px] flex flex-col justify-start sm:flex-row  gap-6 xs:justify-between items-center border-t md:border-t-0 lg:border-t xl:border-t-0 border-b py-10 md:py-0 lg:py-10 xl:py-0 xl:pb-6">
 
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="w-max dark:text-white w-full mr-auto text-left  text-base font-semibold flex items-center gap-5"
+                    className="w-max dark:text-white w-full mr-auto text-left font-semibold flex items-center gap-5"
                 >
-                    <TfiBag className="dark:text-white text-base md:hidden" />
-                    <h2 className="w-max dark:text-white text-base text-left font-semibold ">Offres d&#39;emploi</h2>
+                    <TfiBag className="dark:text-white text-sm md:text-base md:hidden" />
+                    <h2 className="w-max dark:text-white text-sm md:text-base text-left font-semibold ">Offres d&#39;emploi</h2>
                 </motion.div>
 
                 <div className="w-full sm:w-max flex items-center justify-start lg:justify-end xl:flex-wrap gap-4 text-xs">

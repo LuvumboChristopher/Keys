@@ -54,8 +54,8 @@ const JobSearchBar = () => {
                     transition={{ duration: 0.5 }}
                     className="w-full flex items-center gap-5 py-5 border-b md:hidden md:py-0 "
                 >
-                    <TfiSearch className="dark:text-white text-base" />
-                    <h2 className="dark:text-white text-base text-left font-semibold ">Recherche d&#39;emplois</h2>
+                    <TfiSearch className="dark:text-white text-sm md:text-base" />
+                    <h2 className="dark:text-white text-sm md:text-base text-left font-semibold ">Recherche d&#39;emplois</h2>
                 </motion.div>
                 <div className="w-full pt-5 mx-auto flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row flex-row items-center duration-300">
                     <div className="w-full relative dark:bg-gray-100 bg-white border-b lg:border px-5 lg:px-10 flex items-center group lg:focus-within:border-gray-300 rounded-xl overflow-hidden shadow-sm">

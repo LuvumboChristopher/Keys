@@ -131,7 +131,7 @@ const Carousel = () => {
                                 className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                             />
                         </div>
-                        <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-55"></div>
+                        <div className="absolute inset-0 bg-black opacity-70 md:opacity-50 transition-opacity duration-500 group-hover:opacity-55"></div>
                         <div className="absolute top-1/4 sm:top-1/3 flex w-full z-10 ">
                             <div className="relative max-w-[60%] sm:max-w-[80%] mx-auto text-center sm:text-left text-white group">
                                 <h1

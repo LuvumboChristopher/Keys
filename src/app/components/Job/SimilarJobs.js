@@ -48,7 +48,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="dark:text-white text-md md:text-lg font-semibold">Voir plus d'annonces</h2>
+                <h2 className="dark:text-white text-sm md:text-base  font-semibold">Voir plus d'annonces</h2>
                 <div className="w-full overflow-x-auto flex flex-nowrap justify-start items-center no-scrollbar pt-6">
                     <ul className="flex items-end  gap-x-6">
                         {(similarJobsToDisplay.length > 0 ? similarJobsToDisplay : fallbackJobs).slice(0, 4).map((job, index) => (

@@ -54,10 +54,10 @@ const AgenciesByLocation = () => {
                     }}
                 >
                     {[...agencies, ...agencies].map((agency, index) => (
-                        <div key={index} className="w-max group overflow-hidden cursor-pointer mx-6 border-l pl-6">
-                            <div className="flex w-full justify-start">
+                        <div key={index} className="w-max group overflow-hidden cursor-pointer px-6 border-l md:pl-6">
+                            <div className="flex w-full justify-center md:justify-start">
                                 <div className="w-full mx-auto text-left">
-                                    <h1 className="flex items-center gap-1 pb-3 text-black text-sm md:text-md font-semibold transition-all duration-300 text-shadow-sm">
+                                    <h1 className="w-max flex items-center gap-1 pb-3 text-black text-sm md:text-md font-semibold transition-all duration-300 text-shadow-sm">
                                         <FaBuilding className="inline-block mr-2 text-md md:text-base" /> 
                                         Agence de {agency.name}
                                     </h1>

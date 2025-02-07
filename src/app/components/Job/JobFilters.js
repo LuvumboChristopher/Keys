@@ -27,10 +27,10 @@ const JobFilters = ({ filters, handleRemoveFilter }) => {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="w-full min-h-[70px]  flex items-center  gap-5 py-5 border-b  md:py-0 "
+                className="w-full min-h-[70px] flex items-center gap-5 py-5 border-b  md:py-0 "
             >
-                <TfiPanel className="dark:text-white text-base md:hidden" />
-                <h2 className="dark:text-white text-base text-left font-semibold ">Filtres</h2>
+                <TfiPanel className="dark:text-white text-sm md:text-base md:hidden" />
+                <h2 className="dark:text-white text-sm md:text-base text-left font-semibold ">Filtres</h2>
             </motion.div>
 
             <div

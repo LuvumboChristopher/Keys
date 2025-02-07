@@ -140,7 +140,7 @@ export default function JobsPreview() {
                         </motion.div>
                     ))}
                 </div>
-                <Link href="/jobs" className="text-xxs md:text-xs  mt-8 w-max mx-auto bg-white dark:hover:bg-yellow-500 hover:bg-black hover:text-white dark:hover:text-black  flex items-center justify-center bg-transparent font-semibold px-16 py-4 transition-all duration-300 rounded-xl overflow-hidden"
+                <Link href="/jobs" className="text-xxs md:text-xs  mt-8 w-max mx-auto bg-white dark:hover:bg-yellow-500 hover:bg-black hover:text-white dark:hover:text-black  flex items-center justify-center bg-transparent px-16 py-4 transition-all duration-300 rounded-xl overflow-hidden"
                     style={{
                         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
                     }}>
