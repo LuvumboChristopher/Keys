@@ -56,7 +56,7 @@ const StatsSection = () => {
       <div className="relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center items-center">
           {/* Stat 1 */}
-          <div ref={elementRef1} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef1} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible1 ? 1 : 0, scale: isVisible1 ? 1 : 0.5 }}
@@ -70,7 +70,7 @@ const StatsSection = () => {
           </div>
 
           {/* Stat 2 */}
-          <div ref={elementRef2} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef2} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible2 ? 1 : 0, scale: isVisible2 ? 1 : 0.5 }}
@@ -84,7 +84,7 @@ const StatsSection = () => {
           </div>
 
           {/* Stat 3 */}
-          <div ref={elementRef3} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef3} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible3 ? 1 : 0, scale: isVisible3 ? 1 : 0.5 }}
@@ -98,7 +98,7 @@ const StatsSection = () => {
           </div>
 
           {/* Stat 4 */}
-          <div ref={elementRef4} className="bg-gray-50 p-7 md:p-10 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef4} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible4 ? 1 : 0, scale: isVisible4 ? 1 : 0.5 }}

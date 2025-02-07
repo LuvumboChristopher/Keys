@@ -13,6 +13,8 @@ import JobActions from '@/app/components/Job/JobActions';
 import JobDetails from '@/app/components/Job/JobDetails';
 import JobAgency from '@/app/components/Job/JobAgency';
 import { CallToActionInfo } from '@/app/components/Home/CallToActionInfo';
+import { formatSalary } from '@/app/utils/utils';
+import JobTitle from '@/app/components/Job/JobTitle';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -129,7 +131,7 @@ const Job = () => {
                     )}
                   </span>
                   {job?.offer_id && (
-                    <small className="text-xxs  text-gray-200">
+                    <small className="text-xxs  text-black dark:text-gray-200">
                       Référence : {job.offer_id}
                     </small>
                   )}
@@ -148,23 +150,7 @@ const Job = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <div className="w-full pb-4">
-                    <div className='w-full flex flex-col md:flex-row items-center justify-between gap-6 pb-4'>
-                      <motion.h3
-                        className="w-full mx-auto text-center md:text-left text-xl md:text-2xl font-bold capitalize "
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                      >
-                        {job?.job_title}
-                      </motion.h3>
-                      <button
-                        className="block w-max h-max block bg-black hover:bg-yellow-500 text-white text-xs p-3 px-12 flex items-center justify-center gap-2 transition group rounded-xl"
-                        onClick={() => router.push('https://www.keys-rh.fr/worker/security/login')}>
-                        Candidater
-                      </button>
-                    </div>
-                </div>
+                <JobTitle job={job}/> 
                 <JobDetails job={job}/> 
                 <JobActions job={job}/>    
                 <JobInfo job={job} fadeIn={fadeIn} />

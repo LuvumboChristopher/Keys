@@ -27,7 +27,7 @@ export default function AboutKeys() {
     return (
         <div id="keys" className="bg-white">
             <motion.div
-                className="container flex flex-col lg:flex-row gap-6 lg:gap-12 items-center py-8 lg:py-16"
+                className="container flex flex-col lg:flex-row gap-6 lg:gap-12 items-center py-8 lg:py-14"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"

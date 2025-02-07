@@ -6,10 +6,12 @@ export default function JobAgency({ job }) {
     const agency = agencies.find(agency => job?.agency_name.includes(agency.name));
 
     if (!agency) {
-        return <p>Aucune agence trouvée pour ce job.</p>;
+        return <p className="dar:text-white">Aucune agence trouvée pour ce job.</p>;
     }
 
     return (
+        <>
+        <h2 className="hidden md:block xl:hidden dark:text-white  w-full text-md md:text-lg font-semibold mb-6">Agence</h2>
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -25,5 +27,6 @@ export default function JobAgency({ job }) {
                 </ul>
             </div>
         </motion.div>
+        </>
     );
 }

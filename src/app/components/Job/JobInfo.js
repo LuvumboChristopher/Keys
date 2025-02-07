@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const JobInfo = ({ job }) => {
-  const [isDescriptionOpen, setDescriptionOpen] = useState(true);
-  const [isJobDescOpen, setJobDescOpen] = useState(true);
-  const [isResponsabilitiesOpen, setResponsabilitiesOpen] = useState(true);
-  const [isAdditionalInfoOpen, setAdditionalInfoOpen] = useState(true);
-  const [isSkillsOpen, setSkillsOpen] = useState(true);
-
+  const [isDescriptionOpen, setDescriptionOpen] = useState(false);
+  const [isJobDescOpen, setJobDescOpen] = useState(false);
+  const [isResponsabilitiesOpen, setResponsabilitiesOpen] = useState(false);
+  const [isAdditionalInfoOpen, setAdditionalInfoOpen] = useState(false);
+  const [isSkillsOpen, setSkillsOpen] = useState(false);
+  
   const toggleSection = (section) => {
     switch (section) {
       case 'description':
@@ -31,14 +31,16 @@ const JobInfo = ({ job }) => {
   };
 
   return (
-    <motion.div      initial={{ opacity: 0, x: 20 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.5, delay: 0.5 }}
-    className="space-y-8 pt-8">
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className="space-y-8 pt-8"
+    >
       {job?.offer_description && (
         <motion.div className="space-y-2 text-left">
           <h2
-            className="text-md md:text-lg font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
+            className="text-md md:text-base font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
             onClick={() => toggleSection('description')}
           >
             Description de l'offre
@@ -65,7 +67,7 @@ const JobInfo = ({ job }) => {
       {job?.job_description && (
         <motion.div className="space-y-2 text-left">
           <h2
-            className="text-md md:text-lg font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
+            className="text-md md:text-base font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
             onClick={() => toggleSection('job')}
           >
             Description du poste
@@ -92,7 +94,7 @@ const JobInfo = ({ job }) => {
       {job?.responsability_description && (
         <motion.div className="space-y-2 text-left">
           <h2
-            className="text-md md:text-lg font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
+            className="text-md md:text-base font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
             onClick={() => toggleSection('responsabilities')}
           >
             Responsabilités
@@ -119,7 +121,7 @@ const JobInfo = ({ job }) => {
       {job?.miscellaneous && (
         <motion.div className="space-y-2 text-left">
           <h2
-            className="text-md md:text-lg font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
+            className="text-md md:text-base font-semibold mb-7 pb-7 cursor-pointer flex items-center justify-between group border-b"
             onClick={() => toggleSection('additional')}
           >
             Informations complémentaires

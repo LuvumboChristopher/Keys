@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { metiers } from "@/app/utils/metiers";
 import { IoClose } from "react-icons/io5";
 
-const colors = ["text-blue-500","text-yellow-500", "text-emerald-600", "text-amber-500"];
+const colors = ["text-blue-500", "text-emerald-600", "text-amber-500"];
 
 const AnimatedText = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -13,13 +13,11 @@ const AnimatedText = () => {
     const [jobIndex, setJobIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
-    
     const jobs = useMemo(() => metiers, []);
 
     useEffect(() => {
         const typingSpeed = isDeleting ? 120 : 150;
         const delay = isDeleting && charIndex === 0 ? 1000 : typingSpeed;
-
         const typeTimeout = setTimeout(() => {
             const job = jobs[jobIndex];
             if (!isDeleting && charIndex < job.length) {
@@ -59,26 +57,32 @@ const AnimatedText = () => {
         return () => observer.disconnect();
     }, []);
 
-
     if (!isVisible) return null;
-
 
     return (
         <motion.div
             id="keys-recrute"
-            className="relative bg-gray-900 dark:bg-gray-100 bg-gray-900 text-white dark:text-black p-10 hidden lg:block"
+            className="relative text-white p-10 hidden lg:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
         >
+            <div className="absolute inset-0 bg-cover bg-center filter brightness-[95%] contrast-[122%]" 
+            style={{ backgroundImage: "url('/images/heroImages/background.png')" }}
+            >
+
+            </div>
+            
+            <div className="absolute inset-0 bg-black bg-opacity-[9%]"></div>
+
             <button
-                className="absolute top-6 right-6 text-white dark:text-black text-2xl"
+                className="absolute top-4 right-4 md:top-6 md:right-6 text-white dark:text-black text-2xl z-20"
                 onClick={() => setIsVisible(false)}
             >
                 <IoClose />
             </button>
-
-            <div className="">
+            
+            <div className="relative z-10">
                 <div className="w-max mx-auto gap-4 flex flex-row justify-center text-left items-center">
                     <motion.h1
                         className="w-max mx-auto text-xl md:text-sm font-extrabold text-center leading-10"
@@ -97,7 +101,7 @@ const AnimatedText = () => {
                         <span className={isDarkMode ? colors[jobIndex % colors.length] : "text-white"}>
                             {currentJob}
                         </span>
-                        <span className="text-yellow-500 ">{cursorBlink ? "|" : " "}</span>
+                        <span className="text-yellow-500">{cursorBlink ? "|" : " "}</span>
                     </motion.h1>
                     <motion.h1
                         className="w-max mx-auto text-xl md:text-sm font-extrabold text-center leading-10"

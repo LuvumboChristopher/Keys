@@ -63,7 +63,7 @@ const JobList = ({ jobs, loading }) => {
 
     const renderJobs = () => {
         if (loading) {
-            return <p className="text-left text-gray-500">Chargement des offres...</p>;
+            return <p className="text-left text-gray-500 dark:text-white">Chargement des offres...</p>;
         }
 
         const jobs = getjobs();
@@ -71,7 +71,7 @@ const JobList = ({ jobs, loading }) => {
         if (jobs.length === 0) {
             return (
                 <div className="w-full h-[50vh] flex justify-center items-center mx-auto p-10 text-center">
-                    <p className="text-xs lg:text-xs leading-7 font-semibold">
+                    <p className="text-xs lg:text-xs leading-7 font-semibold dark:text-white">
                         Aucune offre ne correspond à vos critères.<br /> Veuillez ajuster vos filtres et réessayer.
                     </p>
                 </div>

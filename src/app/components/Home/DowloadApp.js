@@ -6,14 +6,14 @@ import Image from "next/image";
 
 export const DownloadApp = () => {
     return (
-        <div id="app" className="bg-gray-100 dark:bg-gray-900 py-12 border-t border-b border-gray-300">
+        <div id="app" className="bg-gray-100 dark:bg-gray-900 py-14 border-t border-b border-gray-300">
             <motion.div
-                className="w-[90%] mx-auto flex flex-col lg:flex-row gap-7 items-center justify-between overflow-hidden text-black relative"
+                className="container w-[90%] mx-auto flex flex-col lg:flex-row items-center justify-between overflow-hidden text-black relative"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                <div className="hidden lg:block w-full lg:w-[35%] relative overflow-hidden md:h-[470px] rounded-3xl">
+                <div className="hidden lg:block w-full lg:w-[37%] relative overflow-hidden lg:h-[450px] rounded-l-3xl">
                     <Image
                         src="/images/banner/utilisateur-app-keys.webp"
                         alt="Mockup del téléphone"
@@ -22,24 +22,25 @@ export const DownloadApp = () => {
                         className="object-cover h-full"
                     />
                 </div>
-
-                <div className="w-full h-full mx-auto lg:w-[65%] md:h-[470px] rounded-3xl bg-white p-10 md:p-14 flex items-center justify-center border border-gray-300">
+                <div className="w-full h-full mx-auto lg:w-[63%] lg:h-[450px] rounded-3xl lg:rounded-none lg:rounded-r-3xl bg-white p-10 md:p-16 flex items-center justify-center border border-gray-300">
                     <div className="w-max text-center lg:text-left">
-                        <h1 className="text-2xl md:text-3xl font-extrabold mb-4 lg:mb-2 leading-9 tracking-tight">
+                        <h1 className="text-2xl md:text-3xl font-extrabold mb-4 lg:mb-2 leading-[1.1] tracking-tight">
                             Simplifiez votre recherche d’emploi
                         </h1>
-                        <h2 className="text-md lg:text-lg font-bold mb-4">
+                        <h2 className="text-md xl:text-lg font-bold mb-4">
                             Téléchargez notre application mobile
                         </h2>
-                        <p className="text-md mb-6 max-w-xl">
-                            Découvrez des centaines d’offres d’emploi adaptées à vos compétences, postulez en un clic et suivez l’évolution de vos candidatures en temps réel.
-                        </p>
-                        <ul className="text-xs mb-6 space-y-2">
-                            <li>✔ Trouvez des missions près de chez vous.</li>
-                            <li>✔ Gérez facilement votre emploi du temps.</li>
-                            <li>✔ Recevez des notifications en temps réel.</li>
-                        </ul>
-                        <p className="text-md font-medium mb-6">
+                        <div>
+                            <p className="text-md lg:text-xs xl:text-md mb-6 max-w-xl">
+                                Découvrez des centaines d’offres d’emploi adaptées à vos compétences, postulez en un clic et suivez l’évolution de vos candidatures en temps réel.
+                            </p>
+                            <ul className="text-xs lg:text-xxs xl:text-xs mb-6 space-y-2">
+                                <li>✔ Trouvez des missions près de chez vous.</li>
+                                <li>✔ Gérez facilement votre emploi du temps.</li>
+                                <li>✔ Recevez des notifications en temps réel.</li>
+                            </ul>
+                        </div>
+                        <p className="text-sm font-medium mb-6">
                             Ne manquez aucune opportunité : téléchargez l’application dès maintenant !
                         </p>
 
@@ -54,7 +55,7 @@ export const DownloadApp = () => {
                                     alt="Télécharger sur Google Play"
                                     width={3000}
                                     height={3000}
-                                    className="hover:scale-105 transition-transform w-32"
+                                    className="hover:scale-105 transition-transform w-28"
                                 />
                             </Link>
                             <Link
@@ -67,7 +68,7 @@ export const DownloadApp = () => {
                                     alt="Télécharger sur l'App Store"
                                     width={3000}
                                     height={3000}
-                                    className="hover:scale-105 transition-transform w-32"
+                                    className="hover:scale-105 transition-transform w-28"
                                 />
                             </Link>
                         </div>

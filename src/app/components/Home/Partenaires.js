@@ -18,10 +18,10 @@ const Partenaires = () => {
     return (
         <section className="container mx-auto ">
             <div className="w-full sm:max-w-[90%] mx-auto py-14 md:py-12">
-                <h1 className="text-md sm:text-base text-center">
+                <h1 className="text-md sm:text-base text-center pb-6">
                     Ils nous font confiance
                 </h1>
-                <div className="relative z-20 py-2 md:py-6">
+                <div className="relative z-20 pb-6">
                     <div className="w-full flex justify-start xl:justify-center items-center overflow-x-auto whitespace-nowrap gap-6 scrollbar-hide relative">
                         {partenaires.map((partenaire, index) => (
                             <motion.div

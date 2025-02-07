@@ -59,7 +59,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                 className="flex items-end"
                                 key={job.offer_id}
                             >
-                                <div className="w-[90vw] xs:w-[80vw] sm:w-full sm:min-w-[420px] xl:w-[80px]  p-10 border bg-white group rounded-3xl hover:border hover:border-gray-300">
+                                <div className="w-[90vw] xs:w-[80vw] sm:w-full sm:min-w-[420px] md:min-w-[420px] xl:w-[80px]  p-10 border bg-white group rounded-3xl hover:border hover:border-gray-300">
                                     <div className="space-y-6">
                                         <div className="flex justify-between items-center gap-6 group">
                                             <motion.h3

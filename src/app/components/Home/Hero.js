@@ -81,13 +81,13 @@ const Hero = () => {
                         transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-[#0a0a0a] opacity-[85%] lg:opacity-[80%]"></div>
-                <div className="max-w-[85%] xs:max-w-[80%] md:max-w-[90%] xl:max-w-[70%] w-full h-full flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#0a0a0a] opacity-[85%]"></div>
+                <div className="max-w-[85%] xs:max-w-[80%] md:max-w-[90%] xl:max-w-[65%] 2xl:max-w-[55%] w-full h-full flex items-center justify-center">
                     <div
-                        className="w-full z-10 h-full flex flex-col gap-10 md:flex-row lg:gap-16 xl:gap-24 justify-center items-center"
+                        className="w-full z-10 h-full flex flex-col gap-10 md:flex-row lg:gap-16 2xl:gap-20 justify-center items-center"
                     >
                         <div
-                            className="w-full md:w-[60%] lg:w-full flex flex-col items-center justify-center gap-3 md:max-w-xl xl:max-w-full mx-auto"
+                            className="w-full md:w-[55%] lg:w-full flex flex-col items-center justify-center gap-3 md:max-w-xl xl:max-w-full mx-auto"
                         >
                             <motion.div
                                 className="w-full mx-auto"
@@ -95,7 +95,7 @@ const Hero = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, ease: "easeOut" }}
                             >
-                                <div className=" flex flex-col items-start">
+                                <div className=" flex flex-col items-start ">
                                     <motion.h1
                                         className="text-responsive-lg font-bold text-white shadow-text mb-[-35px]"
                                         initial={{ y: 20, opacity: 0 }}
@@ -151,7 +151,7 @@ const Hero = () => {
                                 </motion.div>
                             </motion.div>
                             <motion.div
-                                className="w-full mx-auto flex flex-col items-center gap-4 duration-300 cursor-pointer pt-4"
+                                className="w-full mx-auto flex flex-col items-center gap-4 duration-300 cursor-pointer pt-5"
                                 initial={{ y: -20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 1, ease: "easeInOut" }}
@@ -161,7 +161,7 @@ const Hero = () => {
                                     <input
                                         ref={firstInputRef}
                                         placeholder="Indiquez un métier"
-                                        className="w-full px-6 py-4 md:py-[18px] text-gray-800 focus:outline-none text-xxs lg:text-xs text-center"
+                                        className="w-full px-6 py-4 sm:py-5  lg:py-[18px]  text-gray-800 focus:outline-none text-xxs lg:text-xs text-center"
                                         value={jobTitle}
                                         onChange={(e) => setJobTitle(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}
                                         onKeyDown={handleKeyDown}
@@ -179,7 +179,7 @@ const Hero = () => {
                                     <TfiLocationArrow className="text-md md:text-base text-gray-700" />
                                     <input
                                         ref={secondInputRef}
-                                        className="w-full px-6 py-4 md:py-[18px] text-gray-800 focus:outline-none text-xxs lg:text-xs text-center"
+                                        className="w-full px-6 py-4 sm:py-5  lg:py-[18px] text-gray-800 focus:outline-none text-xxs lg:text-xs text-center"
                                         placeholder="Sélectionnez un lieu"
                                         name="location"
                                         value={location}
@@ -199,13 +199,13 @@ const Hero = () => {
                                     onClick={handleSearch}
                                     className="w-full mx-auto group"
                                 >
-                                    <div className="w-full flex justify-center items-center gap-3 text-xxs lg:text-xs text-center mx-auto px-6 py-4 md:py-[18px] bg-yellow-500 text-black hover:bg-gray-100 hover:outline-[1px] hover:shadow-md hover:text-black transition-all duration-300 group rounded-xl overflow-hidden">
+                                    <div className="w-full flex justify-center items-center gap-3 text-xxs lg:text-xs text-center mx-auto px-6 py-4 sm:py-5  lg:py-[18px] bg-yellow-500 text-black hover:bg-gray-100 hover:outline-[1px] hover:shadow-md hover:text-black transition-all duration-300 group rounded-xl overflow-hidden">
                                         Consultez nos offres
                                     </div>
                                 </button>
                             </motion.div>
                         </div>
-                        <div className="w-full md:w-[40%] lg:w-full pt-3">
+                        <div className="w-full md:w-[45%] lg:w-full pt-3">
                             <Features />
                         </div>
                     </div>
