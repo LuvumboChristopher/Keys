@@ -75,7 +75,7 @@ export const SearchComponent = ({ scrolled, showBar }) => {
                         className={`bg-white dark:bg-gray-900 flex justify-center items-center mx-auto relative ease z-[9996] text-xs duration-300 shadow-lg  ${showBar ? "lg:block hidden" : "hidden"}`}
                         style={{
                             position: "fixed",
-                            top: "130px",
+                            top: "110px",
                             left: 0,
                             right: 0,
                             zIndex: 50,
@@ -92,7 +92,7 @@ export const SearchComponent = ({ scrolled, showBar }) => {
                                 <input
                                     ref={inputRef}
                                     placeholder="Indiquez un métier"
-                                    className="w-full bg-gray-50  px-6 py-5 text-xxs  text-gray-800 focus:outline-none"
+                                    className="w-full bg-gray-50  px-6 py-3 text-xxs  text-gray-800 focus:outline-none"
                                     value={localJobTitle}
                                     onChange={(e) =>
                                         setLocalJobTitle(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))
@@ -110,7 +110,7 @@ export const SearchComponent = ({ scrolled, showBar }) => {
                             <div className="w-full relative bg-gray-50 border-b lg:border-[1px] rounded-xl px-6 flex items-center focus-within:border-gray-300 ">
                                 <TfiLocationArrow className="text-lg text-gray-800" />
                                 <input
-                                    className="w-full bg-gray-50  px-6 py-5 text-xxs  text-gray-800 focus:outline-none"
+                                    className="w-full bg-gray-50  px-6 py-3 text-xxs  text-gray-800 focus:outline-none"
                                     placeholder="Sélectionnez un lieu"
                                     name="location"
                                     value={localLocation}
@@ -129,14 +129,14 @@ export const SearchComponent = ({ scrolled, showBar }) => {
                             </div>
                             <button
                                 onClick={toggleFilters}
-                                className={`flex items-center px-6 py-5 text-xxs text-gray-500 rounded-xl focus:outline-none border ${isFiltersVisible ? 'bg-yellow-500 dark:bg-emerald-600 dark:border-emerald-600' : 'border border-gray-200 bg-gray-50'}`}
+                                className={`flex items-center px-6 py-3 text-xxs text-gray-500 rounded-xl focus:outline-none border ${isFiltersVisible ? 'bg-yellow-500 dark:bg-emerald-600 dark:border-emerald-600' : 'border border-gray-200 bg-gray-50'}`}
                             >
                                 <TfiPanel className={`text-md text-gray-800 ${isFiltersVisible ? 'text-gray-800 dark:text-white' : 'text-gray-800'}`} />
                             </button>
                                 <div
                                     className={`w-full absolute top-full left-0 bg-gray-50 border-t border-b shadow-sm transition-all duration-300 ${isFiltersVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                                 >
-                                    <div className="container flex items-end gap-4 py-7">
+                                    <div className="container flex items-end gap-4 py-6">
                                         <div className="w-full grid grid-cols-2 gap-4 sm:grid-cols-6 items-end">
                                             <div >
                                                 <label className="block text-xxs font-medium text-gray-800 pb-3">
@@ -247,7 +247,6 @@ export const SearchComponent = ({ scrolled, showBar }) => {
                                      
                                     </div>
                                 </div>
-                       
                             <button onClick={handleSubmit} className="block w-max">
                                 <div
                                     className="w-max block mx-auto flex items-center justify-center dark:bg-yellow-500 dark:text-black bg-black text-white text-xxs py-5 px-16 font-semibold hover:bg-yellow-500 dark:hover:bg-white dark:hover:text-black hover:text-black border-black rounded-xl transition-all duration-500"

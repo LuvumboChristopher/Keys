@@ -15,7 +15,7 @@ export const DownloadApp = () => {
             >
                 <div className="hidden lg:block w-full lg:w-[37%] relative overflow-hidden lg:h-[450px] rounded-l-3xl">
                     <Image
-                        src="/images/banner/utilisateur-app-keys.webp"
+                        src="/images/banner/girl-using-mobile-phone.jpg"
                         alt="Mockup del téléphone"
                         width={5000}
                         height={5000}
