@@ -101,7 +101,7 @@ const JobSearchBar = () => {
                     </button>
                     <button
                         onClick={handleSearchAndScroll}
-                        className="w-full md:w-max block text-sm mx-auto flex items-center justify-center bg-yellow-500 text-black py-5 text-xxs xl:text-xs px-20 hover:bg-black dark:hover:bg-gray-50 dark:hover:text-black hover:text-white border-black transition-all duration-500 cursor-pointer rounded-xl overflow-hidden whitespace-nowrap "
+                        className="w-full md:w-max block text-sm mx-auto flex items-center justify-center bg-yellow-500 text-black py-5 text-xxs px-20 hover:bg-black dark:hover:bg-gray-50 dark:hover:text-black hover:text-white border-black transition-all duration-500 cursor-pointer rounded-xl overflow-hidden whitespace-nowrap "
                     >
                         Consultez nos offres
                     </button>

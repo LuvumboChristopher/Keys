@@ -8,7 +8,7 @@ export const UIProvider = ({ children }) => {
     const [scrolled, setScrolled] = useState(false);
     const [showBar, setShowBar] = useState(false);
     const [isSavedJobsMenuOpen, setIsSavedJobsMenuOpen] = useState(false);
-    const [isFiltersVisible, setIsFiltersVisible] = useState(true);
+    const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
     const toggleSavedJobsMenu = () => setIsSavedJobsMenuOpen((prev) => !prev);

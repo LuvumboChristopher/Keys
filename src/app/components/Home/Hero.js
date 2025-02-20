@@ -62,9 +62,9 @@ const Hero = () => {
     }, [isHovered]);
 
     return (
-        <div className="w-full  mx-auto flex items-center justify-center">
+        <div className="w-full mx-auto flex items-center justify-center">
             <motion.section
-                className="w-full h-full mx-auto relative transition-transform transform duration-300 flex flex-col pt-[8.5rem] pb-[4.5rem] justify-center items-center overflow-hidden"
+                className="w-full h-full mx-auto relative transition-transform transform duration-300 flex flex-col pt-[8.75rem] pb-[4.5rem] justify-center items-center overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -87,7 +87,7 @@ const Hero = () => {
                         className="w-full z-10 h-full flex flex-col gap-10 md:flex-row lg:gap-16 2xl:gap-20 justify-center items-center"
                     >
                         <div
-                            className="w-full md:w-[55%] lg:w-full flex flex-col items-center justify-center gap-3 md:max-w-xl xl:max-w-full mx-auto"
+                            className="w-full md:w-[55%] lg:w-[45%] 2xl:w-full flex flex-col items-center justify-center gap-3 md:max-w-xl xl:max-w-full mx-auto"
                         >
                             <motion.div
                                 className="w-full mx-auto"
@@ -95,7 +95,7 @@ const Hero = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, ease: "easeOut" }}
                             >
-                                <div className=" flex flex-col items-start ">
+                                <div className="flex flex-col items-start ">
                                     <motion.h1
                                         className="text-responsive-lg font-bold text-white shadow-text mb-[-35px]"
                                         initial={{ y: 20, opacity: 0 }}
@@ -205,7 +205,7 @@ const Hero = () => {
                                 </button>
                             </motion.div>
                         </div>
-                        <div className="w-full md:w-[45%] lg:w-full pt-3">
+                        <div className="w-full md:w-[45%] lg:w-[50%]  2xl:w-full pt-3">
                             <Features />
                         </div>
                     </div>

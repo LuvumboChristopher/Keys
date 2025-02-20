@@ -12,8 +12,6 @@ import JobInfo from '@/app/components/Job/JobInfo';
 import JobActions from '@/app/components/Job/JobActions';
 import JobDetails from '@/app/components/Job/JobDetails';
 import JobAgency from '@/app/components/Job/JobAgency';
-import { CallToActionInfo } from '@/app/components/Home/CallToActionInfo';
-import { formatSalary } from '@/app/utils/utils';
 import JobTitle from '@/app/components/Job/JobTitle';
 
 const fadeIn = {
