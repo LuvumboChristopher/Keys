@@ -6,19 +6,24 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { useUIContext } from "@/app/context/UIContext";
 
 export const ThemeToggle = () => {
-    const [theme, setTheme] = useState("dark");
     const { scrolled } = useUIContext();
     const [isChangingTheme, setIsChangingTheme] = useState(false);
 
-    useEffect(() => {
-        const storedTheme = localStorage.getItem("theme");
-
-        if (storedTheme) {
-            setTheme(storedTheme);
-        } else {
-            setTheme("dark");
-            localStorage.setItem("theme", "dark");
+    const getInitialTheme = () => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
         }
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme) {
+            return storedTheme;
+        }
+        return "light";
+    };
+
+    const [theme, setTheme] = useState("light"); 
+
+    useEffect(() => {
+        setTheme(getInitialTheme());
     }, []);
 
     useEffect(() => {
@@ -31,12 +36,12 @@ export const ThemeToggle = () => {
     }, [theme]);
 
     const handleThemeChange = () => {
-        setIsChangingTheme(true); 
+        setIsChangingTheme(true);
         setTheme(theme === "dark" ? "light" : "dark");
 
         setTimeout(() => {
-            setIsChangingTheme(false); 
-        }, 300); 
+            setIsChangingTheme(false);
+        }, 300);
     };
 
     return (

@@ -37,7 +37,7 @@ module.exports = {
         '7xl': '5rem',
         '8xl': '6rem',
         '9xl': '8rem',
-        'responsive-lg': 'clamp(2.65rem, 12vw, 3.40rem)',
+        'responsive-lg': 'clamp(2.65rem, 11vw, 3.40rem)',
       },
     },
   },

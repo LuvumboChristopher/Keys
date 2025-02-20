@@ -242,7 +242,7 @@ const JobList = ({ jobs, loading }) => {
                             </div>
                             <Link
                                 href={`/jobs/${job.offer_id}`}
-                                className={`${isListView ? "w-full ml-auto " : "w-full xs:w-max ml-auto xs:px-10"} p-4 h-full block bg-black text-white text-center text-xxs xl:text-xs  hover:bg-yellow-500 hover:text-black hover:shadow-sm transition-all duration-100 rounded-xl border cursor-pointer`}
+                                className={`${isListView ? "w-full ml-auto " : "w-full xs:w-max ml-auto xs:px-10"} p-4 h-full block bg-black text-white text-center text-xxs hover:bg-yellow-500 hover:text-black hover:shadow-sm transition-all duration-100 rounded-xl border cursor-pointer`}
                             >
                                 {isListView ? (
                                     <FaEye />

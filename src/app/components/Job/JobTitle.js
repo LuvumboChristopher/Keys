@@ -1,7 +1,10 @@
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function JobTitle({ job }) {
+    const router = useRouter();
+    
     return (
         <div className="w-full pb-6">
             <div className='w-full flex flex-col md:flex-row items-center justify-end gap-6'>
