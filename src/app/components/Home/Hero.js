@@ -64,7 +64,7 @@ const Hero = () => {
     return (
         <div className="w-full mx-auto flex items-center justify-center">
             <motion.section
-                className="w-full h-full mx-auto relative transition-transform transform duration-300 flex flex-col pt-[8.75rem] pb-[4.5rem] justify-center items-center overflow-hidden"
+                className="w-full h-full mx-auto relative transition-transform transform duration-300 flex flex-col pt-[8.75rem] pb-[5rem] justify-center items-center overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -81,7 +81,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-[#0a0a0a] opacity-[85%]"></div>
+                <div className="absolute inset-0 bg-[#0a0a0a] opacity-[80%]"></div>
                 <div className="max-w-[85%] xs:max-w-[80%] md:max-w-[90%] xl:max-w-[70%] 2xl:max-w-[55%] w-full h-full flex items-center justify-center">
                     <div
                         className="w-full z-10 h-full flex flex-col gap-10 md:flex-row lg:gap-16 2xl:gap-20 justify-center items-center"

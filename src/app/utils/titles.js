@@ -4,7 +4,7 @@ export const pageTitles = {
     home: "Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH",
     AboutKeys: "Qui nous sommes ? | Agence Intérimaire et Solutions RH",
     howItWorks: "Comment ça marche ? | Agence Intérimaire et Solutions RH",
-    myKeysApp: "Simplifiez votre recherche d’emploi App| Agence Intérimaire et Solutions RH",
+    myKeysApp: "Téléchargez notre application mobile | Agence Intérimaire et Solutions RH",
     secteursActivite: "Secteurs d'Activité | Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH",
     jobOffers: "Dernières offres d'emploi | Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH",
     jobsByLocation: "Emplois par Localisation | Keys - Intérim & Recrutement | Agence Intérimaire et Solutions RH",

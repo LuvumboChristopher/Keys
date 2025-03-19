@@ -26,7 +26,7 @@ export const UIProvider = ({ children }) => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
             setScrolled(scrollY > 40);
-            setShowBar(scrollY > 60);
+            setShowBar(scrollY > 300);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -42,11 +42,11 @@ export const UIProvider = ({ children }) => {
             }
 
             if (isFiltersVisible && mediaQuery.matches) {
-                document.documentElement.style.scrollPaddingTop = "314px";
+                document.documentElement.style.scrollPaddingTop = "300px";
             } else {
                 document.documentElement.style.scrollPaddingTop = mediaQuery.matches
-                    ? "190px"
-                    : "110px";
+                    ? "192px"
+                    : "115px";
             }
         };
 

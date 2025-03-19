@@ -21,7 +21,7 @@ export default function JobDetails({ job }) {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.3, delay: 0.6 }}
                         >
-                            <FaBuilding className="mr-3 text-blue-500" />
+                            <FaBuilding className="mr-3 dark:text-blue-500" />
                             <p className="capitalize truncate whitespace-nowrap">{job?.agency_name}</p>
                         </motion.div>
                         <motion.div
@@ -30,7 +30,7 @@ export default function JobDetails({ job }) {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.3, delay: 0.7 }}
                         >
-                            <FaMapMarkerAlt className="mr-3 text-emerald-600" />
+                            <FaMapMarkerAlt className="mr-3 dark:text-emerald-600" />
                             <p className="capitalize truncate whitespace-nowrap">{job?.town_name}</p>
                         </motion.div>
                         <motion.div
@@ -39,7 +39,7 @@ export default function JobDetails({ job }) {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.3, delay: 0.8 }}
                         >
-                            <FaClock className="mr-3 text-amber-500" />
+                            <FaClock className="mr-3 dark:text-amber-500" />
                             <p className="capitalize truncate whitespace-nowrap">{job?.contract_type}</p>
                         </motion.div>
                     </div>

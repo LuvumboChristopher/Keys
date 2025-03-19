@@ -139,7 +139,7 @@ const SecteursActivite = () => {
           </div>
           <motion.div
             ref={swiperRef}
-            className="swiper-container slider-center-inline w-[90%] xs:w-full lg:w-[90%] lg:max-w-[1440px] mx-auto overflow-hidden "
+            className="swiper-container slider-center-inline w-[90%] sm:w-full lg:w-[90%] lg:max-w-[1440px] mx-auto overflow-hidden "
             style={{ overflow: "hidden" }}
           >
             <div className="swiper-wrapper text-white ">

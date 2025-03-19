@@ -33,7 +33,7 @@
 }
 
 html {
-  scroll-padding-top: 110px;
+  scroll-padding-top: 115px;
 }
 
 @media (min-width: 1024px) {
@@ -44,7 +44,7 @@ html {
 
 @media (min-width: 1280px) {
   html {
-      scroll-padding-top: 208px;
+      scroll-padding-top: 100px;
   }
 }
 

@@ -23,14 +23,16 @@ const Processus = () => {
     ];
 
     const descriptions = [
-        "Simplifiez votre processus de recrutement grâce à des canaux stratégiques pour atteindre des candidats qualifiés. Postuler à une offre n'a jamais été aussi facile. Suivez les étapes simples et efficaces pour soumettre votre candidature en quelques clics.",
-        "Nous vous guidons à travers chaque étape : explorez les opportunités de carrière, soumettez vos informations, optimisez votre CV, et suivez l'avancement de vos candidatures. Avec ces étapes simples, vous êtes sur la voie du succès !",
-        "Grâce à notre plateforme, vous bénéficiez d'un accompagnement personnalisé tout au long de votre parcours professionnel. Que vous soyez à la recherche d'un premier emploi ou que vous souhaitiez faire évoluer votre carrière, nous vous offrons les outils nécessaires pour réussir dans vos démarches et atteindre vos objectifs."
+        "Simplifiez votre processus de recrutement grâce à des canaux stratégiques optimisés pour atteindre encore plus efficacement des candidats qualifiés. Postuler à une offre n'a jamais été aussi simple et rapide. Suivez les étapes claires, simples et efficaces pour soumettre votre candidature en très peu de clics.",
+        "Nous vous guidons à travers chaque étape essentielle : explorez les opportunités de carrière variées, soumettez toutes vos informations pertinentes, optimisez intelligemment votre CV, et suivez en détail l'avancement de vos candidatures. Avec ces étapes bien pensées, vous êtes assurément sur la voie du succès !",
+        "Grâce à notre plateforme innovante, vous bénéficiez d'un accompagnement personnalisé et adapté tout au long de votre parcours professionnel. Que vous soyez à la recherche active d'un premier emploi ou que vous souhaitiez faire évoluer votre carrière vers de nouvelles opportunités, nous vous offrons tous les outils nécessaires pour réussir pleinement dans vos démarches et atteindre efficacement vos objectifs."
     ];
+    
+    
 
     return (
         <section id="processus" className="bg-gray-100 dark:bg-gray-900 border-t border-b border-gray-300 dark:border-none">
-            <div className="container flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20 py-8 md:py-12 ">
+            <div className="container flex flex-col lg:flex-row-reverse items-start gap-10 lg:gap-13 py-8 md:py-12 ">
                 <div className="w-full text-left">
                     <motion.h2 initial={{ y: -30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -54,11 +56,11 @@ const Processus = () => {
                             Découvrez comment simplifier et optimiser votre parcours pour trouver votre emploi idéal.
                         </motion.div>
                     </small>
-                    <div className="space-y-8  mx-auto">
+                    <div className="space-y-8 mx-auto">
                         {descriptions.map((description, index) => (
                             <motion.p
                                 key={index}
-                                className="w-full dark:text-white  mr-auto text-xs sm:text-sm lg:text-md text-black "
+                                className="w-full dark:text-white mr-auto text-xs sm:text-sm lg:text-md text-black "
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.5 * (index + 1), duration: 1 }}
@@ -72,12 +74,12 @@ const Processus = () => {
                     {steps.map((step, index) => (
                         <motion.div
                             key={index}
-                            className="bg-white border rounded-xl shadow-sm p-7 md:p-8 lg:p-6  hover:border-[1px] hover:shadow-md hover:scale-[101%] cursor-pointer transition-all duration-300"
+                            className="bg-white border rounded-xl shadow-sm p-7 md:p-9 lg:p-12 xl:p-9 hover:border-[1px] hover:shadow-md hover:scale-[101%] cursor-pointer transition-all duration-300"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.3 * (index + 1), duration: 0.8 }}
                         >
-                            <div className="flex flex-row items-center mb-4">
+                            <div className="flex flex-row items-center mb-3">
                                 <span>{step.icon}</span>
                                 <h3 className="w-full text-xs sm:text-sm xs:text-md font-semibold">{step.title}</h3>
                             </div>

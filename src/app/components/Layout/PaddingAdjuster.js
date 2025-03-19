@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function PaddingAdjuster({ children }) {
     const pathname = usePathname();
 
-    const paddingClass = pathname !== "/" ? "pt-[90px] md:pt-[110px]" : "pt-0";
+    const paddingClass = pathname !== "/" ? "pt-[115px]" : "pt-0";
 
     return <div className={paddingClass}>{children}</div>;
 }

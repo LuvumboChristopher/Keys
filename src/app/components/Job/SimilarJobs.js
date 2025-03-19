@@ -48,7 +48,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="dark:text-white text-sm md:text-base  font-semibold">Voir plus d'annonces</h2>
+                <h2 className="dark:text-white  w-full text-md md:text-lg font-semibold">Voir plus d'annonces</h2>
                 <div className="w-full overflow-x-auto flex flex-nowrap justify-start items-center no-scrollbar pt-6">
                     <ul className="flex items-end  gap-x-6">
                         {(similarJobsToDisplay.length > 0 ? similarJobsToDisplay : fallbackJobs).slice(0, 4).map((job, index) => (
@@ -80,7 +80,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3, delay: 0.4 }}
                                                 >
-                                                <FaBuilding className="mr-3 text-blue-500" />
+                                                <FaBuilding className="mr-3 dark:text-blue-500" />
                                                 <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.agency_name}</p>
                                                 </motion.div>
                                                 <motion.div
@@ -89,7 +89,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3, delay: 0.6 }}
                                                 >
-                                                <FaMapMarkerAlt className="mr-3 text-emerald-600" />
+                                                <FaMapMarkerAlt className="mr-3 dark:text-emerald-600" />
                                                 <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.town_name}</p>
                                                 </motion.div>
                                                 <motion.div
@@ -98,7 +98,7 @@ export default function SimilarJobs({ jobId: currentJobId }) {
                                                     animate={{ opacity: 1 }}
                                                     transition={{ duration: 0.3, delay: 0.8 }}
                                                 >
-                                                <FaClock className="mr-3 text-amber-500" />
+                                                <FaClock className="mr-3 dark:text-amber-500" />
                                                 <p className="text-xxs md:text-xs text-gray-700 capitalize truncate whitespace-nowrap">{job?.contract_type}</p>
                                                 </motion.div>
                                             </div>

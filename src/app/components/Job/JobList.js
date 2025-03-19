@@ -127,7 +127,7 @@ const JobList = ({ jobs, loading }) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3, delay: 0.6 }}
                                 >
-                                    <FaBuilding className="mr-3 text-blue-500" />
+                                    <FaBuilding className="mr-3 dark:text-blue-500" />
                                     <p className="capitalize truncate whitespace-nowrap">
                                         {job.agency_name}
                                     </p>
@@ -138,7 +138,7 @@ const JobList = ({ jobs, loading }) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3, delay: 0.7 }}
                                 >
-                                    <FaMapMarkerAlt className="mr-3 text-emerald-600" />
+                                    <FaMapMarkerAlt className="mr-3 dark:text-emerald-600" />
                                     <p className="capitalize truncate whitespace-nowrap">
                                         {job.town_name}
                                     </p>
@@ -149,7 +149,7 @@ const JobList = ({ jobs, loading }) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3, delay: 0.8 }}
                                 >
-                                    <FaClock className="mr-3 text-amber-500" />
+                                    <FaClock className="mr-3 dark:text-amber-500" />
                                     <p className="capitalize truncate whitespace-nowrap">
                                         {job.contract_type}
                                     </p>
@@ -242,7 +242,7 @@ const JobList = ({ jobs, loading }) => {
                             </div>
                             <Link
                                 href={`/jobs/${job.offer_id}`}
-                                className={`${isListView ? "w-full ml-auto " : "w-full xs:w-max ml-auto xs:px-10"} p-4 h-full block bg-black text-white text-center text-xxs hover:bg-yellow-500 hover:text-black hover:shadow-sm transition-all duration-100 rounded-xl border cursor-pointer`}
+                                className={`${isListView ? "w-full ml-auto " : "w-full xs:w-max ml-auto xs:px-10"} p-4 h-full block bg-black text-white text-center text-xxs xl:text-xs  hover:bg-yellow-500 hover:text-black hover:shadow-sm transition-all duration-100 rounded-xl border cursor-pointer`}
                             >
                                 {isListView ? (
                                     <FaEye />

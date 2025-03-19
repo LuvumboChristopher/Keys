@@ -1,13 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const JobInfo = ({ job }) => {
-  const [isDescriptionOpen, setDescriptionOpen] = useState(false);
+  const [isDescriptionOpen, setDescriptionOpen] = useState(
+    typeof window !== 'undefined' ? window.innerWidth >= 768 : false
+  );
   const [isJobDescOpen, setJobDescOpen] = useState(false);
   const [isResponsabilitiesOpen, setResponsabilitiesOpen] = useState(false);
   const [isAdditionalInfoOpen, setAdditionalInfoOpen] = useState(false);
   const [isSkillsOpen, setSkillsOpen] = useState(false);
-  
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDescriptionOpen(window.innerWidth >= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleSection = (section) => {
     switch (section) {
       case 'description':
@@ -37,6 +48,7 @@ const JobInfo = ({ job }) => {
       transition={{ duration: 0.5, delay: 0.5 }}
       className="space-y-8 pt-8"
     >
+  
       {job?.offer_description && (
         <motion.div className="space-y-2 text-left">
           <h2

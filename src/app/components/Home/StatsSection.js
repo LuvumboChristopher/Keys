@@ -56,7 +56,7 @@ const StatsSection = () => {
       <div className="relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center items-center">
           {/* Stat 1 */}
-          <div ref={elementRef1} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef1} className="bg-gray-50 p-8 md:py-9 md:px-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible1 ? 1 : 0, scale: isVisible1 ? 1 : 0.5 }}
@@ -64,13 +64,15 @@ const StatsSection = () => {
               className="font-extrabold mb-4 flex items-center justify-center gap-4"
             >
               <span className="text-md md:text-xl dark:text-blue-500"><FaCalendar/></span>
-              <h2 className="text-md text-left">Depuis 2021</h2>
+              <h2 className="text-md text-left truncate whitespace-nowrap ">Depuis 2021</h2>
             </motion.div>
-            <p className="text-xxs text-left line-clamp-3 ">Depuis 2021, nous évoluons pour répondre aux défis actuels du marché et anticiper les besoins de demain.</p>
+            <p className="text-xxs text-left line-clamp-3 ">
+            Depuis 2021, nous évoluons afin de mieux répondre aux défis actuels du marché et anticiper les besoins futurs de demain.
+            </p>
           </div>
 
           {/* Stat 2 */}
-          <div ref={elementRef2} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef2} className="bg-gray-50 p-8 md:py-9 md:px-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible2 ? 1 : 0, scale: isVisible2 ? 1 : 0.5 }}
@@ -78,13 +80,13 @@ const StatsSection = () => {
               className="font-extrabold mb-4 flex items-center justify-center gap-4"
             >
               <span className="text-md md:text-xl dark:text-amber-500"><FaBuilding/></span>
-              <h2 className="text-md text-left">5 Agences</h2>
+              <h2 className="text-md text-left truncate whitespace-nowrap">5 Agences</h2>
             </motion.div>
             <p className="text-xxs text-left line-clamp-3 ">Pour accompagner nos clients partout sur le territoire avec des solutions adaptées et un service de proximité.</p>
           </div>
 
           {/* Stat 3 */}
-          <div ref={elementRef3} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef3} className="bg-gray-50 p-8 md:py-9 md:px-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible3 ? 1 : 0, scale: isVisible3 ? 1 : 0.5 }}
@@ -92,13 +94,13 @@ const StatsSection = () => {
               className="font-extrabold mb-4 flex items-center justify-center gap-4"
             >
               <span className="text-md md:text-xl dark:text-yellow-500"><FaUserMd/></span>
-              <h2 className="text-md text-left">300+ Intérimaires</h2>
+              <h2 className="text-md text-left truncate whitespace-nowrap">300+ Intérimaires</h2>
             </motion.div>
             <p className="text-xxs text-left line-clamp-3 ">Prêts à répondre aux besoins des entreprises en apportant leur expertise, leur flexibilité et leur savoir-faire sur le terrain.</p>
           </div>
 
           {/* Stat 4 */}
-          <div ref={elementRef4} className="bg-gray-50 p-7 md:p-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
+          <div ref={elementRef4} className="bg-gray-50 p-8 md:py-9 md:px-12 rounded-xl border border-gray-300 w-full flex flex-col items-start text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: isVisible4 ? 1 : 0, scale: isVisible4 ? 1 : 0.5 }}
@@ -106,7 +108,7 @@ const StatsSection = () => {
               className="font-extrabold mb-4 flex items-center justify-center gap-4"
             >
               <span className="text-md md:text-xl dark:text-emerald-600"><FaUserFriends/></span>
-              <h2 className="text-md text-left">200+ Clients</h2>
+              <h2 className="text-md text-left truncate whitespace-nowrap">200+ Clients</h2>
             </motion.div>
             <p className="text-xxs text-left line-clamp-3 ">Qui nous font confiance grâce à la qualité de nos services, notre réactivité et notre engagement à répondre à leurs attentes. </p>
           </div>

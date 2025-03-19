@@ -37,7 +37,7 @@ const Header = () => {
 >
 
         <div
-          className={`container mx-auto flex justify-between items-center relative h-[90px]  md:h-[110px] duration-30`}
+          className={`container mx-auto flex justify-between items-center relative h-[115px] duration-30`}
         >
           <motion.div>
             <Link href="/">
@@ -48,7 +48,7 @@ const Header = () => {
                 width={2000}
                 height={2000}
                 loading="lazy"
-                className={`block dark:hidden transition-opacity ease-in-out w-[85px] sm:w-[95px] md:w-[100px] ${scrolled || !isHomePage ? "opacity-100" : "opacity-0"
+                className={`block dark:hidden transition-opacity ease-in-out w-[95px] ${scrolled || !isHomePage ? "opacity-100" : "opacity-0"
                   }`}
               />
               <Image
@@ -58,7 +58,7 @@ const Header = () => {
                 width={2000}
                 height={2000}
                 loading="lazy"
-                className={`hidden dark:block transition-opacity ease-in-out w-[85px] sm:w-[95px] md:w-[100px] ${scrolled || !isHomePage ? "opacity-100" : "opacity-0"
+                className={`hidden dark:block transition-opacity ease-in-out w-[95px]  ${scrolled || !isHomePage ? "opacity-100" : "opacity-0"
                   }`}
               />
             </Link>
